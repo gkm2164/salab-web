@@ -1,0 +1,17 @@
+/* Layout part */
+section article {
+	margin-left: 0px !important;
+}
+
+div#cfps-sac2015 {
+
+	margin-right: 3em;
+}
+
+div#cfps-sac2015 a {
+	color: black;
+}
+
+div#cfps-sac2015 a:hover {
+	color: red;
+}

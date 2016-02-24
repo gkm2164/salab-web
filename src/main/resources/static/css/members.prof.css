@@ -1,0 +1,18 @@
+#profintro {
+	font-size: 12px;
+}
+
+#prof-pic {
+	float: left;
+	margin: 10px 20px 20px 10px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+#profintro table.careers th.from {
+	text-align: right;
+}
+
+#profintro table.careers th.to {
+	text-align: left;
+}

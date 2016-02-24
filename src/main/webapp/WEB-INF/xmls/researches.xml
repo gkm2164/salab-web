@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE researches SYSTEM "researches.dtd">
+<researches>
+	<research>
+		<name>Software Architecture</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Software Product Line</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Enterprise Architecture</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Software Testing</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Model-Driven Development</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Formal methods</name>
+		<desc></desc>
+	</research>
+	<research>
+		<name>Service-Oriented Architecture</name>
+		<desc></desc>
+	</research>
+</researches>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE members SYSTEM "members.alumni.dtd">
+<members>
+	<archive year="2005">
+		<person>
+			<name>Youn-Seok Choi</name>
+			<current-works>Employee at Hyundai Motors AutoEver (Present)</current-works>
+			<interests>
+				<interest>Software Architecture, Object Oriented Analysis and Design</interest>
+				<interest>Component Based Development, Software Process</interest>
+				<interest>Business Process Management</interest>
+			</interests>
+			<publications>
+				<publication>Hyoung-iel Park , Sungwon Kang, Yoonsuk Choi , and
+					Danhyung Lee, “Developing Object Oriented Designs from Component
+					and Connector Architectures,” Proceedings of the 12 th Asia-Pacific
+					Software Engineering Conference (APSEC 2005), pp.231~238, Dec. 15 ?
+					17, 2005</publication>
+				<publication>Sungwon Kang, Yoonseok Choi, “Designing Logical
+					Architectures of Software Systems”, Proceedings of the 6th ACIS
+					International Conference on Software Engineering, Artificial
+					Intelligence, Networking, and Parallel/Distributed Computing
+					(SNPD2005), IEEE Computer Society, May 2005.</publication>
+				<publication>Yuun suk Choi, Sungwon Kang, “ALFReD: Architecture
+					description Language for Recursive Design,” The 6th Korean
+					Conference on Software Engineering, Feb 19-21, 2004.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Dae-Sung Park</name>
+			<current-works>Employee at LG Electronic (Present)</current-works>
+			<interests>
+				<interest>Software System Analysis</interest>
+				<interest>Software Testing</interest>
+				<interest>Model-driven Development</interest>
+			</interests>
+			<publications>
+				<publication>Daesung Park, Sungwon Kang, Jihyun Lee, “Design Phase
+					Analysis of Software Qualities Using Aspect-Oriented Programming,”
+					Proceedings of the 7th ACIS International Conference on Software
+					Engineering, Artificial Intelligence, Networking, and
+					Parallel/Distributed Computing (SNPD2006), IEEE Computer Society,
+					Las Vegas, USA June 19~20, 2006.</publication>
+				<publication>Daesung Park, Sungwon Kang, “Design Phase Analysis of
+					Software Performance Using Aspect-Oriented Programming”, 7th Int’l
+					Conf. on UML Modeling Languages and Applications, Aspect oriented
+					modeling workshop, Lisbon, Portugal October 10-15, 2004.</publication>
+				<publication>박대성, 강성원, “소프트웨어 분석 체계”, 한국정보 과학회 31회 춘계 발표회, 2004.4.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Jung-Jin Seo</name>
+			<current-works>Employee at Korea Credit Bureau (Present)</current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Business Intelligence</interest>
+				<interest>Software Process</interest>
+			</interests>
+			<publications></publications>
+		</person>
+		<person>
+			<name>Hee-Young Choi</name>
+			<current-works></current-works>
+			<interests></interests>
+			<publications>
+				<publication>최희영, "Selective white-box testing," Graduate School of
+					Information and Communications University, 2005.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>In-Hong Kim</name>
+			<current-works></current-works>
+			<interests></interests>
+			<publications>
+				<publication>김인홍, "Critical Risks of Small Team Software
+					Development," 한국정보통신대학교, 2005.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Hyung-Il Park</name>
+			<current-works></current-works>
+			<interests></interests>
+			<publications>
+				<publication>Hyoung-iel Park, Sungwon Kang, Yoonsuk Choi, and
+					Danhyung Lee, “Developing Object Oriented Designs from Component
+					and Connector Architectures,” Proceedings of the 12th Asia-Pacific
+					Software Engineering Conference (APSEC 2005), pp.231~238, Dec. 15 -
+					17, 2005.</publication>
+				<publication>박형일 , 강성원 , 최윤석 , 이단형 , “C&amp;C 아키텍처 기반의 객체지향 설계 ,”
+					정보과학회논문지 : 소프트웨어 및 응용 , 제 34 권 제 4 호 , pp. 317~327, 2007 년 4 월 .</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2006">
+		<person>
+			<name>Chang-Sun Song</name>
+			<current-works>Employee at TTA (Present)</current-works>
+			<interests>
+				<interest>Model-Driven Development</interest>
+				<interest>Object-Oriented System</interest>
+				<interest>Executable UML </interest>
+			</interests>
+			<publications></publications>
+		</person>
+		<person>
+			<name>Jong-Gul Park</name>
+			<current-works>Employee at VI Soft (Present)</current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Design Patterns</interest>
+				<interest>Object Oriented Analysis &amp; Design</interest>
+			</interests>
+			<publications></publications>
+		</person>
+		<person>
+			<name>Mi-Yul Park</name>
+			<current-works>Employee at LG Electronics (Present)</current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Software Development Process, Project Management</interest>
+				<interest>Design Patterns, Software Analysis</interest>
+			</interests>
+			<publications></publications>
+		</person>
+	</archive>
+	<archive year="2007">
+		<person>
+			<name>Eun-Chae Yoon</name>
+			<current-works>Employee at Hyundai Motors AutoNet (Present)</current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Tactical Digital Information Link</interest>
+				<interest>Software Process</interest>
+			</interests>
+			<publications>
+				<publication>윤은채, 강성원, "A Framework for Exchanging Heterogeneous
+					Messages based-on Ontology Mapping," 2007 한국 소프트웨어공학 학술대회, 2007년 2월
+					22일 ~ 24일.</publication>
+				<publication>윤은채, 이지현, 강성원, 이노복, “가변 포맷 메시지로부터 XML 포맷 메시지로의 변환 기술,”
+					한국통신학회 추계종합학술발표회, 2006.11.18.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Jong-Su Bae</name>
+			<current-works>Junior Manager at LG CNS (Present)</current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Model-Driven Development </interest>
+				<interest>Component-Based Development</interest>
+			</interests>
+			<publications>
+				<publication>Jongsu Bae, Sungwon Kang, “FMBP (A methods to generate
+					Feature Model from Business Process Model for business
+					application)”, Proceedings of the IEEE 7th Int'l Conference on
+					Computer and Information Technology, pp 879~ 884, Univ. of Aizu ,
+					Fukushima Japan , Oct.16-19, 2007.</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2008">
+		<person>
+			<name>Woo-Seok Choi</name>
+			<current-works>Employee at KT (Present)</current-works>
+			<interests>
+				<interest>Software Testing</interest>
+				<interest>Software Analysis</interest>
+			</interests>
+			<publications>
+				<publication>Woo-seok Choi, Sungwon Kang, Hojin Choi, and Jongmoon
+					Baik, “ Automated Generation of Product Use Case Scenarios in
+					Product Line Development,” IEEE 8th International Conference on
+					Computer and Information Technology (CIT), 2008.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Hyun-Woong Park</name>
+			<current-works>Employee at POSDATA (Present)</current-works>
+			<interests>
+				<interest>Formality and Automation in Software Engineering</interest>
+			</interests>
+			<publications>
+				<publication>Hyunwoong Park and Sungwon Kang, "An Automated Approach
+					to Detecting Inconsistencies between Product Portfolio and Product
+					Line Dependencies", School of Engineering, Information and
+					Communications University, 2008.</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2009">
+		<person>
+			<name>Taek-Goo Kim</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Behavioral Formalization</interest>
+				<interest>Software Process</interest>
+			</interests>
+			<publications>
+				<publication>Taekgoo Kim , Kevin Bierhoff, Jonathan Aldrich and
+					Sungwon Kang, “Typestate Protocol Specification in JML,” The 8th
+					Workshop on Specification And Verification of Component-Based
+					Systems (SAVCBS 09), Amsterdam, The Netherlands, August 25, 2009.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Hyun-Ho Kim</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Architecture Design</interest>
+				<interest>Software Measurement and Analysis</interest>
+				<interest>Techincal Test and Defect Analysis</interest>
+			</interests>
+			<publications>
+				<publication>Sungwon Kang, Hyunho Kim, Changsup Keum, Jongmoon Baik,
+					Hojin Choi, "Transformation Rules for Synthesis of UML Activity
+					Diagram from Scenario-based Specification," The 34th International
+					Computer Software and Applications Conference, COMPSAC 2010, Seoul,
+					Korea, July 19 - 23, 2010</publication>
+				<publication>Hyunho Kim, "Synthesis of UML Activity Diagram from
+					Scenario-based Specification," 한국정보통신대학교, 2009.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Agnes O. Odongo</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Analysis</interest>
+				<interest>Software Architecture</interest>
+				<interest>Software Testing</interest>
+			</interests>
+			<publications>
+				<publication>Agnes Owuato Odongo , Sungwon Kang, In-Young Ko, “ A
+					Scheme for Systematically Selecting an Enterprise Architecture
+					Framework ,” The 9th IEEE/ACIS International Conference on Computer
+					and Information Science, (ICIS 2010), August 18-20, 2010, Yamagata,
+					Japan.</publication>
+				<publication>Agnes Owuato Odongo, Sungwon Kang and Jae Jeung Rho. “A
+					Generic e-Government Process Based on Case Studies”. The 1st
+					International Workshop on Enterprise Architecture Challenges and
+					Responses in (WEACR) in Conjunction with SNPD2009 , IEEE SNPD2009,
+					Daegu, Korea, May 27-29, 2009 .</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2010">
+		<person>
+			<name>Atabek Murtazaev</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Architecture</interest>
+				<interest>Service-Oriented Architecture</interest>
+			</interests>
+			<publications>
+				<publication>Atabek Murtazaev , Sungwon Kang, Jongmoon Baik, Jihyun
+					Lee, “An Approach to Defining Value-based Software Development
+					Process , ” The 9th IEEE/ACIS International Conference on Computer
+					and Information Science, (ICIS 2010), August 18-20, 2010, Yamagata,
+					Japan.</publication>
+			</publications>
+		</person>
+		<person>
+			<name>Akmal Yaghini</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Engineering</interest>
+				<interest>Computer Network</interest>
+			</interests>
+			<publications></publications>
+		</person>
+	</archive>
+	<archive year="2011">
+		<person>
+			<name>Sungju Kang</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Product Line Traceability</interest>
+				<interest>Service-Oriented Architecture</interest>
+			</interests>
+			<publications>
+				<publication>Sungju Kang, Sungwon Kang, "A Design of the Conceptual
+					Architecture for a Multitenant SaaS Application Platform," The 3rd
+					ACIS International Workshop on Enterprise Architecture Challenges
+					and Responses (WEACR 11), Jeju Island, Korea, May 23-25, 2011.</publication>
+				<publication>엄석환, 김진규, 강성원, 강성주, 김희강, 김경일, " 모바일하버 통합 제어 시스템의 소프트웨어
+					아키텍처 설계," 한국정보과학회 소프트웨어공학 소사이어티 논문지, 제23권 제 4호, pp. 125 - 139,
+					2011년 12월.</publication>
+				<publication>강성주 , 안휘 , 강성원 , 신영미 , 김상기 , “ 소프트웨어 프로덕트 라인 가변성 표현 언어의
+					비교 ,” 2010 한국 소프트웨어공학 학술대회 (KCSE 2010), 2010 년 2 월 8 일 ~ 10 일.</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2012">
+		<person>
+			<name>Seokhwan Eom</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Product Line Traceability</interest>
+				<interest>Software Architecture</interest>
+			</interests>
+			<publications>
+				<publication>엄석환, 김진규, 강성원, 강성주, 김희강, 김경일, " 모바일하버 통합 제어 시스템의 소프트웨어
+					아키텍처 설계," 한국정보과학회 소프트웨어공학 소사이어티 논문지, 제23권 제 4호, pp. 125 - 139,
+					2011년 12월.</publication>
+				<publication>엄석환, 김진규, 강성원, 이민광, 김태호, 김진혁, " MDD 기반의 임베디드 소프트웨어
+					재구조화", 2011 한국 소프트웨어공학 학술대회(KCSE 2011), 2011년 2월 9일 ~ 11일.</publication>
+			</publications>
+		</person>
+	</archive>
+	<archive year="2014">
+		<person>
+			<name>Heuijin Lee</name>
+			<current-works></current-works>
+			<interests>
+				<interest>Software Product Lines</interest>
+				<interest>Software Architecture</interest>
+			</interests>
+			<publications>
+				<publication>Heui Jin Lee, Sungwon Kang, Myungchul Kim, “An
+					Efficient Application-Device Matching Method for the Mobile
+					Software Ecosystem,” The 21st Asia-Pacific Software Engineering
+					Conference, Jeju, Korea, December 1-4, 2014.</publication>
+				<publication>이희진, 강성원, "모바일 소프트웨어 에코시스템(MSECO)의 마켓을 위한 단말 중심 어플리케이션
+					필터링 방법, 2014 한국 소프트웨어공학 학술대회, 강원도 보광 휘닉스 파크, 2014년 2월 12일 ~ 2월 14일</publication>
+			</publications>
+		</person>
+	</archive>
+</members>

@@ -1,0 +1,61 @@
+body { background-color: rgb(49, 72, 126); }
+#container {
+	background-color: white;
+	-webkit-box-shadow: 7px 7px 10px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    7px 7px 10px rgba(50, 50, 50, 0.9);
+	box-shadow:         7px 7px 10px rgba(50, 50, 50, 0.9);
+}
+
+/* Header is consist of #banner and #nav-global */
+header { background-color: rgb(230, 230, 230); }
+
+/* Banner is consist of 2 #logo and textbox*/
+#banner {}
+
+#logo {}
+#salab-logo {}
+#kaist-logo {}
+#salab-title {}
+
+#nav-global { background-color: #888888; }
+/* if navigation is activated */
+#nav-global > ul > .nav-active { background-color: #BBBBBB; }
+/* first navigation's child's color */
+#nav-global > ul ul li { background-color: #999999; }
+/* every navigation on nav global's color when hovering mouse.*/
+#nav-global ul li:hover { background-color: #ABABAB; }
+
+/* Section is consist of two, aside and article */
+section {}
+/* Aside is local navigation. */
+section aside {
+	background-color: rgba(156, 171, 198, .60);
+	background: rgb(156,171,198); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(156,171,198,1) 0%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(156,171,198,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(156,171,198,1) 0%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(156,171,198,1) 0%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(156,171,198,1) 0%,rgba(234,234,234,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(156,171,198,1) 0%,rgba(234,234,234,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cabc6', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+}
+
+#nav-local > ul > li { background-color: rgb(69, 92, 146); }
+#nav-local > ul > .nav-active { background-color: #B3CBF5; }
+#nav-local > ul > li:hover { background-color: rgb(109, 132, 186); }
+#nav-local > ul > .nav-active:hover { background-color: #B3CBF5; }
+#nav-local li > ul li {
+	background-color: rgb(89, 112, 166);
+	color: rgb(255, 255, 255);
+}
+
+footer {
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=1 ); /* IE6-9 */
+}

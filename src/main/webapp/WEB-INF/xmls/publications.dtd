@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT publications (category, publists*)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT publists (paper*)>
+<!ATTLIST publists typename CDATA #REQUIRED>
+<!ELEMENT paper (#PCDATA)>
+<!ATTLIST paper link CDATA #IMPLIED>

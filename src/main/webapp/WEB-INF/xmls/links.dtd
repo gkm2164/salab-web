@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT links (group*)>
+<!ELEMENT group (link*)>
+<!ELEMENT link (#PCDATA)>
+
+<!ATTLIST group name CDATA #IMPLIED>
+<!ATTLIST link addr CDATA #IMPLIED>

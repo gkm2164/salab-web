@@ -1,0 +1,52 @@
+.pubs-home {
+	font-size: 15px;
+}
+
+.pubs-home h1:first {
+	margin: 0px;
+}
+
+.pubs-home a {
+	color:black;
+	text-decoration: underline;
+	font-size:12px; 
+}
+.pubs-home a:hover{
+	color:red;
+}
+
+.pubs-category-list ul li a {
+	color: black;
+	text-decoration: underline;	
+}
+
+.pubs-category-list ul li a:hover {
+	color: red;
+}
+.pubs-books-list{
+	height:450px;
+}
+
+.pubs-books-list div{
+	heigth:100%;
+	width:50%;
+	float:left;
+}
+.pubs-books-list div p{
+	text-align:center;
+}
+.pubs-books-list div img{
+	align:middle;
+}
+.pubs-contents {
+	font-size: 12px;
+}
+
+.pub-paper-list {
+	font-size: 12px;
+}
+
+.pub-paper-list li {
+	margin-bottom: 10px;
+}
+

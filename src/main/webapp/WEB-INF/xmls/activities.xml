@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE activities SYSTEM "activities.dtd">
+<activities>
+	<activity>
+		<preview>Homecoming Day 2009</preview>
+		<title>1st. Software Architecture Symposium</title>
+		<contents><![CDATA[
+			<p>날짜 : 2009. 12. 5 (토)</p>
+			<p>시간 : 오후 2시 ~ 오후 7시</p>
+			<p>장소 : 서울 도곡동 한국과학기술원(KAIST) SOTI</p>
+			<table>
+				<tr><th>발표자</th><th>발표주제</th></tr>
+				<tr><td>윤은채</td><td>Model-Driven Development for Automotive Multimedia Software</td>
+				<tr><td>최윤석</td><td>현대자동차 업무 소개</td>
+				<tr><td>금창섭</td><td>융합서비스 플랫폼 아키텍처</td>
+				<tr><td>안신영</td><td>Architectural Design Method using View-Chain based Refinement</td>
+				<tr><td>김정호</td><td>Metaverse Architecture & 아키텍처 구성을 위한 지식</td></tr>
+			</table>
+		]]></contents>
+	</activity>
+	<activity>
+		<preview>Homecoming Day 2011</preview>
+		<title>2nd. Software Architecture Symposium</title>
+		<contents><![CDATA[
+				<p>날짜 : 2011. 2. 26 (토)</p>
+				<p>시간 : 오후 2시 ~ 오후 6시</p>
+				<p>장소 : 한국 과학 기술원(KAIST) KI 빌딩</p>
+				<table>
+					<tr><th>발표자</th><th>발표주제</th></tr>
+					<tr><td>이선아</td><td>프로그래머들의 코드 네비게이션을 돕기 위한 클러스터링 기법</td></tr>
+					<tr><td>최윤석</td><td>기능안전 국제표준 (ISO/DIS 26262) 분석</td></tr>
+					<tr><td>김진규</td><td>프로토콜 변환 기술</td></tr>
+					<tr><td>배종수</td><td>IPOS 개발</td></tr>
+					<tr><td>강성원교수님</td><td>Systematic software product line test case generation from Activity diagram</td></tr>
+					<tr><td>윤은채</td><td>현대 모비스 모델기반 개발 방법</td></tr>
+				</table>
+		]]></contents>
+	</activity>
+	<activity>
+		<preview>Homecoming Day 2012</preview>
+		<title>3rd. Software Architecture Symposium</title>
+		<contents><![CDATA[
+				<p>날짜 : 2012. 8. 25(토)</p>
+				<p>시간 : 오후 2시 ~ 오후 8시</p>
+				<p>장소 : 한국과학기술원(KAIST) 도곡캠퍼스 1층 강의실</p>
+				<table>
+					<tr><th>시 간</th><th>발표자</th></tr>
+					<tr><td>14:40</td><td>김진규 발표 및 질의응답</td></tr>
+					<tr><td>15:10</td><td>최윤석 발표 및 질의응답</td></tr>
+					<tr><td>15:40</td><td>백하은 발표 및 질의응답</td></tr>
+					<tr><td>16:30</td><td>김진현 발표 및 질의응답</td></tr>
+					<tr><td>17:00</td><td>안휘, 박태현 발표 및 질의응답</td></tr>
+					<tr><td>18:00</td><td>저녁식사</td></tr>
+				</table>
+		]]></contents>
+	</activity>
+	<activity>
+		<preview>Mt.Gyeryong: 2012.11.3</preview>
+		<title></title>
+		<contents><![CDATA[
+			<img src="/img/mtgyeryong001.jpg" />
+			<img src="/img/mtgyeryong002.jpg" />
+		]]></contents>
+	</activity>
+</activities>

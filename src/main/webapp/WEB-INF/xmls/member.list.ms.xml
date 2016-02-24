@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE members SYSTEM "members.dtd">
+<members>
+	<person>
+		<name>Jason Shim</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Junhaeng Heo</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Jaejun Lee</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Taehyun Kim</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+</members>

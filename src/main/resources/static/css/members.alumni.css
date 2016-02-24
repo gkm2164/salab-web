@@ -1,0 +1,21 @@
+ul#archives-year {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#archives-year li {
+	font-size: 12px;
+	margin: 0px 10px;
+	float: left;
+}
+
+ul#archives-year li:hover {
+	text-decoration: underline;
+}
+
+.alumni-home{
+	font-size: 100px;
+	vertical-align: middle;
+	margin: 50px;
+}

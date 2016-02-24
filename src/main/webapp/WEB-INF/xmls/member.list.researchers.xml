@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE members SYSTEM "members.dtd">
+<members>
+	<person link="http://www.saleese.com/">
+		<name>Dr. Seon-Ah Lee</name>
+		<interests>
+			<interest>Software Evolution, Program Comprehension and Reverse Engineering,</interest>
+			<interest>Code Recommendation, Data Mining, Collective Intelligence,</interest>
+			<interest>Software Architecture, Software Visualization, Dynamic Analysis,</interest>
+			<interest>and Overall Software Engineering Issues</interest>
+		</interests>
+		<publications>
+			<publication>Seonah Lee, Sungwon Kang, Sunghun Kim and Matt Staats, "The Impact of View Histories on Edit Recommendations," IEEE Transactions on Software Engineering (TSE), DOI (identifier) 10.1109/TSE.2014.2362138.</publication> 
+			<publication>Seonah Lee, Sungwon Kang, “Clustering Navigation Sequences to Create Contexts for Guiding Code Navigation,” Journal of Systems and Software,  DOI information: 10.1016/j.jss.2013.03.103, 2013.</publication> 
+			<publication>Seonah Lee, Sungwon Kang, Matt Staats "A Graphical Recommender for Assisting Code Exploration," 35th IEEE International Conference on Software Engineering (ICSE Formal Demonstrations 2013), [Presentation]</publication>
+			<publication>Seonah Lee and Sungwon Kang, “Clustering and Recommending Collections of Code Relevant to Tasks,” 27th IEEE International Conference on Software Maintenance (ICSM ERA 2011), Sep 25 - Oct 1, 2011, Williamsburg, USA, 2011. [Presentation]</publication>
+			<publication>Seonah Lee and Sungwon Kang, “A Study on Guiding Programmers’ Code Navigation with a Graphical Code Recommender,” Studies in Computational Intelligence, Vol. 377, Springer, 2012. [Presentation]</publication>
+			<publication>Sungwon Kang, Seonah Lee, Dan Hyung Lee, “A Framework for Tool-based Software Architecture Reconstruction,” International Journal of Software Engineering and Knowledge Engineering, 19(2), 2009.</publication>
+			<publication>Seonah Lee, Gail C. Murphy, Thomas Fritz, Meghan Allen, “How Can Diagramming Tools Help Support Programming Activities?” IEEE Symposium on Visual Languages and Human-Centric Computing, (VL/HCC 2008), Herrsching am Ammersee, Germany, September 15-19, 2008.</publication>
+			<publication>Seonah Lee, Sungwon Kang, “Verifying a Software Architecture Reconstruction Framework with a Case Study,” 2006 International Conference on Software Engineering and Knowledge Engineering (SEKE'2006), San Francisco, USA, July 5-7, 2006.</publication>
+			<publication>Seonah Lee, Seungmo Cho, Sungkwan Heo, “SAAT: Reverse Engineering for Performance Analysis”, the Second International Workshop on Dynamic Analysis, Edinburgh, Scotland, UK, 25 May 2004. [Presentation]</publication>
+			<publication>Seonah Lee, Byoungju Choi, "Transition Management of Software Process Improvement," LNCS, Vol. 2559, pp.19-34. (4th International Conference on Product Focused Software Process Improvement, Finland, December 2002)</publication>
+			<publication>Seonah Lee, Sookyung Kim, Byoungju Choi, "Developer's View on the Software Quality Model based on the ISO/IEC9126," the World Congress for Software Quality, September 2000 (WCSQ 2000: Japan), pp.719-724.</publication>
+			<publication>Seonah Lee, Sungwon Kang, “Mining Contexts for Recommending Source Locations to Explore,” Korea-Japan Joint Workshop on ICT, Beppu Kamenoi Hotel, Beppu City, Oita, Japan, December 12-14, 2013. [Presentation]</publication>			
+			<publication>Seonah Lee, Sungwon Kang, "Data-mining based Recommendation Systems for Software Evolution Tasks" Communications of The Korea Information Science Society, pp. 86-93, October, 2013. [이선아, 강성원, " 소프트웨어 진화 작업을 위한 데이터 마이닝 기반 추천 시스템," 한국정보과학회지 제31권 제10호, pp. 86-93, 2013년 10월]</publication>
+			<publication>한승범, 이선아, 강성원, "파일 오너십에 따른 코드 품질 수준에 대한 사례 연구," 2014 제16회 한국 소프트웨어공학 학술대회, 2014년 2월</publication>
+		</publications>
+	</person>
+</members>

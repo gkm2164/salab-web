@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE links SYSTEM "links.dtd">
+<links>
+	<group name="KAIST Links">
+		<link addr="http://www.kaist.ac.kr">KAIST</link>
+		<link addr="http://cs.kaist.ac.kr">KAIST Computer Science</link>
+		<link addr="http://soti.kaist.ac.kr/Home">KAIST-CMU MSE</link>
+	</group>
+	
+	<group name="Software Architecture Resources">
+		<link addr="http://www.sei.cmu.edu">CMU, SEI</link>
+		<link addr="http://www.softwarearchitectureportal.org/">Software Architecture Portal</link>
+		<link addr="http://www.sei.cmu.edu/architecture/start/events/index.cfm">software Architecture Conferences, Workshops and Calls for Participation</link>
+	</group>
+	<group name="Related Conferences">
+		<link addr="http://www.icse-conferences.org/">ICSE (International Conference on Software Engineering)</link>
+		<link addr="http://www.wicsa.net/">WICSA(Working IEEE/IFIP Conference on Software Architecture)</link>
+		<link addr="http://www.lirmm.fr/ecsa13/">ECSA (European Conference on Software Architecture)</link>
+		<link addr="http://www.splc.net/">SPLC (Software Product Line Conference)</link>
+	</group>
+</links>

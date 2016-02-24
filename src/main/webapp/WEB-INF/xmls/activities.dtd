@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT activities (activity*)>
+<!ELEMENT activity (preview, title, contents)>
+<!ELEMENT preview (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT contents (#PCDATA)>

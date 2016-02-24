@@ -1,0 +1,25 @@
+.research-list {
+	font-size: 12px;
+}
+
+.research-list a {
+	text-decoration: underline;
+}
+
+.research-list a:hover {
+	color: red;
+}
+
+#lab-research-area-img {
+	float: right;
+	width: 600px;
+	height: auto;
+}
+
+#research-explain-field {
+	font-size: 12px;
+}
+
+#research-hidden-explain {
+	display: none;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE courses SYSTEM "courses.dtd">
+
+<courses>
+	<course>
+		<title>SEP523 Software Architecture Design (Graduate)</title>
+		<description><![CDATA[Nowadays software architecture is regarded as an essential step in developing nontrivial software systems. In this course, we study the foundational knowledge of the discipline of software architecture consisting of: the notions of architecture drivers, quality attribute scenarios, architecture styles and patterns and architecture analysis and evaluation. The principles learned in class are applied to architecture design of a nontrivial software project.]]></description>
+	</course>
+	<course>
+		<title>CS101 Introduction to Programming (Undergraduate)</title>
+		<description><![CDATA[This course is aimed at students with little or no programming experience. It aims to provide students with an understanding of the role computation can play in solving problems. It also aims to help students, regardless of their major, to feel justifiably confident of their ability to write small programs that allow them to accomplish useful goals. The class will use the Python programming language.]]></description>
+	</course>
+	<course>
+		<title>CS552/SEP531 Models of Software Systems (Graduate)</title>
+		<description><![CDATA[Computer Scientists have long investigated the problem of how to automate software development from its specification to its program. So far the efforts were not fully successful but much of the results can be fruitfully applied to development of small programs and critical small portions of large programs. In this course, we learn how to formally write requirements, how to formally model specifications and how to rigorously verify that the models have the required properties.]]></description>
+	</course>
+	<course>
+		<title>CS492 Topics in Computer Science - Distributed and Outsourced Software Engineering (undergraduate)</title>
+		<description><![CDATA[The DOSE(Distributed and Outsourced Software Engineering) course introduces the software engineering principles and techniques appropriate for the increasingly prevalent style of modern software development, involving teams spread across teams, companies and countries. The course involves a distributed project conducted in cooperation with student teams from other universities.]]></description>
+	</course>
+	<course>
+		<title>SEP503 Computer Science for Software Engineers (graduate)</title>
+		<description><![CDATA[This course offers various background topics for software engineers to start graduate level study of software engineering. Topics include: <br /><ul><li>Advanced Discrete Mathematics</li><li>UML and Design Tool</li><li>Advanced Data Structure and Algorithm</li><li>Etc.</li>]]></description>
+	</course>
+	<course>
+		<title>CS408 Computer Science Project (undergraduate)</title>
+		<description><![CDATA[
+			This course provides students with a laboratory for direct application of concepts learned in computer science and other related courses, in which a “Learning-by-Doing” philosophy of education is realized. Through the course, students will experience the whole life cycle of software development process while working in a team. The target of development will be a challenging real life project. After finishing this course, students are expected to know:
+			<ul>
+				<li>How to plan for software development projects</li>
+				<li>How to approach design software at an architecture level and detailed design level</li>
+				<li>How to develop various artifacts and conduct various activities required in typical software development projects</li>
+			</ul>]]></description>
+	</course>
+	<course>
+		<title>ED100/ED1001 Freshman Design (undergraduate)</title>
+		<description><![CDATA[This course introduces the fundamentals of conceptual design and critical thinking to students to produce a paradigm shift in the way they think, view the world, and view their role in the world. It also introduces essential technical communication skills to permit students to work together and effectively express ideas in English. The course thereby provides an opportunity for students to learn more about engineering, science and technology and make a more informed decision about choice of major.]]></description>
+	</course>
+	<course>
+		<title>Software Studio (undergraduate)</title>
+		<description><![CDATA[
+			The objective of this course is to study the fundamental concepts of software engineering through studio project work. Teamwork, organization, processes, and disciplined techniques of software development will be of the major focus. By the end of the semester the students are expected to have achieved the following goals:
+			<ul>
+				<li>To practice and experience development of software based on software development process</li> 
+				<li>To know various methods and aspects of systems analysis and design methodologies</li> 
+				<li>To be able to analyze information systems and justify design decisions for them</li>
+				<li>To understand the notion of software product line and apply it for software development</li>
+				<li>To incorporate classroom lessons into their studio projects by teamwork</li>
+			</ul>]]></description>
+	</course>
+	<course>
+		<title>Discrete Mathematics (undergraduate)</title>
+		<description><![CDATA[The main objective of the course is to help students become familiar with essential mathematical tools for taking basic courses in computer science. Topics covered in the course range from basic language of discrete mathematics, such as sets and relations, to more advanced topics, such as graph theory, boolean algebra, and automata.]]></description>
+	</course>
+	<course>
+		<title>Introduction to Software Engineering (undergraduate)</title>
+		<description><![CDATA[
+			Software engineering encompasses the issues that arise during the creation and use of large software applications, which include not only technical issues but also social and managerial issues. In this course, we will study: (1) management and organization of software development; (2) software development processes and techniques including software life cycle models and various methods and technologies useful at each lifecycle stage. In this 2007 spring course, (3) a special emphasis is on software architecture design and analysis. After finishing this course, students should be able to work as a team member on large complex software projects and should be able to:
+			<ul>
+				<li>Understand the overall management concepts and issues of large software projects.</li>
+				<li>Specify the requirements for a software product</li>
+				<li>Design a software system at architecture level. </li>
+				<li>Architecture design will incorporate multiple views and analysis.</li>
+				<li>Test software systems.</li> 
+				<li>Manage software projects and the evolution of software systems.</li>
+			</ul>
+		]]></description>
+	</course>
+	<course>
+		<title>UML 2.0</title>
+		<description><![CDATA[This is a short course on UML 2.0. UML is an industry standard software design language. In this course, students learn how to interpret and draw various UML diagrams using a UML design tool. In addition, students learn relationships between various diagrams and the usages of those diagrams.]]></description>
+	</course>
+</courses>
+
+
+ 
+
+
+

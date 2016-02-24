@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE members SYSTEM "members.dtd">
+<members>
+	<person>
+		<name>Jungho Kim</name>
+		<interests>
+			<interest>Measuring Quality based on Software Architecture</interest>
+			<interest>Evaluation of Software Architecture Software System</interest>
+			<interest>Construction of Software Architecture</interest>
+		</interests>
+		<publications>
+			<publication>김정호 , 강성원 , “ 사례연구 : 기능확장성을 위한 소프트웨어 아키텍처 재설계 ,” 2009 한국 소프트웨어공학 학술대회 (KCSE 2009), 2009 년 2 월 9 일 ~ 11 일 .</publication>
+			<publication>김정호, 강성원, “소프트웨어 아키텍처를 통한 시스템 기능확장성 측정에 관한 연구” 한국IT서비스학회 추계학술대회, 2007.11.21.</publication>
+			<publication>김정호, 강성원, “FSP Model을 이용한 C&amp;C View 아키텍처의 검증” 한국IT서비스학회 추계학술대회, 2006.11.15.</publication>
+		</publications>
+	</person>
+	<person>
+		<name>Hwi Ahn</name>
+		<interests>
+			<interest>Software Architecture</interest>
+			<interest>Software Product Line</interest></interests>
+		<publications>
+			<publication>Hwi Ahn, Sungwon Kang, “Analysis of Software Product Line Architecture Representation Mechanisms,” The 9th ACIS International Conference on Software Engineering Research, Management and Applications (SERA 2011), August 10-12, 2011, Radisson Plaza Lord, Baltimore, USA.</publication>
+			<publication>안휘 , 강성원 , “ 휘처 모델을 위한 가변성 표현 방법의 비교 ,” 2010 한국 소프트웨어공학 학술대회 (KSEJW2010), 2010 년 8 월 20 일 ~ 21 일 .</publication>
+			<publication>강성주 , 안휘 , 강성원 , 신영미 , 김상기 , “ 소프트웨어 프로덕트 라인 가변성 표현 언어의 비교 ,” 2010 한국 소프트웨어공학 학술대회 (KCSE 2010), 2010 년 2 월 8 일 ~ 10 일 .</publication>
+			<publication>안휘 , 강성원 , “A Comparison of Software Product Line Architecture Design Methods from the Practicality Viewpoint,” 2009 한국 소프트웨어공학 학술대회 (KCSE 2009), 2009 년 2 월 9 일 ~ 11 일 .</publication>
+			<publication>안휘 , 강성원 , 김진규 , “ 도메인 뷰포인트를 통한 소프트웨어 프로덕트 라인 아키텍처 설계방법들의 비교 ,” 소프트웨어공학소사이어티 논문지 , Vol. 21, No. 4, 2008 년 12 월 .</publication></publications>
+	</person>
+	<person>
+		<name>Taehyun Park</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Jongsun Ahn</name>
+		<interests>
+			<interest>Measuring Quality based on Software Architecture</interest>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Pilsu Jung</name>
+		<interests>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications></publications>
+	</person>
+	<person>
+		<name>Younghun Han</name>
+		<interests>
+			<interest>Software Architecture</interest>
+			<interest>Software Product Lines</interest>
+			<interest>Formal Methods, Model Checking</interest>
+			<interest>Cyber-Physical System, Safety-Critical System</interest>
+		</interests>
+		<publications>
+			<publication>Younghun Han, Sungwon Kang, Jinhyun Kim, “ExCHARON: Improved Modeling Language for Cyber-Physical Systems based on CHARON,” IEEE 10th International Conference on Embedded Software and Systems (ICESS 2013), pages 734-741, Dec. 3-5, 2013. (Sydney, Australia)</publication>
+			<publication>Younghun Han, Sungwon Kang, “ExCHARON: Improved Modeling Language for Cyber-Physical Systems based on CHARON,” KAIST Computer Science Technical Reports, CS-TR-2013-377, Apr. 18, 2013.</publication>
+			<publication>Jingyu Kim, Sungwon Kang, Younghun Han, “An approach to automating identifications of mapping relations among message field for message translations,” Korea Conference on Software Engineering (KCSE 2013), Vol. 15, No. 1, pages 33-40, Jan. 30-Feb. 1, 2013. (Pyeongchang, Republic of Korea)</publication>
+			<publication>Younghun Han, Haeyoung Lee, Jin-young Choi, “Modeling of Battle Field using Hybrid System Framework,” Korea Computer Congress 2011(KCC 2011), Vol. 38, No. 1, pages 63-66, Jun. 29- Jul. 1, 2011. (Gyeongju, Republic of Korea)</publication>
+			<publication>Jungjae Lee, Reeseo Cha, Younghun Han, Wonhong Nam, Jin-young Choi, “Modeling Cyber-Physical Systems Using Hybrid System Framework: A Case Study,” The 2nd International Conference on Research Challenges in Computer Science (ICRCCS 2010), pages 343-346, Dec. 18-19, 2010. (Guangzhou, China)</publication>
+			<publication>Jungjae Lee, Reeseo Cha, Younghun Han, Wonhong Nam, Jin-young Choi, “Modeling Autonomous Military Robots Using Hybrid System Framework,” International Conference on ICT Convergence (ICTC 2010), pages 429-430, Nov. 17-19, 2010. (Jeju island, Republic of Korea)</publication>
+		</publications>
+	</person>
+	<person>
+		<name>Gyeongmin Go</name>
+		<interests>
+			<interest>Formal Method</interest>
+			<interest>Programming Language</interest>
+			<interest>Software Product Lines</interest>
+			<interest>Software Architecture</interest>
+		</interests>
+		<publications>
+			<publication>Gyeongmin Go, Sungwon Kang, Jongsun Ahn, "A Software Binding Application Tool based on the Orthogonal Variability Description Language for Software Product Line Development," The 16th ACIS International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing (SNPD 2015), Takamatsu, Japan, June 1-3, 2015. (Regular Paper)</publication>
+			<publication>고경민, 강성원, 안종선, 소프트웨어 제품라인 개발을 위한 직교적 가변성 기술 언어 기반의 바인딩 적용 도구, 제 17회 한국 소프트웨어공학 학술대회(KCSE 20015), 2015년 1월 28일 ~ 30일.</publication>
+		</publications>
+	</person>
+</members>
