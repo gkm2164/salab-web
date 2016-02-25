@@ -1,9 +1,11 @@
 package kr.ac.kaist.salab.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -31,10 +33,9 @@ public class Member {
     @Basic(optional = true)
     private String link;
 
-
-
     private Date enterDate;
 
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean graduated;
 
     private Date graduatedDate;
@@ -54,6 +55,6 @@ public class Member {
             joinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "PublicationID", referencedColumnName = "ID")
     )
-    @JsonManagedReference
+    @JsonBackReference
     private List<Publication> publications;
 }

@@ -1,6 +1,5 @@
 package kr.ac.kaist.salab.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,9 +33,17 @@ public class Publication {
     @JoinTable(
             name = "RMemberPublications",
             joinColumns = @JoinColumn(name = "PublicationID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID")
+            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID"),
+            indexes = @Index(name = "IDX_RMP_AuthorOrder", columnList = "AuthorOrder")
     )
-    @OrderBy("memberOrder")
-    @JsonBackReference
     private List<Member> memberList;
+
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        memberList.forEach((x) -> sb.append(x.getName()).append(", "));
+        String names = sb.toString();
+
+        return String.format("%s\"%s,\" %s", names, title, metadata);
+    }
 }

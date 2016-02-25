@@ -14,7 +14,7 @@ import java.util.List;
  * Created by USER on 2016-02-24.
  */
 @RestController
-@RequestMapping("/member/rest")
+@RequestMapping("/members/rest")
 public class MemberRestController {
     @Autowired MemberRepository memberRepository;
     @RequestMapping("/{id}/show")
@@ -24,7 +24,10 @@ public class MemberRestController {
 
     @RequestMapping("/{id}/show/pub")
     public List<Publication> findPubs(@PathVariable Integer id) {
-        System.out.println("Number of author: " + memberRepository.findOne(id).getPublications().get(0).getMemberList().size());
-        return memberRepository.findOne(id).getPublications();
+        List<Publication> listPubs = memberRepository.findOne(id).getPublications();
+
+        System.out.println ("* " + listPubs);
+
+        return listPubs;
     }
 }
