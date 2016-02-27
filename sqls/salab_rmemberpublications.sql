@@ -1,0 +1,14 @@
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (0, 0, 0, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (1, 0, 1, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (2, 0, 2, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (3, 1, 3, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (4, 1, 1, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (5, 2, 1, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (6, 2, 10, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (7, 2, 11, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (8, 2, 12, 4);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (9, 3, 12, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (10, 3, 13, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (11, 3, 14, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (12, 3, 15, 4);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (13, 3, 1, 5);
