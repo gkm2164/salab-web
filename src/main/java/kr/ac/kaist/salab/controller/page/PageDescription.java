@@ -25,8 +25,8 @@ public abstract class PageDescription {
         initJS(pageJS);
     }
 
-    abstract void initCSS(List<String> pageCSS);
-    abstract void initJS(List<String> pageJS);
+    protected abstract void initCSS(List<String> pageCSS);
+    protected abstract void initJS(List<String> pageJS);
 
     public String getTitle() {
         return title;

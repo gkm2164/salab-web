@@ -1,5 +1,7 @@
-package kr.ac.kaist.salab.controller.page;
+package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.page.LayoutController;
+import kr.ac.kaist.salab.controller.page.PageDescription;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +28,12 @@ public class ActivityController extends LayoutController {
         }
 
         @Override
-        void initCSS(List<String> pageCSS) {
+        protected void initCSS(List<String> pageCSS) {
             pageCSS.add("activities.css");
         }
 
         @Override
-        void initJS(List<String> pageJS) {
+        protected void initJS(List<String> pageJS) {
             pageJS.add("salab.activities.js");
         }
     }

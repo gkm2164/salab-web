@@ -40,8 +40,31 @@ public class Publication {
 
     public String toString() {
 
+        switch (publicationType) {
+            case SCI_JOURNAL:
+            case INTERNATIONAL_JOURNAL:
+            case INTERNATIONAL_CONFERENCE:
+                return toEnglishString();
+            case DOMESTIC_JOURNAL:
+            case DOMESTIC_CONFERENCE:
+                return toKoreanString();
+
+        }
+
+        return "!!";
+    }
+
+    public String toEnglishString() {
         StringBuilder sb = new StringBuilder();
         memberList.forEach((x) -> sb.append(x.getName()).append(", "));
+        String names = sb.toString();
+
+        return String.format("%s\"%s,\" %s", names, title, metadata);
+    }
+
+    public String toKoreanString() {
+        StringBuilder sb = new StringBuilder();
+        memberList.forEach((x) -> sb.append(x.getKoreanName()).append(", "));
         String names = sb.toString();
 
         return String.format("%s\"%s,\" %s", names, title, metadata);

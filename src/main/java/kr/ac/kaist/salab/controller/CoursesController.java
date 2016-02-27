@@ -1,5 +1,7 @@
-package kr.ac.kaist.salab.controller.page;
+package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.page.LayoutController;
+import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Course;
 import kr.ac.kaist.salab.model.repository.CourseXMLRepository;
 import org.springframework.stereotype.Controller;
@@ -28,12 +30,12 @@ public class CoursesController extends LayoutController {
         }
 
         @Override
-        void initCSS(List<String> pageCSS) {
+        protected void initCSS(List<String> pageCSS) {
             pageCSS.add("courses.css");
         }
 
         @Override
-        void initJS(List<String> pageJS) {
+        protected void initJS(List<String> pageJS) {
             pageJS.add("salab.courses.js");
         }
     }

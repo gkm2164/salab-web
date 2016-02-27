@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <div class="pubs-home">
-	<%
-		request.setCharacterEncoding("UTF-8");
-	%>
 	<div class="pubs-books-list">
 		<h1>Books</h1>
 		<div>

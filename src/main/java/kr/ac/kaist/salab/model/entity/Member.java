@@ -28,6 +28,8 @@ public class Member {
 
     private String name;
 
+    private String koreanName;
+
     private String degree;
 
     @Basic(optional = true)
