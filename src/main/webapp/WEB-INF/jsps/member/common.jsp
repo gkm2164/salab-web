@@ -5,5 +5,5 @@
 <h1>${MEMBER_STATUS}</h1>
 <c:forEach var="elem" items="${MEMBER_LIST}">
 	<c:set var="member" value="${elem}" scope="request" />
-	<jsp:include page="./members.namecard.jsp" flush="true" />
+	<jsp:include page="./namecard.jsp" flush="true" />
 </c:forEach>

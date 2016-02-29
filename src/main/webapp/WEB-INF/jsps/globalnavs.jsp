@@ -4,9 +4,9 @@
 <ul>
 	<c:forEach var="elem" items="${NAVS}">
 		<c:if test="${elem.exposeOnGlobalNav == true}">
-	<li id="${elem.servletName}"><a href="${elem.servletPath}">${elem.name}</a>
-		<c:if test="${elem.childSize() > 0 and elem.globalExposeChild == true}">
-			<c:set var="NAVS" value="${elem.childNodes}" scope="request" />
+	<li><a href="${elem.pathName}">${elem.name}</a>
+		<c:if test="${elem.childs.size() > 0 and elem.globalExposeChild == true}">
+			<c:set var="NAVS" value="${elem.childs}" scope="request" />
 			<jsp:include page="globalnavs.jsp" />
 		</c:if>
 	</li>

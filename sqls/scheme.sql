@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS SurrogateKeys;
 DROP TABLE IF EXISTS RMemberInterests;
 DROP TABLE IF EXISTS RMemberPublications;
 DROP TABLE IF EXISTS Courses;
@@ -63,29 +64,4 @@ ALTER TABLE RMemberPublications
 ALTER TABLE RMemberInterests
   ADD CONSTRAINT FK_Interests_ID FOREIGN KEY (InterestID) REFERENCES Interests(ID),
   ADD CONSTRAINT FK_Interests_Members_ID FOREIGN KEY (MemberID) REFERENCES Members(ID);
-
-/* Feb. 2016 Data */
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (0, 'Sungwon Kang', '강성원', 'prof', null, '1997-01-01', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (1, 'Jungho Kim', '김정호', 'phd', null, '2011-02-01', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (2, 'Hwi Ahn', '안휘', 'phd', null, '2012-03-01', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (3, 'Taehyun Park', '박태현', 'phd', null, '2012-09-03', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (4, 'Jongsun Ahn', '안종선', 'phd', '', '2012-10-31', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (5, 'Pilsu Jung', '정필수', 'phd', null, '2014-03-03', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (6, 'Younghun Han', '한영훈', 'phd', null, '2014-09-01', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (7, 'Gyeongmin Go', '고경민', 'phd', 'http://imarch.pe.kr', '2015-08-31', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (8, 'Jaejun Lee', '이재준', 'ms', null, '2014-09-01', 0, null);
-INSERT INTO salab.members (ID, KoreanName, Name, Degree, Link, EnterDate, Graduated, GraduatedDate)
-  VALUES (9, 'Taehyun Kim', '김태현', 'ms', null, '2015-03-02', 0, null);
-
-INSERT INTO SurrogateKeys (TableName, KeyValue) VALUES ("Members", 10);
-
 
