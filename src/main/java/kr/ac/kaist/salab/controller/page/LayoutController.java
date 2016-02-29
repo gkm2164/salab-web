@@ -2,7 +2,6 @@ package kr.ac.kaist.salab.controller.page;
 
 import kr.ac.kaist.salab.controller.navs.NavNode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.ui.Model;
 
 /**
@@ -10,6 +9,7 @@ import org.springframework.ui.Model;
  */
 public abstract class LayoutController {
     @Autowired NavNode rootNode;
+
     public String layoutCall(PageDescription pageDescription, Model model) {
         model.addAttribute("DEBUG", false);
         model.addAttribute("PDESC", pageDescription);

@@ -17,6 +17,7 @@ public class NavNode {
     private boolean globalExposeChild = true;
 
     private List<NavNode> childs;
+    private String id;
 
     public NavNode() {
         childs = new ArrayList<>();
@@ -94,5 +95,13 @@ public class NavNode {
 
     public void addChild(NavNode navNode) {
         childs.add(navNode);
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 }

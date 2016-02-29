@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <navigation>
-    <node>
+    <node id="home">
         <link href="/">
             <alias>/home</alias>
         </link>
         <name>Home</name>
     </node>
-    <node>
+    <node id="member">
         <link href="/member" />
         <name>Members</name>
         <childs>
-            <node>
+            <node id="prof">
                 <link href="/prof" />
                 <name>Professor</name>
             </node>
-            <node>
+            <node id="phd">
                 <link href="/phd" />
                 <name>Ph.D. Students</name>
             </node>
-            <node>
+            <node id="ms">
                 <link href="/ms" />
                 <name>Masters Students</name>
             </node>
-            <node>
+            <node id="alumni">
                 <link href="/alumni" />
                 <name>Alumni</name>
             </node>
         </childs>
     </node>
-    <node>
+    <node id="research">
         <link href="/research" />
         <name>Research</name>
     </node>
-    <node>
+    <node id="pubs">
         <link href="/pubs" />
         <name>Publications</name>
     </node>
-    <node>
+    <node id="activities">
         <link href="/activities" />
         <name>Activities</name>
     </node>
-    <node>
+    <node id="resources">
         <link href="/resources" />
         <name>Resources</name>
         <childs>
-            <node>
-                <link href="/link" />
+            <node id="links">
+                <link href="/links" />
                 <name>Links</name>
             </node>
-            <node>
+            <node id="tools">
                 <link href="/tools" />
                 <name>Tools</name>
             </node>

@@ -10,6 +10,7 @@ import java.util.List;
 public abstract class SidebarIncludedController extends LayoutController {
     public String layoutCall(PageDescription pageDescription, Model model) {
         PageDescription pd = new EmptyViewPageDescription("sidebar.jsp", pageDescription.getTitle());
+        model.addAttribute("LNAVS", null);
         return super.layoutCall(pd, model);
     }
 

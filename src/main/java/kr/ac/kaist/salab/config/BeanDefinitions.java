@@ -2,6 +2,7 @@ package kr.ac.kaist.salab.config;
 
 import kr.ac.kaist.salab.controller.navs.NavNode;
 import kr.ac.kaist.salab.controller.navs.NavReader;
+import kr.ac.kaist.salab.controller.navs.NavReverseMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,5 +40,11 @@ public class BeanDefinitions {
         }
 
         return navNode;
+    }
+
+    @Bean
+    @Autowired
+    public NavReverseMap reverseMap(NavReader navReader) {
+        return navReader.getReverseMap();
     }
 }

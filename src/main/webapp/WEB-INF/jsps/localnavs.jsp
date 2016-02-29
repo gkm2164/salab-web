@@ -4,9 +4,9 @@
 <ul>
 <c:forEach var="elem" items="${LNAVS}">
 	<c:if test="${elem.exposeOnLocalNav == true}">
-	<li id="${elem.servletName}"><a href="${elem.servletPath}">${elem.name}</a>
-		<c:if test="${elem.childSize() > 0 and elem.localExposeChild == true}">
-			<c:set var="LNAVS" value="${elem.childNodes}" scope="request" />
+	<li><a href="${elem.pathName}">${elem.name}</a>
+		<c:if test="${elem.childs.size() > 0 and elem.localExposeChild == true}">
+			<c:set var="LNAVS" value="${elem.childs}" scope="request" />
 			<jsp:include page="localnavs.jsp" />
 		</c:if>
 	</li>

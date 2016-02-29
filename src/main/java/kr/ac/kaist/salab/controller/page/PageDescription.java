@@ -12,17 +12,17 @@ public abstract class PageDescription {
     private List<String> pageCSS;
     private List<String> pageJS;
 
-    private PageDescription() {
+    public PageDescription() {
         pageCSS = new ArrayList<>();
         pageJS = new ArrayList<>();
+        initCSS(pageCSS);
+        initJS(pageJS);
     }
 
     protected PageDescription(String pageFileName, String title) {
         this();
         this.title = title;
         this.pageFileName = pageFileName + ".jsp";
-        initCSS(pageCSS);
-        initJS(pageJS);
     }
 
     protected abstract void initCSS(List<String> pageCSS);

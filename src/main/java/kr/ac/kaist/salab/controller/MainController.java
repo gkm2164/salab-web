@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by USER on 2016-02-22.
  */
 @Controller
+@RequestMapping("/")
 public class MainController {
-    @RequestMapping("/")
+    @RequestMapping
     public String mainController() {
         return "redirect:/home";
     }

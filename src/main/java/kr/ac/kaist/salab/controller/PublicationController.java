@@ -16,7 +16,7 @@ import java.util.List;
  * Created by USER on 2016-02-24.
  */
 @Controller
-@RequestMapping("/pub")
+@RequestMapping("/pubs")
 public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;
 

@@ -7,15 +7,10 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by gyeongmin on 2016. 2. 27..
@@ -27,6 +22,7 @@ public class NavReader {
         private Stack<NavNode> stack;
         private NavNode currentNode;
         private List<NavNode> nodeList;
+        private NavReverseMap reverseMap = new NavReverseMap();
 
         boolean isNameWriting = false;
         String nameBuffer;
@@ -57,6 +53,7 @@ public class NavReader {
                 case "node":
                     stack.push(currentNode);
                     currentNode = new NavNode();
+                    currentNode.setId(attributes.getValue("id"));
                     break;
                 case "link":
                     currentNode.setLink(attributes.getValue("href"));
@@ -81,6 +78,8 @@ public class NavReader {
                     NavNode parent = stack.pop();
                     parent.addChild(currentNode);
                     currentNode.setParent(parent);
+                    reverseMap.put(currentNode.getId(), currentNode);
+
                     currentNode = parent;
                     break;
                 case "link":
@@ -105,10 +104,15 @@ public class NavReader {
         public NavNode getCurrentNode() {
             return currentNode;
         }
+
+        public NavNode getNodeById(String id) {
+            return reverseMap.get(id);
+        }
     }
 
+    private SAXNavParser saxNavParser = new SAXNavParser();
+
     public NavNode readFile(String fileName) throws SAXException, IOException {
-        SAXNavParser saxNavParser = new SAXNavParser();
         XMLReader parser = XMLReaderFactory.createXMLReader();
         parser.setContentHandler(saxNavParser);
 
@@ -116,6 +120,14 @@ public class NavReader {
         parser.parse(source);
 
         return saxNavParser.getCurrentNode();
+    }
+
+    public NavNode getNodeById(String id) {
+        return saxNavParser.getNodeById(id);
+    }
+
+    public NavReverseMap getReverseMap() {
+        return saxNavParser.reverseMap;
     }
 
     public static void main(String[] args) throws IOException, SAXException {

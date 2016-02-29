@@ -12,7 +12,7 @@ import java.util.List;
  * Created by USER on 2016-02-26.
  */
 @Controller
-@RequestMapping({ "/", "/home" })
+@RequestMapping("/home")
 public class HomeController extends LayoutController {
 
     @RequestMapping
