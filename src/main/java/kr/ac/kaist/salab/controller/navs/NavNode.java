@@ -1,7 +1,9 @@
 package kr.ac.kaist.salab.controller.navs;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by gyeongmin on 2016. 2. 27..
@@ -17,6 +19,7 @@ public class NavNode {
     private boolean globalExposeChild = true;
 
     private List<NavNode> childs;
+    private Map<String, NavNode> childMap = new HashMap<>();
     private String id;
 
     public NavNode() {
@@ -93,8 +96,9 @@ public class NavNode {
         this.childs = childs;
     }
 
-    public void addChild(NavNode navNode) {
+    public void addChild(String id, NavNode navNode) {
         childs.add(navNode);
+        childMap.put(id, navNode);
     }
 
     public void setId(String id) {
@@ -103,5 +107,9 @@ public class NavNode {
 
     public String getId() {
         return id;
+    }
+
+    public NavNode findId(String id) {
+        return childMap.get(id);
     }
 }

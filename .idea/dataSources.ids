@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - SALab@localhost" uuid="f92b2d29-4c66-475d-bb17-e733242726f6">
-    <database-info product="MySQL" version="5.7.10-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.7.10" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
-      <schema id="1" name="salab"/>
-      <table id="2" parent="1" name="courses"/>
-      <table id="3" parent="1" name="interests"/>
-      <table id="4" parent="1" name="members"/>
-      <table id="5" parent="1" name="publications"/>
-      <table id="6" parent="1" name="rmemberinterests"/>
-      <table id="7" parent="1" name="rmemberpublications"/>
-      <table id="8" parent="1" name="surrogatekeys"/>
+      <schema id="1" name="SALab"/>
+      <table id="2" parent="1" name="Courses"/>
+      <table id="3" parent="1" name="Interests"/>
+      <table id="4" parent="1" name="Members"/>
+      <table id="5" parent="1" name="Publications"/>
+      <table id="6" parent="1" name="RMemberInterests"/>
+      <table id="7" parent="1" name="RMemberPublications"/>
+      <table id="8" parent="1" name="SurrogateKeys"/>
       <column id="9" parent="2" name="ID">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
@@ -134,13 +134,13 @@
       </key>
       <foreign-key id="39" parent="6" name="FK_Interests_ID">
         <columns>InterestID</columns>
-        <ref-key>~.interests.PRIMARY</ref-key>
+        <ref-key>~.Interests.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <foreign-key id="40" parent="6" name="FK_Interests_Members_ID">
         <columns>MemberID</columns>
-        <ref-key>~.members.PRIMARY</ref-key>
+        <ref-key>~.Members.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
@@ -174,13 +174,13 @@
       </key>
       <foreign-key id="48" parent="7" name="FK_Members_ID">
         <columns>MemberID</columns>
-        <ref-key>~.members.PRIMARY</ref-key>
+        <ref-key>~.Members.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <foreign-key id="49" parent="7" name="FK_Publications_ID">
         <columns>PublicationID</columns>
-        <ref-key>~.publications.PRIMARY</ref-key>
+        <ref-key>~.Publications.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>

@@ -19,7 +19,7 @@
 					<h2>Research Interests</h2>
 					<ul>
 						<c:forEach var="ints" items="${member.interests}">
-							<li>${ints}</li>
+							<li>${ints.fieldName}</li>
 						</c:forEach>
 					</ul>
 				</div>

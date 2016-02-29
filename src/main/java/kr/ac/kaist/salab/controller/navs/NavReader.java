@@ -22,7 +22,6 @@ public class NavReader {
         private Stack<NavNode> stack;
         private NavNode currentNode;
         private List<NavNode> nodeList;
-        private NavReverseMap reverseMap = new NavReverseMap();
 
         boolean isNameWriting = false;
         String nameBuffer;
@@ -76,9 +75,8 @@ public class NavReader {
                     break;
                 case "node":
                     NavNode parent = stack.pop();
-                    parent.addChild(currentNode);
+                    parent.addChild(currentNode.getId(), currentNode);
                     currentNode.setParent(parent);
-                    reverseMap.put(currentNode.getId(), currentNode);
 
                     currentNode = parent;
                     break;
@@ -105,9 +103,6 @@ public class NavReader {
             return currentNode;
         }
 
-        public NavNode getNodeById(String id) {
-            return reverseMap.get(id);
-        }
     }
 
     private SAXNavParser saxNavParser = new SAXNavParser();
@@ -120,14 +115,6 @@ public class NavReader {
         parser.parse(source);
 
         return saxNavParser.getCurrentNode();
-    }
-
-    public NavNode getNodeById(String id) {
-        return saxNavParser.getNodeById(id);
-    }
-
-    public NavReverseMap getReverseMap() {
-        return saxNavParser.reverseMap;
     }
 
     public static void main(String[] args) throws IOException, SAXException {

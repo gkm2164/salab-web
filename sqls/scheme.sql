@@ -15,7 +15,6 @@ CREATE TABLE Members(
   EnterDate DATE NOT NULL,
   Graduated BOOLEAN DEFAULT FALSE,
   GraduatedDate DATE DEFAULT NULL
-
 ) Engine = InnoDB;
 
 CREATE TABLE Publications(
