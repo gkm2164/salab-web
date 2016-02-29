@@ -11,5 +11,5 @@ import java.util.List;
  */
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Integer> {
-    List<String> findByDegree(String degree);
+    List<Member> findByDegree(String degree);
 }
