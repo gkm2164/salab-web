@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS SurrogateKeys;
+DROP TABLE IF EXISTS Resources;
 DROP TABLE IF EXISTS RMemberInterests;
 DROP TABLE IF EXISTS RMemberPublications;
 DROP TABLE IF EXISTS Courses;
@@ -50,6 +51,13 @@ CREATE TABLE RMemberInterests(
   InterestID INTEGER NOT NULL,
   MemberID INTEGER NOT NULL
 ) Engine = InnoDB;
+
+CREATE TABLE Resources(
+  ID INTEGER NOT NULL PRIMARY KEY,
+  ResourceType VARCHAR(255) NOT NULL,
+  Title TEXT NOT NULL,
+  Contents TEXT NOT NULL
+)
 
 CREATE TABLE SurrogateKeys(
   TableName VARCHAR(255) NOT NULL PRIMARY KEY,

@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationItem;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
@@ -21,11 +22,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/member")
 @NavigationTop(
+    @NavigationDesc(
         id = "member",
         name = "Member",
         link = "/member",
-        exposeOnGlobalNav = true,
-        order = 1
+        order = 2
+    )
 )
 public class MemberController extends LayoutController {
 
@@ -41,6 +43,7 @@ public class MemberController extends LayoutController {
 
             @Override
             protected void initJS(List<String> pageJS) {
+
             }
         }, model);
     }
@@ -73,10 +76,12 @@ public class MemberController extends LayoutController {
 
     @RequestMapping("/prof")
     @NavigationItem(
+        @NavigationDesc(
             id = "prof",
             name = "Professor",
             link = "/prof",
             order = 0
+        )
     )
     public String memberProf(Model model) {
         return memberStatus("prof", model);
@@ -84,10 +89,12 @@ public class MemberController extends LayoutController {
 
     @RequestMapping("/phd")
     @NavigationItem(
+        @NavigationDesc(
             id = "phd",
             name = "Ph.D. Candidates",
             link = "/phd",
             order = 1
+        )
     )
     public String memberPhD(Model model) {
         return memberStatus("phd", model);
@@ -95,10 +102,12 @@ public class MemberController extends LayoutController {
 
     @RequestMapping("/ms")
     @NavigationItem(
+        @NavigationDesc(
             id = "ms",
             name = "Masters Candidates",
             link = "/ms",
             order = 2
+        )
     )
     public String membersMS(Model model) {
         return memberStatus("ms", model);
@@ -106,10 +115,12 @@ public class MemberController extends LayoutController {
 
     @RequestMapping("/alumni")
     @NavigationItem(
+        @NavigationDesc(
             id = "alumni",
             name = "Alumni",
             link = "/alumni",
             order = 3
+        )
     )
     public String memberAlumni(Model model) {
         return memberStatus("alumni", model);

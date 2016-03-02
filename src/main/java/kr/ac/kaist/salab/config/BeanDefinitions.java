@@ -2,7 +2,6 @@ package kr.ac.kaist.salab.config;
 
 import kr.ac.kaist.salab.controller.HomeController;
 import kr.ac.kaist.salab.controller.navs.NavNode;
-import kr.ac.kaist.salab.controller.navs.NavReader;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -17,11 +16,6 @@ public class BeanDefinitions {
     @Bean
     public ServerEndpointExporter serverEndpointExporter() {
         return new ServerEndpointExporter();
-    }
-
-    @Bean
-    public NavReader navReader() {
-        return new NavReader();
     }
 
     @Bean

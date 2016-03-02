@@ -47,10 +47,7 @@ public class NavigationBuilder {
         classList.forEach((klass) -> {
             NavigationTop nt = klass.getAnnotation(NavigationTop.class);
             NavNode nav = new NavNode();
-            nav.setId(nt.id());
-            nav.setName(nt.name());
-            nav.setLink(nt.link());
-            nav.setOrder(nt.order());
+            nav.setDesc(nt.value());
             nav.setExposeOnGlobalNav(nt.exposeOnGlobalNav());
 
             root.addChild(nav.getId(), nav);
@@ -59,10 +56,7 @@ public class NavigationBuilder {
                 NavigationItem ni = f.getAnnotation(NavigationItem.class);
                 if (ni != null) {
                     NavNode child = new NavNode();
-                    child.setId(ni.id());
-                    child.setName(ni.name());
-                    child.setLink(ni.link());
-                    child.setOrder(ni.order());
+                    child.setDesc(ni.value());
                     child.setExposeOnLocalNav(ni.exposeOnLocalNav());
                     nav.addChild(child.getId(), child);
                 }

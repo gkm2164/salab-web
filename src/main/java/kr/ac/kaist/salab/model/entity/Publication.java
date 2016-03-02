@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.model.entity;
 
+import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

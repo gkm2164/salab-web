@@ -1,7 +1,7 @@
 package kr.ac.kaist.salab.model.repository;
 
 import kr.ac.kaist.salab.model.entity.Publication;
-import kr.ac.kaist.salab.model.entity.PublicationType;
+import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

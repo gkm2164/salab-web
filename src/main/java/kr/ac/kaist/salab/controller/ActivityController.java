@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
@@ -15,11 +16,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/activity")
 @NavigationTop(
+    @NavigationDesc(
         id = "activity",
         name = "Activity",
         link = "/activity",
-        exposeOnGlobalNav = true,
-        order = 4
+        order = 6
+    )
 )
 public class ActivityController extends LayoutController {
     private final static String VIEW_NAME = "acts/acts.home";

@@ -1,10 +1,11 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Publication;
-import kr.ac.kaist.salab.model.entity.PublicationType;
+import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,11 +20,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/pubs")
 @NavigationTop(
+    @NavigationDesc(
         id = "pubs",
         name = "Publications",
         link = "/pubs",
-        exposeOnGlobalNav = true,
-        order = 3
+        order = 4
+    )
 )
 public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;

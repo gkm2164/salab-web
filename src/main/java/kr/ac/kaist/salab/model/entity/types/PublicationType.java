@@ -1,4 +1,4 @@
-package kr.ac.kaist.salab.model.entity;
+package kr.ac.kaist.salab.model.entity.types;
 
 /**
  * Created by USER on 2016-02-24.

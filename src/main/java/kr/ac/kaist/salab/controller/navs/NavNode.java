@@ -1,5 +1,9 @@
 package kr.ac.kaist.salab.controller.navs;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationItem;
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +36,13 @@ public class NavNode {
         this.name = name;
         this.link = link;
         childs = new ArrayList<>();
+    }
+
+    public void setDesc(NavigationDesc desc) {
+        id = desc.id();
+        name = desc.name();
+        link = desc.link();
+        order = desc.order();
     }
 
     public NavNode getParent() {

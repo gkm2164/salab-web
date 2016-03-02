@@ -11,9 +11,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
 public @interface NavigationTop {
-    String id();
-    String name();
-    String link();
-    int order() default 0;
+    NavigationDesc value();
     boolean exposeOnGlobalNav() default true;
 }

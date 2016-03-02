@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
@@ -17,11 +18,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/research")
 @NavigationTop(
+    @NavigationDesc(
         id = "research",
         name = "Researches",
         link = "/research",
-        exposeOnGlobalNav = true,
-        order = 2
+        order = 3
+    )
 )
 public class ResearchController extends LayoutController {
     @Autowired InterestRepository ir;
