@@ -1,8 +1,8 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
-import kr.ac.kaist.salab.model.entity.Interest;
 import kr.ac.kaist.salab.model.repository.InterestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +16,13 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/research")
+@NavigationTop(
+        id = "research",
+        name = "Researches",
+        link = "/research",
+        exposeOnGlobalNav = true,
+        order = 2
+)
 public class ResearchController extends LayoutController {
     @Autowired InterestRepository ir;
 

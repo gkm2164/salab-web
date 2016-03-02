@@ -1,5 +1,7 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationItem;
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
@@ -7,7 +9,6 @@ import kr.ac.kaist.salab.model.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
@@ -19,7 +20,15 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/member")
+@NavigationTop(
+        id = "member",
+        name = "Member",
+        link = "/member",
+        exposeOnGlobalNav = true,
+        order = 1
+)
 public class MemberController extends LayoutController {
+
     @Autowired MemberRepository mr;
 
     @RequestMapping
@@ -44,8 +53,7 @@ public class MemberController extends LayoutController {
         statusMap.put("ms", "M.S. Students");
     }
 
-    @RequestMapping("/{code}")
-    public String members(@PathVariable String code, Model model) {
+    public String memberStatus(String code, Model model) {
         List<Member> members = mr.findByDegree(code);
         setLocalNav("member");
         model.addAttribute("status", statusMap.get(code));
@@ -61,5 +69,49 @@ public class MemberController extends LayoutController {
 
             }
         }, model);
+    }
+
+    @RequestMapping("/prof")
+    @NavigationItem(
+            id = "prof",
+            name = "Professor",
+            link = "/prof",
+            order = 0
+    )
+    public String memberProf(Model model) {
+        return memberStatus("prof", model);
+    }
+
+    @RequestMapping("/phd")
+    @NavigationItem(
+            id = "phd",
+            name = "Ph.D. Candidates",
+            link = "/phd",
+            order = 1
+    )
+    public String memberPhD(Model model) {
+        return memberStatus("phd", model);
+    }
+
+    @RequestMapping("/ms")
+    @NavigationItem(
+            id = "ms",
+            name = "Masters Candidates",
+            link = "/ms",
+            order = 2
+    )
+    public String membersMS(Model model) {
+        return memberStatus("ms", model);
+    }
+
+    @RequestMapping("/alumni")
+    @NavigationItem(
+            id = "alumni",
+            name = "Alumni",
+            link = "/alumni",
+            order = 3
+    )
+    public String memberAlumni(Model model) {
+        return memberStatus("alumni", model);
     }
 }

@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,13 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/home")
+@NavigationTop(
+        id = "home",
+        name = "Home",
+        link = "/home",
+        exposeOnGlobalNav = true,
+        order = 0
+)
 public class HomeController extends LayoutController {
 
     @RequestMapping

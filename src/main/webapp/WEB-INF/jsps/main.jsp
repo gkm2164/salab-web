@@ -45,7 +45,7 @@
 		<header>
 			<div id="banner">
 				<div id="salab-logo-box" class="logo">
-					<a id="salab-logo-link" href="${ABSPATH}"> <img
+					<a id="salab-logo-link" href="<c:url value='/' />"> <img
 						src="/img/SALAB_logo.png" alt="SALab logo"
 						id="salab-logo" />
 					</a>
@@ -54,7 +54,7 @@
 					<h1>Software Architecture Laboratory</h1>
 				</div>
 				<div id="kaist-logo-box" class="logo">
-					<a id="kaist-logo-link" href="http://www.kaist.ac.kr/"
+					<a id="kaist-logo-link" href="<c:url value='http://www.kaist.ac.kr/' />"
 						target="_blank"> <img src="/img/KAIST_logo.gif"
 						alt="KAIST Logo" id="kaist-logo" />
 					</a>

@@ -1,0 +1,79 @@
+package kr.ac.kaist.salab.controller.navs.annotation;
+
+import kr.ac.kaist.salab.controller.navs.NavNode;
+import org.reflections.Reflections;
+import org.reflections.scanners.SubTypesScanner;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ * Created by USER on 2016-03-02.
+ */
+public class NavigationBuilder {
+    private static final Logger l = Logger.getLogger(NavigationBuilder.class.getName());
+    private ArrayList<Class<?>> classList;
+    private NavNode root;
+
+    public NavigationBuilder(Class<?> basePkg) {
+
+        String pkgName = basePkg.getPackage().getName();
+        Reflections reflections = new Reflections(pkgName, new SubTypesScanner(false));
+
+        classList = new ArrayList<>();
+
+        reflections.getSubTypesOf(Object.class).forEach((klazz) -> {
+            l.log(Level.INFO, klazz.getName());
+            if (klazz.isAnnotation()) return;
+            for (Annotation a: klazz.getDeclaredAnnotations()) {
+                l.log(Level.INFO, " -> Annotated with: " + a.toString());
+            }
+            if (klazz.getAnnotation(NavigationTop.class) != null) {
+                l.log(Level.INFO, " -> This class is annotated as a navigation element");
+                classList.add(klazz);
+            }
+        });
+        System.out.println(classList.size());
+        root = new NavNode();
+        root.setName("ROOT");
+        root.setLink("");
+        constructNavBar();
+    }
+
+    private void constructNavBar() {
+        classList.forEach((klass) -> {
+            NavigationTop nt = klass.getAnnotation(NavigationTop.class);
+            NavNode nav = new NavNode();
+            nav.setId(nt.id());
+            nav.setName(nt.name());
+            nav.setLink(nt.link());
+            nav.setOrder(nt.order());
+            nav.setExposeOnGlobalNav(nt.exposeOnGlobalNav());
+
+            root.addChild(nav.getId(), nav);
+
+            for (Method f: klass.getMethods()) {
+                NavigationItem ni = f.getAnnotation(NavigationItem.class);
+                if (ni != null) {
+                    NavNode child = new NavNode();
+                    child.setId(ni.id());
+                    child.setName(ni.name());
+                    child.setLink(ni.link());
+                    child.setOrder(ni.order());
+                    child.setExposeOnLocalNav(ni.exposeOnLocalNav());
+                    nav.addChild(child.getId(), child);
+                }
+            }
+
+            nav.getChilds().sort((a, b) -> a.getOrder() - b.getOrder());
+        });
+        root.getChilds().sort((a, b) -> a.getOrder() - b.getOrder());
+    }
+
+    public NavNode getRoot() {
+        return root;
+    }
+}

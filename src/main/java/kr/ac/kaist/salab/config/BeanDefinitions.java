@@ -1,14 +1,13 @@
 package kr.ac.kaist.salab.config;
 
+import kr.ac.kaist.salab.controller.HomeController;
 import kr.ac.kaist.salab.controller.navs.NavNode;
 import kr.ac.kaist.salab.controller.navs.NavReader;
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
-import org.xml.sax.SAXException;
-
-import java.io.IOException;
 
 /**
  * Created by USER on 2016-02-22.
@@ -27,17 +26,9 @@ public class BeanDefinitions {
 
     @Bean
     @Autowired
-    public NavNode navNode(NavReader navReader) {
-        NavNode navNode = null;
-
-        try {
-            navNode = navReader.readFile("prop/salab-nav.xml");
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return navNode;
+    public NavNode navNode() {
+        NavigationBuilder nb = new NavigationBuilder(HomeController.class);
+        
+        return nb.getRoot();
     }
 }

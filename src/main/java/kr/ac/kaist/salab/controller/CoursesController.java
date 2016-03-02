@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Course;
@@ -15,6 +16,13 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/courses")
+@NavigationTop(
+        id = "courses",
+        name = "Courses",
+        link = "/courses",
+        exposeOnGlobalNav = true,
+        order = 5
+)
 public class CoursesController extends LayoutController {
 
     @RequestMapping

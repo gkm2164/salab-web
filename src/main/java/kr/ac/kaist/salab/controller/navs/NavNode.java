@@ -21,6 +21,7 @@ public class NavNode {
     private List<NavNode> childs;
     private Map<String, NavNode> childMap = new HashMap<>();
     private String id;
+    private int order;
 
     public NavNode() {
         childs = new ArrayList<>();
@@ -99,6 +100,7 @@ public class NavNode {
     public void addChild(String id, NavNode navNode) {
         childs.add(navNode);
         childMap.put(id, navNode);
+        navNode.setParent(this);
     }
 
     public void setId(String id) {
@@ -111,5 +113,13 @@ public class NavNode {
 
     public NavNode findId(String id) {
         return childMap.get(id);
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
+    public int getOrder() {
+        return order;
     }
 }

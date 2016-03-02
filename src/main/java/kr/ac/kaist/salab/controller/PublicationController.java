@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.controller;
 
+import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Publication;
@@ -17,6 +18,13 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/pubs")
+@NavigationTop(
+        id = "pubs",
+        name = "Publications",
+        link = "/pubs",
+        exposeOnGlobalNav = true,
+        order = 3
+)
 public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;
 
