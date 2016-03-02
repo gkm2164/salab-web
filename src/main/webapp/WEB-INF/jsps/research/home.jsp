@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="research-area">
-	<img id="lab-research-area-img" src="${ABSPATH}/img/lab-research2.png" />
+	<img id="lab-research-area-img" src="/img/lab-research2.png" />
 	<h1>Research</h1>
 	<p>Research areas of the Software Architecture Lab include:</p> 
 	<ul class="research-list">
-<c:forEach var="elem" items="${RESEARCHES}">
-		<li>${elem.name}</li>
+<c:forEach var="elem" items="${researches}">
+		<li>${elem.fieldName}</li>
 </c:forEach> 
 	</ul>
 </div>
