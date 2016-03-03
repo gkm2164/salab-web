@@ -7,12 +7,10 @@ import org.reflections.scanners.SubTypesScanner;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by USER on 2016-03-02.
- */
 public class NavigationBuilder {
     private static final Logger l = Logger.getLogger(NavigationBuilder.class.getName());
     private ArrayList<Class<?>> classList;
@@ -52,7 +50,7 @@ public class NavigationBuilder {
 
             root.addChild(nav.getId(), nav);
 
-            for (Method f: klass.getMethods()) {
+            Arrays.asList(klass.getMethods()).forEach((f) -> {
                 NavigationItem ni = f.getAnnotation(NavigationItem.class);
                 if (ni != null) {
                     NavNode child = new NavNode();
@@ -60,7 +58,7 @@ public class NavigationBuilder {
                     child.setExposeOnLocalNav(ni.exposeOnLocalNav());
                     nav.addChild(child.getId(), child);
                 }
-            }
+            });
 
             nav.getChilds().sort((a, b) -> a.getOrder() - b.getOrder());
         });

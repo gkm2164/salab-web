@@ -4,12 +4,13 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationItem;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
+import kr.ac.kaist.salab.controller.page.PageDescription;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Created by gyeongmin on 2016. 3. 2..
- */
+import java.util.List;
+
 @Controller
 @RequestMapping("/resources")
 @NavigationTop(
@@ -22,8 +23,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 )
 public class ResourceController extends LayoutController {
     @RequestMapping
-    public String home() {
-        return "resources/home";
+    public String home(Model model) {
+        setLocalNav("resources");
+        return layoutCall(
+                new PageDescription("resources/home", "Resources") {
+
+                    @Override
+                    protected void initCSS(List<String> pageCSS) {
+
+                    }
+
+                    @Override
+                    protected void initJS(List<String> pageJS) {
+
+                    }
+                }, model);
     }
 
     @RequestMapping("/tools")
@@ -35,8 +49,21 @@ public class ResourceController extends LayoutController {
             order = 1
         )
     )
-    public String tools() {
-        return "resources/tools";
+    public String tools(Model model) {
+        setLocalNav("resources");
+        return layoutCall(
+                new PageDescription("resources/tools", "Resources") {
+
+                    @Override
+                    protected void initCSS(List<String> pageCSS) {
+
+                    }
+
+                    @Override
+                    protected void initJS(List<String> pageJS) {
+
+                    }
+                }, model);
     }
 
     @RequestMapping("/links")
@@ -48,7 +75,20 @@ public class ResourceController extends LayoutController {
             order = 2
         )
     )
-    public String links() {
-        return "resources/links";
+    public String links(Model model) {
+        setLocalNav("resources");
+        return layoutCall(
+                new PageDescription("resources/links", "Resources") {
+
+                    @Override
+                    protected void initCSS(List<String> pageCSS) {
+
+                    }
+
+                    @Override
+                    protected void initJS(List<String> pageJS) {
+
+                    }
+                }, model);
     }
 }

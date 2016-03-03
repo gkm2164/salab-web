@@ -13,15 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by gyeongmin on 2016. 2. 28..
- */
 @Controller
 @RequestMapping("/member")
 @NavigationTop(
@@ -179,7 +177,7 @@ public class MemberController extends LayoutController {
 
         return hml;
     }
-    @RequestMapping("/alumni/{year}")
+    @RequestMapping(path = "/alumni/{year}", method = RequestMethod.POST)
     public String memberAlumni(@PathVariable Integer year, Model model) {
         List<Member> members = mr.findAlumniByGraduatedYear(year);
         model.addAttribute("members", members);

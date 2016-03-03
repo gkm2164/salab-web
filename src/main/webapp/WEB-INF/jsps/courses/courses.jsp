@@ -5,8 +5,8 @@
 <c:forEach var="elem" items="${courses}">
 	<div class="course-card">
 		<c:choose>
-		<c:when test="${elem.id.length() > 0}">
-		<h3><a href="/courses/${elem.id}">${elem.title}</a></h3>
+		<c:when test="${elem.courseId.length() > 0}">
+		<h3><a href="/courses/${elem.courseId}">${elem.title}</a></h3>
 		</c:when>
 		<c:otherwise>
 		<h3>${elem.title}</h3>

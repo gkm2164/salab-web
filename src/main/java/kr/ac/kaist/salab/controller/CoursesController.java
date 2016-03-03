@@ -5,16 +5,15 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Course;
+import kr.ac.kaist.salab.model.repository.CourseRepository;
 import kr.ac.kaist.salab.model.repository.CourseXMLRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * Created by USER on 2016-02-23.
- */
 @Controller
 @RequestMapping("/courses")
 @NavigationTop(
@@ -27,9 +26,10 @@ import java.util.List;
 )
 public class CoursesController extends LayoutController {
 
+    @Autowired private CourseRepository cr;
     @RequestMapping
     public String courses(Model model) {
-        List<Course> courses = new CourseXMLRepository().findAll();
+        List<Course> courses = cr.findAll();
         model.addAttribute("courses", courses);
         return layoutCall(new CoursePageDescription(), model);
     }

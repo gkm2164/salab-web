@@ -1,14 +1,12 @@
 package kr.ac.kaist.salab.model.entity;
 
+import kr.ac.kaist.salab.model.entity.types.CourseType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-/**
- * Created by USER on 2016-02-23.
- */
 @Entity
 @Table(name = "Courses")
 @Getter @Setter
@@ -21,7 +19,14 @@ public class Course {
         allocationSize = 1
     ) @GeneratedValue(strategy = GenerationType.TABLE, generator = "CourseIDGen")
     private Integer id;
+
     private String courseId;
+
+    @Enumerated(EnumType.STRING)
+    private CourseType courseType;
+
     private String title;
+
     private String description;
+
 }

@@ -48,6 +48,10 @@ INSERT INTO RMemberInterests (ID, InterestID, MemberID)
   VALUES
     (0, 0, 0), (1, 0, 1), (2, 1, 0), (3, 1, 1);
 
+INSERT INTO Courses(ID, CourseType, CourseID, Title, Description)
+  VALUES
+    (0, 'GRADUATE', null, 'Modeling Software Systems', '...');
+
 INSERT INTO SurrogateKeys (TableName, KeyValue)
   VALUES
     ('Members', 20),
