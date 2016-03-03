@@ -52,6 +52,16 @@ INSERT INTO Courses(ID, CourseType, CourseID, Title, Description)
   VALUES
     (0, 'GRADUATE', null, 'Modeling Software Systems', '...');
 
+INSERT INTO ResourceGroups(ID, GroupName)
+  VALUES
+    (0, 'KAIST Links'),
+    (1, 'Software Architecture Resources'),
+    (2, 'Related Conferences');
+
+INSERT INTO Resources(ID, ResourceGroupID, ResourceType, Title, Contents)
+  VALUES
+    (0, 0, 'LINK', 'KAIST', 'http://www.kaist.ac.kr');
+
 INSERT INTO SurrogateKeys (TableName, KeyValue)
   VALUES
     ('Members', 20),
