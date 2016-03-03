@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <h1>Links</h1>
-<c:forEach var="elem" items="${linkGroup}">
+<c:forEach var="elem" items="${resourceGroup}">
 	<h2>${elem.groupName}</h2>
 	<ul class="resources-links">
-	<c:forEach var="e" items="${elem.links}">
-		<li>${e.name}, <a href="${e.link}">${e.link}</a>
+	<c:forEach var="e" items="${elem.resourceList}">
+		<li>${e.title}, <a href="${e.contents}">${e.contents}</a>
 	</c:forEach>
 	</ul>
 </c:forEach>

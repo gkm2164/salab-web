@@ -5,6 +5,8 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationItem;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
+import kr.ac.kaist.salab.model.repository.ResourceGroupRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,7 @@ import java.util.List;
     )
 )
 public class ResourceController extends LayoutController {
+    @Autowired private ResourceGroupRepository rgr;
     @RequestMapping
     public String home(Model model) {
         setLocalNav("resources");
@@ -77,6 +80,7 @@ public class ResourceController extends LayoutController {
     )
     public String links(Model model) {
         setLocalNav("resources");
+        model.addAttribute("resourceGroup", rgr.findAll());
         return layoutCall(
                 new PageDescription("resources/links", "Resources") {
 

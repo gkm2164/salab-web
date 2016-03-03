@@ -1,5 +1,9 @@
 package kr.ac.kaist.salab.model.entity;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,6 +12,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "ResourceGroups")
+@Getter @Setter
+@EqualsAndHashCode(exclude = "resourceList")
 public class ResourceGroup {
     @Id
     @TableGenerator(

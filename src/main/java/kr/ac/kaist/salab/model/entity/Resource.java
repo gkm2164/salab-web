@@ -31,6 +31,6 @@ public class Resource {
     private String contents;
 
     @ManyToOne
-    @JoinColumn(name = "ResourceID")
+    @JoinColumn(name = "ResourceGroupID")
     private ResourceGroup resourceGroup;
 }
