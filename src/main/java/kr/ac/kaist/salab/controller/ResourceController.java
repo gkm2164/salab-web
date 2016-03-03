@@ -86,7 +86,7 @@ public class ResourceController extends LayoutController {
 
                     @Override
                     protected void initCSS(List<String> pageCSS) {
-
+                        pageCSS.add("resources.links.css");
                     }
 
                     @Override

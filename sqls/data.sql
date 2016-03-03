@@ -33,8 +33,13 @@ INSERT INTO Publications (ID, PublicationType, Title, MetaData, Date)
 
 INSERT INTO Interests (ID, FieldName, FieldDesc)
   VALUES
-    (0, 'Software Product Lines', null),
-    (1, 'Software Engineering', null);
+    (0, 'Software Engineering', null),
+    (1, 'Software Architecture', null),
+    (2, 'Software Product Lines', null),
+    (3, 'Software Testing', null),
+    (4, 'Model-Driven Development', null),
+    (5, 'Formal Methods', null),
+    (6, 'Service-Oriented Architecture', null);
 
 INSERT INTO RMemberPublications (ID, PublicationID, MemberID, AuthorOrder)
   VALUES

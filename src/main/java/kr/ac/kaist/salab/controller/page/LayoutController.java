@@ -4,12 +4,16 @@ import kr.ac.kaist.salab.controller.navs.NavNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Created by USER on 2016-02-23.
  */
 public abstract class LayoutController {
     @Autowired NavNode rootNode;
-    public String navId = "";
+    private String navId = "";
+    private static final Logger l = Logger.getLogger(LayoutController.class.getName());
 
     public void setLocalNav(String navId) {
         this.navId = navId;
@@ -23,7 +27,7 @@ public abstract class LayoutController {
         if (navId != null && !navId.equals("")) {
             NavNode localNav = rootNode.findId(navId);
             if (localNav == null) {
-                System.out.println ("Invalid nav Id");
+                l.log(Level.WARNING, "Invalid nav Id");
             } else {
                 model.addAttribute("LNAVS", localNav.getChilds());
             }

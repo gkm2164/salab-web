@@ -24,6 +24,7 @@ public class NavigationBuilder {
         classList = new ArrayList<>();
 
         reflections.getSubTypesOf(Object.class).forEach((klazz) -> {
+
             l.log(Level.INFO, klazz.getName());
             if (klazz.isAnnotation()) return;
             for (Annotation a: klazz.getDeclaredAnnotations()) {
@@ -55,6 +56,7 @@ public class NavigationBuilder {
                 if (ni != null) {
                     NavNode child = new NavNode();
                     child.setDesc(ni.value());
+                    child.setExposeOnGlobalNav(ni.exposeOnGlobalNav());
                     child.setExposeOnLocalNav(ni.exposeOnLocalNav());
                     nav.addChild(child.getId(), child);
                 }

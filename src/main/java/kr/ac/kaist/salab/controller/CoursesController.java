@@ -6,7 +6,6 @@ import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Course;
 import kr.ac.kaist.salab.model.repository.CourseRepository;
-import kr.ac.kaist.salab.model.repository.CourseXMLRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

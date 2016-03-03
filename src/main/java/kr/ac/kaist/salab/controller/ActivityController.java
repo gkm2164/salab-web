@@ -24,9 +24,7 @@ import java.util.List;
     )
 )
 public class ActivityController extends LayoutController {
-    private final static String VIEW_NAME = "acts/acts.home";
-
-
+    
     @RequestMapping
     public String activityMain(Model model) {
         return layoutCall(new ActivityPageDescription(), model);
@@ -34,7 +32,7 @@ public class ActivityController extends LayoutController {
 
     public class ActivityPageDescription extends PageDescription {
         protected ActivityPageDescription() {
-            super(VIEW_NAME, "Activity");
+            super("acts/acts.home", "Activity");
         }
 
         @Override

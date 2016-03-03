@@ -12,5 +12,6 @@ import java.lang.annotation.Target;
 @Target({ ElementType.METHOD })
 public @interface NavigationItem {
     NavigationDesc value();
+    boolean exposeOnGlobalNav() default true;
     boolean exposeOnLocalNav() default true;
 }

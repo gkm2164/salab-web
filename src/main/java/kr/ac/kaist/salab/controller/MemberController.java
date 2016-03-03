@@ -103,12 +103,14 @@ public class MemberController extends LayoutController {
 
     @RequestMapping("/reses")
     @NavigationItem(
-            @NavigationDesc(
+            value = @NavigationDesc(
                     id = "reses",
                     name = "Researchers",
                     link = "/reses",
                     order = 1
-            )
+            ),
+            exposeOnGlobalNav = false,
+            exposeOnLocalNav = false
     )
     public String memberResearchers(Model model) {
         return memberStatus("reses", model);
@@ -177,6 +179,7 @@ public class MemberController extends LayoutController {
 
         return hml;
     }
+
     @RequestMapping(path = "/alumni/{year}", method = RequestMethod.POST)
     public String memberAlumni(@PathVariable Integer year, Model model) {
         List<Member> members = mr.findAlumniByGraduatedYear(year);

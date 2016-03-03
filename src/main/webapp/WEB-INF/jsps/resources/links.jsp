@@ -7,7 +7,7 @@
 	<h2>${elem.groupName}</h2>
 	<ul class="resources-links">
 	<c:forEach var="e" items="${elem.resourceList}">
-		<li>${e.title}, <a href="${e.contents}">${e.contents}</a>
+		<li>${e.title}, <a href="<c:url value='${e.contents}' />" target="_blank">${e.contents}</a>
 	</c:forEach>
 	</ul>
 </c:forEach>
