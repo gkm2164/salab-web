@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS SurrogateKeys;
 DROP TABLE IF EXISTS Resources;
+DROP TABLE IF EXISTS ResourceGroups;
 DROP TABLE IF EXISTS RMemberInterests;
 DROP TABLE IF EXISTS RMemberPublications;
 DROP TABLE IF EXISTS Courses;
@@ -54,10 +55,17 @@ CREATE TABLE RMemberInterests(
 
 CREATE TABLE Resources(
   ID INTEGER NOT NULL PRIMARY KEY,
+  ResourceGroupID INTEGER NOT NULL,
   ResourceType VARCHAR(255) NOT NULL,
   Title TEXT NOT NULL,
   Contents TEXT NOT NULL
-)
+) Engine = InnoDB;
+
+CREATE TABLE ResourceGroups(
+  ID INTEGER NOT NULL PRIMARY KEY,
+  GroupName VARCHAR(255) NOT NULL
+) Engine = InnoDB;
+
 
 CREATE TABLE SurrogateKeys(
   TableName VARCHAR(255) NOT NULL PRIMARY KEY,
@@ -72,3 +80,5 @@ ALTER TABLE RMemberInterests
   ADD CONSTRAINT FK_Interests_ID FOREIGN KEY (InterestID) REFERENCES Interests(ID),
   ADD CONSTRAINT FK_Interests_Members_ID FOREIGN KEY (MemberID) REFERENCES Members(ID);
 
+ALTER TABLE Resources
+  ADD CONSTRAINT FK_Resources_ResourceGroupID FOREIGN KEY (ResourceGroupID) REFERENCES ResourceGroups(ID);

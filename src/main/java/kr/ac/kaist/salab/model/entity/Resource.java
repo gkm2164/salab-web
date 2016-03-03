@@ -29,4 +29,8 @@ public class Resource {
     private String title;
 
     private String contents;
+
+    @ManyToOne
+    @JoinColumn(name = "ResourceID")
+    private ResourceGroup resourceGroup;
 }
