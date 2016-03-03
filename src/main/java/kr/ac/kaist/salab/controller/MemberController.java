@@ -7,11 +7,14 @@ import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
+import kr.ac.kaist.salab.util.HashMapLinked;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,12 +55,14 @@ public class MemberController extends LayoutController {
 
     static {
         statusMap.put("prof", "Professors");
+        statusMap.put("reses", "Researchers");
         statusMap.put("phd", "Ph. D. Students");
         statusMap.put("ms", "M.S. Students");
+        statusMap.put("alumni", "Alumni");
     }
 
     public String memberStatus(String code, Model model) {
-        List<Member> members = mr.findByDegree(code);
+        List<Member> members = mr.findByDegreeAndGraduated(code, false);
         setLocalNav("member");
         model.addAttribute("status", statusMap.get(code));
         model.addAttribute("members", members);
@@ -84,7 +89,31 @@ public class MemberController extends LayoutController {
         )
     )
     public String memberProf(Model model) {
-        return memberStatus("prof", model);
+        setLocalNav("member");
+        return layoutCall(new PageDescription("member/prof", "Professors") {
+            @Override
+            protected void initCSS(List<String> pageCSS) {
+                pageCSS.add("members.prof.css");
+            }
+
+            @Override
+            protected void initJS(List<String> pageJS) {
+
+            }
+        }, model);
+    }
+
+    @RequestMapping("/reses")
+    @NavigationItem(
+            @NavigationDesc(
+                    id = "reses",
+                    name = "Researchers",
+                    link = "/reses",
+                    order = 1
+            )
+    )
+    public String memberResearchers(Model model) {
+        return memberStatus("reses", model);
     }
 
     @RequestMapping("/phd")
@@ -93,7 +122,7 @@ public class MemberController extends LayoutController {
             id = "phd",
             name = "Ph.D. Candidates",
             link = "/phd",
-            order = 1
+            order = 2
         )
     )
     public String memberPhD(Model model) {
@@ -106,7 +135,7 @@ public class MemberController extends LayoutController {
             id = "ms",
             name = "Masters Candidates",
             link = "/ms",
-            order = 2
+            order = 3
         )
     )
     public String membersMS(Model model) {
@@ -119,10 +148,41 @@ public class MemberController extends LayoutController {
             id = "alumni",
             name = "Alumni",
             link = "/alumni",
-            order = 3
+            order = 4
         )
     )
     public String memberAlumni(Model model) {
-        return memberStatus("alumni", model);
+        setLocalNav("member");
+        Map<Integer, List<Member>> map = constructHashMapAlumni();
+        List<Integer> years = new ArrayList<>();
+        years.addAll(map.keySet());
+        years.sort((a, b) -> a - b);
+        model.addAttribute("alumniYears", years);
+        return layoutCall(new PageDescription("member/alumni", "Alumni") {
+            @Override
+            protected void initCSS(List<String> pageCSS) {
+                pageCSS.add("members.alumni.css");
+                pageCSS.add("members.css");
+            }
+
+            @Override
+            protected void initJS(List<String> pageJS) {
+                pageJS.add("salab.members.alumni.js");
+            }
+        }, model);
+    }
+
+    private Map<Integer, List<Member>> constructHashMapAlumni() {
+        HashMapLinked<Integer, Member> hml = new HashMapLinked<>();
+        List<Member> members = mr.findAlumni();
+        members.forEach((x) -> hml.add(x.getGraduatedYear(), x));
+
+        return hml;
+    }
+    @RequestMapping("/alumni/{year}")
+    public String memberAlumni(@PathVariable Integer year, Model model) {
+        List<Member> members = mr.findAlumniByGraduatedYear(year);
+        model.addAttribute("members", members);
+        return "member/common";
     }
 }

@@ -40,7 +40,7 @@ public class Member {
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean graduated;
 
-    private Date graduatedDate;
+    private Integer graduatedYear;
 
     @ManyToMany
     @JoinTable(

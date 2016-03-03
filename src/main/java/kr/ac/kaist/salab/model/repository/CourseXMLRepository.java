@@ -41,7 +41,7 @@ public class CourseXMLRepository {
             Element elem = (Element)nodeList.item(i);
 
             Course course = new Course();
-            if (elem.getAttribute("id") != null) {
+            if (elem.getAttribute("id") != null && !elem.getAttribute("id").equals("")) {
                 course.setId(Integer.valueOf(elem.getAttribute("id")));
             }
             course.setTitle(elem.getElementsByTagName("title").item(0).getTextContent());

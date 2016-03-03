@@ -1,6 +1,6 @@
 START TRANSACTION;
 BEGIN;
-INSERT INTO Members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedDate)
+INSERT INTO Members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear)
   VALUES
     (0, 'Sungwon Kang', '강성원', 'prof', null, '1997-01-01', 0, null),
     (1, 'Jungho Kim', '김정호', 'phd', null, '2011-02-01', 0, null),
@@ -12,16 +12,16 @@ INSERT INTO Members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, G
     (7, 'Gyeongmin Go', '고경민', 'phd', 'http://imarch.pe.kr', '2015-08-31', 0, null),
     (8, 'Jaejun Lee', '이재준', 'ms', null, '2014-09-01', 0, null),
     (9, 'Taehyun Kim', '김태현', 'ms', null, '2015-03-02', 0, null),
-    (10, 'Haeun Baek', '백하은', 'ms', null, '2011-03-01', 1, '2013-02-28'),
-    (11, 'Jungmin Kim', '김정민', 'ms', null, '2011-03-02', 1, '2013-02-28'),
+    (10, 'Haeun Baek', '백하은', 'ms', null, '2011-03-01', 1, '2013'),
+    (11, 'Jungmin Kim', '김정민', 'ms', null, '2011-03-02', 1, '2013'),
     (12, 'Jihyun Lee', '이지현', 'external', null, '2009-02-01', 1, null),
     (13, 'Jinhyun Kim', '김진현', 'external', null, '2016-02-26', 1, null),
     (14, 'Inhey Kang', '강인혜', 'external', null, '2016-02-26', 1, null),
     (15, 'Jin-Young Choi' , '최진영', 'external', null, '2016-02-26', 1, null),
     (16, 'Insup Lee', '이인섭','external', null, '2016-02-26', 1, null),
-    (17, 'Seokhwan Eom', '엄석환', 'ms', null, '2000-01-01', 1, '2002-02-02'),
-    (18, 'Jinkyu Kim', '김진규', 'phd', null, '2012-02-15', 1, '2007-01-01'),
-    (19, 'Seonah Lee', '이선아', 'phd', null, '2012-08-01', 1, '2010-01-01');
+    (17, 'Seokhwan Eom', '엄석환', 'ms', null, '2010-01-01', 1, '2012'),
+    (18, 'Jinkyu Kim', '김진규', 'phd', null, '2012-02-15', 1, '2012'),
+    (19, 'Seonah Lee', '이선아', 'dr', null, '2010-08-01', 1, '2016');
 
 INSERT INTO Publications (ID, PublicationType, Title, MetaData, Date)
   VALUES
@@ -44,11 +44,15 @@ INSERT INTO RMemberPublications (ID, PublicationID, MemberID, AuthorOrder)
     (9, 3, 13, 1), (10, 3, 14, 2), (11, 3, 15, 3), (12, 3, 16, 4), (13, 3, 0, 5),
     (14, 4, 17, 1), (15, 4, 0, 2), (16, 4, 18, 3), (17, 4, 19, 4);
 
+INSERT INTO RMemberInterests (ID, InterestID, MemberID)
+  VALUES
+    (0, 0, 0), (1, 0, 1), (2, 1, 0), (3, 1, 1);
+
 INSERT INTO SurrogateKeys (TableName, KeyValue)
   VALUES
-    ('Members', 17),
-    ('Publications', 4),
+    ('Members', 20),
+    ('Publications', 5),
     ('Interests', 2),
-    ('RMemberPublications', 14);
+    ('RMemberPublications', 18);
 
 COMMIT;

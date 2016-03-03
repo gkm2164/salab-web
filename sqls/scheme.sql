@@ -16,7 +16,7 @@ CREATE TABLE Members(
   Link VARCHAR(255),
   EnterDate DATE NOT NULL,
   Graduated BOOLEAN DEFAULT FALSE,
-  GraduatedDate DATE DEFAULT NULL
+  GraduatedYear INTEGER NULL
 ) Engine = InnoDB;
 
 CREATE TABLE Publications(
