@@ -22,3 +22,5 @@ INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Gradua
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1050, 'Changsub Keum', '금창섭', 'phd', '', '2008-01-01', 1, 2014);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1100, 'Danhyung Lee', '이단형', 'external', '', '2016-03-04', 0, null);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1150, 'Myungchul Kim', '김명철', 'external', '', '2016-12-31', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1200, 'Sunghun Kim', '김성훈', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1201, 'Matt Staats', '', 'external', '', '2016-03-04', 0, null);

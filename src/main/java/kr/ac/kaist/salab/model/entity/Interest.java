@@ -1,5 +1,6 @@
 package kr.ac.kaist.salab.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,8 @@ public class Interest {
     @Id @TableGenerator(
             name = "InterestIDGenerator", table = "SurrogateKeys",
             pkColumnName = "TableName", pkColumnValue = "Interests",
-            valueColumnName = "KeyValue", initialValue = 0)
+            valueColumnName = "KeyValue", initialValue = 0,
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "InterestIDGenerator")
     private Integer id;
 
@@ -33,5 +35,6 @@ public class Interest {
             joinColumns = @JoinColumn(name = "InterestID", referencedColumnName = "ID"),
             inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID")
     )
+    @JsonBackReference
     private List<Member> memberList;
 }

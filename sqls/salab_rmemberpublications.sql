@@ -22,3 +22,11 @@ INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder)
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (21, 300, 1000, 1);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (22, 300, 0, 2);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (23, 300, 1150, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (24, 350, 12, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (25, 350, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (26, 400, 19, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (27, 400, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (28, 5, 19, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (29, 5, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (30, 5, 1200, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (31, 5, 1201, 4);

@@ -20,7 +20,8 @@ public class Publication {
     @Id @TableGenerator(
             name = "PublicationIDGenerator", table = "SurrogateKeys",
             pkColumnName = "TableName", pkColumnValue = "Publications",
-            valueColumnName = "KeyValue", initialValue = 0)
+            valueColumnName = "KeyValue", initialValue = 0,
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "PublicationIDGenerator")
     private Integer id;
 

@@ -22,7 +22,8 @@ public class Member {
     @Id @TableGenerator(
             name = "MemberIDGenerator", table = "SurrogateKeys",
             pkColumnName = "TableName", pkColumnValue = "Members",
-            valueColumnName = "KeyValue", initialValue = 0)
+            valueColumnName = "KeyValue", initialValue = 0,
+            allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "MemberIDGenerator")
     private Integer id;
 

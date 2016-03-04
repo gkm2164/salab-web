@@ -9,14 +9,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form:form method="post" modelAttribute="relation">
   <p>
-    <form:select path="pubId">
+    <form:select path="pubId" onchange="onPubChange(this)">
       <form:option value="-1">Select Publication</form:option>
       <form:options items="${publications}" itemLabel="title" itemValue="id" />
     </form:select>
   </p>
   <p>
     <form:select path="memberId">
-      <form:option value="-1">Select Publication</form:option>
+      <form:option value="-1">Select Author</form:option>
       <form:options items="${members}" itemLabel="name" itemValue="id" />
     </form:select>
   </p>
@@ -26,3 +26,5 @@
   </p>
   <button type="submit">Submit!</button>
 </form:form>
+<p>Author list</p>
+<div id="author-list"></div>
