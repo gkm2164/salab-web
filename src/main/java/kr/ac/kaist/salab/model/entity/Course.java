@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Courses")
 @Getter @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = "courseCodeList")
 public class Course {
     @Id @TableGenerator(
         name = "CourseIDGen", table = "SurrogateKeys",
@@ -20,8 +22,6 @@ public class Course {
     ) @GeneratedValue(strategy = GenerationType.TABLE, generator = "CourseIDGen")
     private Integer id;
 
-    private String courseId;
-
     @Enumerated(EnumType.STRING)
     private CourseType courseType;
 
@@ -29,4 +29,15 @@ public class Course {
 
     private String description;
 
+    @OneToMany(mappedBy = "course")
+    private List<CourseCode> courseCodeList;
+
+    public String getCodes() {
+        StringBuilder sb = new StringBuilder();
+
+        List<CharSequence> csList = new ArrayList<>();
+        courseCodeList.forEach(x -> csList.add(x.getCode()));
+
+        return String.join("/", csList::iterator);
+    }
 }

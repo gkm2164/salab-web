@@ -4,7 +4,7 @@
 <h1>${COURSESTITLE}</h1>
 <c:forEach var="elem" items="${COURSELIST}">
 	<h3>${elem.courseID} ${elem.courseName}</h3>
-	<p><a href="${ABSPATH}/materials/${elem.courseID}">Course Materials</a></p>
+	<p><a href="/materials/${elem.courseID}">Course Materials</a></p>
 	<p>${elem.courseDesc}</p>
 	<hr />
 </c:forEach>

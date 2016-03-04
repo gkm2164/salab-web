@@ -59,4 +59,14 @@ public class Member {
     )
     @JsonBackReference
     private List<Publication> publications;
+
+    public String getPageLink(boolean korean) {
+        String format = "<a href=\"/member/%d/show\">%s</a>";
+
+        if (korean) {
+            return String.format(format, id, koreanName);
+        } else {
+            return String.format(format, id, name);
+        }
+    }
 }

@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS Resources;
 DROP TABLE IF EXISTS ResourceGroups;
 DROP TABLE IF EXISTS RMemberInterests;
 DROP TABLE IF EXISTS RMemberPublications;
+DROP TABLE IF EXISTS CourseCodes;
 DROP TABLE IF EXISTS Courses;
 DROP TABLE IF EXISTS Interests;
 DROP TABLE IF EXISTS Publications;
@@ -35,10 +36,15 @@ CREATE TABLE Interests(
 
 CREATE TABLE Courses(
   ID INTEGER NOT NULL PRIMARY KEY,
-  CourseID VARCHAR(255) NULL,
   CourseType VARCHAR(50) NOT NULL,
   Title VARCHAR(255) NOT NULL,
   Description TEXT NOT NULL
+) Engine = InnoDB;
+
+CREATE TABLE CourseCodes(
+  ID INTEGER NOT NULL PRIMARY KEY,
+  CourseID INTEGER NOT NULL,
+  Code VARCHAR(50) NOT NULL
 ) Engine = InnoDB;
 
 CREATE TABLE RMemberPublications(
@@ -83,3 +89,6 @@ ALTER TABLE RMemberInterests
 
 ALTER TABLE Resources
   ADD CONSTRAINT FK_Resources_ResourceGroupID FOREIGN KEY (ResourceGroupID) REFERENCES ResourceGroups(ID);
+
+ALTER TABLE CourseCodes
+  ADD CONSTRAINT FK_CourseCodes_CourseID FOREIGN KEY (CourseID) REFERENCES Courses(ID);

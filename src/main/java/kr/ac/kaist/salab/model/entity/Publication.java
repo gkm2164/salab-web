@@ -60,7 +60,8 @@ public class Publication {
     public String toEnglishString() {
         StringBuilder sb = new StringBuilder();
 
-        memberList.forEach((x) -> sb.append(x.getName()).append(", "));
+        memberList.forEach((x) -> sb.append(x.getPageLink(false)).append(", "));
+        //memberList.forEach((x) -> sb.append(x.getName()).append(", "));
         String names = sb.toString();
 
         return String.format("%s\"%s,\" %s", names, title, metadata);
@@ -68,7 +69,8 @@ public class Publication {
 
     public String toKoreanString() {
         StringBuilder sb = new StringBuilder();
-        memberList.forEach((x) -> sb.append(x.getKoreanName()).append(", "));
+        memberList.forEach((x) -> sb.append(x.getPageLink(true)).append(", "));
+        //memberList.forEach((x) -> sb.append(x.getKoreanName()).append(", "));
         String names = sb.toString();
 
         return String.format("%s\"%s,\" %s", names, title, metadata);
