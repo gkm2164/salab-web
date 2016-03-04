@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -30,12 +31,13 @@ public class Publication {
 
     private String metadata;
 
+    private Date date;
+
     @ManyToMany
     @JoinTable(
             name = "RMemberPublications",
             joinColumns = @JoinColumn(name = "PublicationID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID"),
-            indexes = @Index(name = "IDX_RMP_AuthorOrder", columnList = "AuthorOrder")
+            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID")
     )
     private List<Member> memberList;
 
@@ -57,6 +59,7 @@ public class Publication {
 
     public String toEnglishString() {
         StringBuilder sb = new StringBuilder();
+
         memberList.forEach((x) -> sb.append(x.getName()).append(", "));
         String names = sb.toString();
 

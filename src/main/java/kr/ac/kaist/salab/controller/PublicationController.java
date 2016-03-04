@@ -7,6 +7,7 @@ import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
+import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,7 @@ import java.util.List;
 )
 public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;
+    @Autowired RMemberPublicationRepository rmpr;
 
     public class PublicationCategory {
         private String name;
@@ -74,6 +76,13 @@ public class PublicationController extends LayoutController {
 
         model.addAttribute("PUBS", pubs);
 
+        for(PublicationCategory pc: pubs) {
+            /* Reorder author list of each publications. */
+            pc.getList().forEach(pub -> pub.getMemberList().sort((a, b) ->
+                rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
+                        - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
+            );
+        }
         return layoutCall(new PublicationPageDescription(), model);
     }
 

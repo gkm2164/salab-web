@@ -23,7 +23,7 @@ CREATE TABLE Publications(
   ID INTEGER NOT NULL PRIMARY KEY,
   PublicationType VARCHAR(255) NOT NULL,
   Title VARCHAR(255) NOT NULL,
-  MetaData VARCHAR(255) NOT NULL,
+  MetaData TEXT NOT NULL,
   Date DATE NOT NULL
 ) Engine = InnoDB;
 

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
@@ -31,6 +32,7 @@ public class BeanDefinitions {
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver irvr = new InternalResourceViewResolver();
+        irvr.setViewClass(JstlView.class);
         irvr.setPrefix("/WEB-INF/jsps/");
         irvr.setSuffix(".jsp");
         return irvr;

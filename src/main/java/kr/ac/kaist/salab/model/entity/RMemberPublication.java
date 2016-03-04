@@ -17,7 +17,7 @@ public class RMemberPublication {
     @Id
     @TableGenerator(
             name = "RMPIDGen", table = "SurrogateKeys",
-            pkColumnName = "TableName", pkColumnValue = "RMemberInterests",
+            pkColumnName = "TableName", pkColumnValue = "RMemberPublications",
             valueColumnName = "KeyValue", initialValue = 0,
             allocationSize = 1
     )
