@@ -37,16 +37,15 @@ public class MemberController extends LayoutController {
     @RequestMapping
     public String memberMain(Model model) {
         setLocalNav("member");
-        return layoutCall(new PageDescription("member/home", "Member Home") {
-            @Override
-            protected void initCSS(List<String> pageCSS) {
-            }
+        return layoutCall(new DefaultPageDesc("member/home", "Member Home"), model);
+    }
 
-            @Override
-            protected void initJS(List<String> pageJS) {
-
-            }
-        }, model);
+    @RequestMapping("/{id}/show")
+    public String singleMember(@PathVariable Integer id, Model model) {
+        setLocalNav("member");
+        Member member = mr.findOne(id);
+        model.addAttribute("member", member);
+        return layoutCall(new DefaultPageDesc("member/show", "Member Show"), model);
     }
 
     private static final Map<String, String> statusMap = new HashMap<>();
