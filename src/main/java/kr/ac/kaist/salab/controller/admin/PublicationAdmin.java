@@ -35,7 +35,9 @@ public class PublicationAdmin extends LayoutController {
 
     @RequestMapping(path = "/addrel", method = RequestMethod.GET)
     public String addRelation(Model model) {
-        model.addAttribute("members", mr.findAll());
+        List<Member> memberList = mr.findAll();
+        memberList.sort((a, b) -> a.getName().compareTo(b.getName()));
+        model.addAttribute("members", memberList);
         model.addAttribute("publications", pr.findAll());
         model.addAttribute("relation", new Relation());
 

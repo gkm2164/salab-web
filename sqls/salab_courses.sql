@@ -1,0 +1,1 @@
+INSERT INTO salab.courses (ID, CourseID, CourseType, Title, Description) VALUES (0, null, 'GRADUATE', 'Modeling Software Systems', '...');

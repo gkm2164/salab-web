@@ -1,0 +1,1 @@
+INSERT INTO salab.resources (ID, ResourceGroupID, ResourceType, Title, Contents) VALUES (0, 0, 'LINK', 'KAIST', 'http://www.kaist.ac.kr');

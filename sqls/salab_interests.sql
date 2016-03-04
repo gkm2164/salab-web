@@ -1,0 +1,10 @@
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (0, 'Software Engineering', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (1, 'Software Architecture', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (2, 'Software Product Lines', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (3, 'Software Testing', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (4, 'Model-Driven Development', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (5, 'Formal Methods', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (6, 'Service-Oriented Architecture', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (7, 'Measuring Quality based on Software Architecture', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (8, 'Evaluation of Software Architecture Software System', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (9, 'Construction of Software Architecture', null);
