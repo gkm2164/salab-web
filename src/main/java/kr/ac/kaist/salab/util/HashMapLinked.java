@@ -3,6 +3,7 @@ package kr.ac.kaist.salab.util;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by USER on 2016-03-03.
@@ -10,6 +11,8 @@ import java.util.List;
 public class HashMapLinked<K, V> extends HashMap<K, List<V>> {
     public void add(K key, V value) {
         List<V> list = this.get(key);
+
+
         if (list == null) {
             list = new ArrayList<>();
             this.put(key, list);

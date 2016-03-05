@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by USER on 2016-03-04.
@@ -29,18 +30,7 @@ public class MemberAdmin extends LayoutController {
     public String createMember(Model model) {
         model.addAttribute("member", new Member());
         model.addAttribute("degreeList", new Degrees().degreeList);
-        return layoutCall(
-                new PageDescription("admin/member", "Create member") {
-                    @Override
-                    protected void initCSS(List<String> pageCSS) {
-
-                    }
-
-                    @Override
-                    protected void initJS(List<String> pageJS) {
-
-                    }
-                }, model);
+        return layoutCall(new DefaultPageDesc("admin/member", "Create member"), model);
     }
 
     public class Degrees {
