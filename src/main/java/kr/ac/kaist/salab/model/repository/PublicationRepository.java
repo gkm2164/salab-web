@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface PublicationRepository extends JpaRepository<Publication, Integer> {
-    List<Publication> findByPublicationType(PublicationType type);
+    List<Publication> findByPublicationTypeOrderByDateDesc(PublicationType type);
 }

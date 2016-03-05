@@ -28,13 +28,4 @@ public class BeanDefinitions {
         
         return nb.getRoot();
     }
-
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver irvr = new InternalResourceViewResolver();
-        irvr.setViewClass(JstlView.class);
-        irvr.setPrefix("/WEB-INF/jsps/");
-        irvr.setSuffix(".jsp");
-        return irvr;
-    }
 }

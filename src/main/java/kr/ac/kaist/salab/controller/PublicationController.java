@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by USER on 2016-02-24.
@@ -61,28 +63,27 @@ public class PublicationController extends LayoutController {
     @RequestMapping
     public String pubPage(Model model) {
 
-        PublicationCategory[] pubs = {
-                new PublicationCategory("SCI/SCIE Journal Papers",
-                        pr.findByPublicationType(PublicationType.SCI_JOURNAL)),
-                new PublicationCategory("Other International Journal Papers",
-                        pr.findByPublicationType(PublicationType.INTERNATIONAL_JOURNAL)),
-                new PublicationCategory("International Conference Papers",
-                        pr.findByPublicationType(PublicationType.INTERNATIONAL_CONFERENCE)),
-                new PublicationCategory("Domestic Journal Papers",
-                        pr.findByPublicationType(PublicationType.DOMESTIC_JOURNAL)),
-                new PublicationCategory("Domestic Conference Papers",
-                        pr.findByPublicationType(PublicationType.DOMESTIC_CONFERENCE))
-        };
+        List<PublicationCategory> pubs = new ArrayList<>();
+
+        pubs.add(new PublicationCategory("SCI/SCIE Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.SCI_JOURNAL)));
+        pubs.add(new PublicationCategory("Other International Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_JOURNAL)));
+        pubs.add(new PublicationCategory("International Conference Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_CONFERENCE)));
+        pubs.add(new PublicationCategory("Domestic Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_JOURNAL)));
+        pubs.add(new PublicationCategory("Domestic Conference Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_CONFERENCE)));
 
         model.addAttribute("PUBS", pubs);
 
-        for(PublicationCategory pc: pubs) {
+        pubs.forEach(pc ->
             /* Reorder author list of each publications. */
             pc.getList().forEach(pub -> pub.getMemberList().sort((a, b) ->
                 rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
                         - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
-            );
-        }
+            ));
         return layoutCall(new PublicationPageDescription(), model);
     }
 
