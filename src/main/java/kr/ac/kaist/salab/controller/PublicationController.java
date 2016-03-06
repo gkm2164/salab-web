@@ -78,12 +78,12 @@ public class PublicationController extends LayoutController {
 
         model.addAttribute("PUBS", pubs);
 
-        pubs.forEach(pc ->
-            /* Reorder author list of each publications. */
-            pc.getList().forEach(pub -> pub.getMemberList().sort((a, b) ->
-                rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
-                        - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
-            ));
+//        pubs.forEach(pc ->
+//            /* Reorder author list of each publications. */
+//            pc.getList().forEach(pub -> pub.getMemberList().sort((a, b) ->
+//                rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
+//                        - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
+//            ));
         return layoutCall(new PublicationPageDescription(), model);
     }
 

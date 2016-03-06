@@ -4,7 +4,9 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
+import kr.ac.kaist.salab.model.entity.Interest;
 import kr.ac.kaist.salab.model.repository.InterestRepository;
+import kr.ac.kaist.salab.model.repository.RMemberInterestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +28,15 @@ import java.util.List;
     )
 )
 public class ResearchController extends LayoutController {
-    @Autowired InterestRepository ir;
+    @Autowired private InterestRepository ir;
+    @Autowired private RMemberInterestRepository rmir;
 
     @RequestMapping
     public String researchSite(Model model) {
-        model.addAttribute("researches", ir.findAll());
+        List<Interest> interestList = ir.findAll();
+
+        interestList.sort((a, b) -> rmir.countWithInterest(a) - rmir.countWithInterest(b));
+        model.addAttribute("researches", interestList);
         return layoutCall(new PageDescription("research/home", "Researches") {
             @Override
             protected void initCSS(List<String> pageCSS) {

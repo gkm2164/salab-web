@@ -38,4 +38,10 @@ public class PublicationRestController {
 
         return authors;
     }
+
+    @RequestMapping("/{id}/authors2")
+    public List<Member> findMembers(@PathVariable int id) {
+        Publication pub = pr.findOne(id);
+        return pub.getMemberList();
+    }
 }

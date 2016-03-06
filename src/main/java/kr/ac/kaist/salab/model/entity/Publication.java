@@ -4,6 +4,8 @@ import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.jpa.repository.*;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -38,7 +40,8 @@ public class Publication {
     @JoinTable(
             name = "RMemberPublications",
             joinColumns = @JoinColumn(name = "PublicationID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID")
+            inverseJoinColumns = @JoinColumn(name = "MemberID", referencedColumnName = "ID"),
+            indexes = @Index(columnList = "AuthorOrder")
     )
     private List<Member> memberList;
 
