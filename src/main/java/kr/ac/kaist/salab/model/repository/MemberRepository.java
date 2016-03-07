@@ -18,6 +18,6 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     @Query("select m from Member m where m.degree <> 'external' and m.graduated = true")
     List<Member> findAlumni();
 
-    @Query("select m from Member m where m.degree <> 'external' and m.graduated = true and m.graduatedYear = ?#{[0]}")
+    @Query("select m from Member m where m.degree <> 'external' and m.graduated = true and m.graduatedYear = ?1")
     List<Member> findAlumniByGraduatedYear(Integer year);
 }
