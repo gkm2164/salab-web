@@ -177,6 +177,19 @@ CREATE TABLE `Resources` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
+DROP TABLE IF EXISTS `Activities`;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Activities` (
+  `ID`       INT(11)      NOT NULL,
+  `Title`    VARCHAR(255) NOT NULL,
+  `Contents` TEXT         NOT NULL,
+  `Date`     DATE         NOT NULL,
+  PRIMARY KEY (`ID`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+
 --
 -- Table structure for table `SurrogateKeys`
 --
@@ -189,6 +202,8 @@ CREATE TABLE `SurrogateKeys` (
   `KeyValue` bigint(20) NOT NULL,
   PRIMARY KEY (`TableName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
