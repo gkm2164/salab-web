@@ -34,12 +34,7 @@ public class PublicationAdmin extends LayoutController {
     public String createPublication(Model model) {
         model.addAttribute("publication", new Publication());
         model.addAttribute("pubTypes", new TypeValues().pubTypes);
-        return layoutCall(new PageDescription("admin/publication", "Create Publication") {
-            @Override
-            protected void initResource(List<String> pageCSS, List<String> pageJS) {
-
-            }
-        }, model);
+        return layoutCall(new DefaultPageDesc("admin/publication", "Create Publication"), model);
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)

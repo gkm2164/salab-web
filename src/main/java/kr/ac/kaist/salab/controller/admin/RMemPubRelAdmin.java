@@ -44,12 +44,12 @@ public class RMemPubRelAdmin extends LayoutController {
         model.addAttribute("publications", publications);
         model.addAttribute("relation", new Relation());
 
-        return layoutCall(new PageDescription("admin/mempubrel", "Publication Relation") {
-            @Override
-            protected void initResource(List<String> pageCSS, List<String> pageJS) {
-                pageJS.add("salab.admin.mempubrel.js");
-            }
-        }, model);
+        PageDescription rmpraPageDesc =
+                new PageDescription("admin/mempubrel", "Publication Relation",
+                        (css, js) -> {
+                            js.add("salab.admin.mempubrel.js");
+                        });
+        return layoutCall(rmpraPageDesc, model);
     }
 
     @RequestMapping(path = "/new", method = RequestMethod.POST)
