@@ -5,13 +5,14 @@
 <h1>Activities</h1>
 <div id="lab-event-accordion">
 	<ul>
-<c:forEach var="elem" varStatus="status" items="${ACTIVITIES}">
-		<li index="${status.count}" id="event-${status.count}" class="event-list">${elem.preview}</li>
+		<c:forEach var="elem" items="${activities}">
+			<li>${elem.title}</li>
 </c:forEach>
 	</ul>
-<c:forEach var="elem" varStatus="status" items="${ACTIVITIES}">
-	<div index="${status.count}" id="event-content-${status.count}" class="event-content">
+	<c:forEach var="elem" items="${activities}">
+		<div>
 		<h4>${elem.title}</h4>
+			<p>${elem.date}</p>
 		<div>${elem.contents}</div>
 	</div>
 </c:forEach>
