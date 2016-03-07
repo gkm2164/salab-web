@@ -15,4 +15,6 @@
       <form:options items="${members}" itemLabel="name" itemValue="id" />
     </form:select>
   </p>
+
+  <button type="submit">Submit!</button>
 </form:form>

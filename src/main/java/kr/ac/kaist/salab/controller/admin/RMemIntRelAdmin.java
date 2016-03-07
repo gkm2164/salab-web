@@ -9,6 +9,7 @@ import kr.ac.kaist.salab.model.repository.InterestRepository;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberInterestRepository;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,24 +59,11 @@ public class RMemIntRelAdmin extends LayoutController {
         return "redirect:/admin/memintrel/new";
     }
 
-    public class RMIBox {
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class RMIBox {
         private Integer intId;
         private Integer memId;
-
-        public Integer getIntId() {
-            return intId;
-        }
-
-        public void setIntId(Integer intId) {
-            this.intId = intId;
-        }
-
-        public Integer getMemId() {
-            return memId;
-        }
-
-        public void setMemId(Integer memId) {
-            this.memId = memId;
-        }
     }
 }
