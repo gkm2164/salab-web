@@ -1,7 +1,6 @@
 package kr.ac.kaist.salab.controller.admin;
 
 import kr.ac.kaist.salab.controller.page.LayoutController;
-import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
@@ -45,7 +44,7 @@ public class PublicationAdmin extends LayoutController {
         }
 
         pr.save(publication);
-        return "redirect:/pubs";
+        return "redirect:/admin/mempubrel/new";
     }
 
     public class TypeValues {

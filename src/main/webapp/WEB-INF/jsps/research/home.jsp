@@ -8,7 +8,7 @@
 	<p>Research areas of the Software Architecture Lab include:</p> 
 	<ul class="research-list">
 <c:forEach var="elem" items="${researches}">
-		<li>${elem.fieldName}</li>
+		<li>${elem.fieldName}(${elem.memberList.size()})</li>
 </c:forEach> 
 	</ul>
 </div>

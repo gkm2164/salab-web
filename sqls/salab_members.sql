@@ -18,6 +18,10 @@ INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Gradua
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (17, 'Seokhwan Eom', '엄석환', 'ms', null, '2010-01-01', 1, 2012);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (18, 'Jinkyu Kim', '김진규', 'phd', null, '2012-02-15', 1, 2012);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (19, 'Seonah Lee', '이선아', 'dr', null, '2010-08-01', 1, 2016);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (25, 'Hamad Alsawalqah', '하마드', 'phd', '', '2008-01-01', 1, 2014);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (26, 'Sangyup Han', '한상엽', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (27, 'Ben Lee', '벤리', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (28, 'Hoseung Shin', '신호승', 'external', '', '2016-03-07', 0, null);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1000, 'Heuijin Lee', '이희진', 'ms', '', '2012-09-01', 1, 2014);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1050, 'Changsub Keum', '금창섭', 'phd', '', '2008-01-01', 1, 2014);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1100, 'Danhyung Lee', '이단형', 'external', '', '2016-03-04', 0, null);

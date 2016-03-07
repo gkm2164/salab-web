@@ -7,4 +7,4 @@ INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (5, 'Formal Method
 INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (6, 'Service-Oriented Architecture', null);
 INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (7, 'Measuring Quality based on Software Architecture', null);
 INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (8, 'Evaluation of Software Architecture Software System', null);
-INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (9, 'Construction of Software Architecture', null);
+INSERT INTO salab.interests (ID, FieldName, FieldDesc) VALUES (9, 'Construction of Software Architecture', NULL);

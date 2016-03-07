@@ -64,12 +64,10 @@ public class MemberController extends LayoutController {
         model.addAttribute("status", statusMap.get(code));
         model.addAttribute("members", members);
 
+        String title = statusMap.get(code) + " List";
         PageDescription pageDesc =
-                new PageDescription("member/common",
-                        statusMap.get(code) + " List",
-                        (css, js) -> {
-                            css.add("member.css");
-                        });
+                new PageDescription("member/common", title,
+                        (css, js) -> css.add("members.css"));
 
         return layoutCall(pageDesc, model);
     }
@@ -87,9 +85,7 @@ public class MemberController extends LayoutController {
         setLocalNav("member");
         PageDescription profPageDesc =
                 new PageDescription("member/prof", "Professors",
-                        (css, js) -> {
-                            css.add("members.prof.css");
-                        });
+                        (css, js) -> css.add("members.prof.css"));
         return layoutCall(profPageDesc, model);
     }
 

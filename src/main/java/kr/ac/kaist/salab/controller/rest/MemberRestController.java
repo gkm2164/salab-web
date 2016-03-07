@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/member/rest")
 public class MemberRestController {
-    @Autowired MemberRepository memberRepository;
+    @Autowired private MemberRepository memberRepository;
     @RequestMapping("/{id}/show")
     public Member findOne(@PathVariable Integer id) {
         return memberRepository.findOne(id);
@@ -32,11 +32,6 @@ public class MemberRestController {
 
         return listPubs;
     }
-
-//    @RequestMapping("/alumni")
-//    public List<Member> findAlumni() {
-//        return memberRepository.findAlumni();
-//    }
 
     @RequestMapping("/alumni")
     private Map<Integer, List<Member>> constructHashMapAlumni() {

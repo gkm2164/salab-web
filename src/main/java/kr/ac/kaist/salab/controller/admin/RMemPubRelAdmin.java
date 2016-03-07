@@ -60,7 +60,7 @@ public class RMemPubRelAdmin extends LayoutController {
         RMemberPublication rmp = rmpr.findByPublicationAndMember(pub, member);
 
         if (rmp != null) {
-            return "redirect:/admin/publication/adrel";
+            return "redirect:/admin/mempubrel/new";
         }
 
         rmp = new RMemberPublication();
@@ -69,7 +69,7 @@ public class RMemPubRelAdmin extends LayoutController {
         rmp.setAuthorOrder(relation.order);
         rmpr.save(rmp);
 
-        return "redirect:/pubs";
+        return "redirect:/admin/mempubrel/new";
     }
 
     @Data

@@ -35,13 +35,11 @@ public class ResearchController extends LayoutController {
     public String researchSite(Model model) {
         List<Interest> interestList = ir.findAll();
 
-        interestList.sort((a, b) -> rmir.countWithInterest(a) - rmir.countWithInterest(b));
+        interestList.sort((a, b) -> rmir.countWithInterest(b) - rmir.countWithInterest(a));
         model.addAttribute("researches", interestList);
         PageDescription researchPageDesc =
                 new PageDescription("research/home", "Researches",
-                        (css, js) -> {
-                           css.add("research.list.css");
-                        });
+                        (css, js) -> css.add("research.list.css"));
         return layoutCall(researchPageDesc, model);
     }
 }

@@ -16,8 +16,8 @@
       <table id="7" parent="1" name="resourcegroups"/>
       <table id="8" parent="1" name="resources"/>
       <table id="9" parent="1" name="rmemberinterests"/>
-      <table id="10" parent="1" name="rmemberpublications"/>
-      <table id="11" parent="1" name="surrogatekeys"/>
+      <table id="10" parent="1" name="surrogatekeys"/>
+      <table id="11" parent="1" name="rmemberpublications"/>
       <column id="12" parent="2" name="ID">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
@@ -223,62 +223,73 @@
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="62" parent="10" name="ID">
+      <column id="62" parent="10" name="TableName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="63" parent="10" name="KeyValue">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <key id="64" parent="10" name="PRIMARY">
+        <columns>TableName</columns>
+        <primary>1</primary>
+      </key>
+      <column id="65" parent="11" name="ID">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="63" parent="10" name="PublicationID">
+      <column id="66" parent="11" name="PublicationID">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="64" parent="10" name="MemberID">
+      <column id="67" parent="11" name="MemberID">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="65" parent="10" name="AuthorOrder">
+      <column id="68" parent="11" name="AuthorOrder">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="66" parent="10" name="FK_Members_ID">
+      <index id="69" parent="11" name="FK_Members_ID">
         <columns>MemberID</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="67" parent="10" name="FK_Publications_ID">
+      <index id="70" parent="11" name="FK_Publications_ID">
         <columns>PublicationID</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="68" parent="10" name="IDX_RMP_AuthorOrder">
+      <index id="71" parent="11" name="IDX_RMP_AuthorOrder">
         <columns>AuthorOrder</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="69" parent="10" name="PRIMARY">
+      <index id="72" parent="11" name="UQ_RMP_PublicationID_MemberID">
+        <columns>PublicationID
+MemberID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="73" parent="11" name="PRIMARY">
         <columns>ID</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="70" parent="10" name="FK_Members_ID">
+      <key id="74" parent="11" name="UQ_RMP_PublicationID_MemberID">
+        <columns>PublicationID
+MemberID</columns>
+        <underlying-index>UQ_RMP_PublicationID_MemberID</underlying-index>
+      </key>
+      <foreign-key id="75" parent="11" name="FK_Members_ID">
         <columns>MemberID</columns>
         <ref-key>~.members.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="71" parent="10" name="FK_Publications_ID">
+      <foreign-key id="76" parent="11" name="FK_Publications_ID">
         <columns>PublicationID</columns>
         <ref-key>~.publications.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="72" parent="11" name="TableName">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="73" parent="11" name="KeyValue">
-        <mandatory>1</mandatory>
-        <data-type>bigint(20)</data-type>
-      </column>
-      <key id="74" parent="11" name="PRIMARY">
-        <columns>TableName</columns>
-        <primary>1</primary>
-      </key>
     </database-model>
   </data-source>
 </component>

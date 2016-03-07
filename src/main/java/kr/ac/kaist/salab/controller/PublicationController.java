@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by USER on 2016-02-24.
@@ -77,13 +76,6 @@ public class PublicationController extends LayoutController {
                         pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_CONFERENCE)));
 
         model.addAttribute("PUBS", pubs);
-
-//        pubs.forEach(pc ->
-//            /* Reorder author list of each publications. */
-//            pc.getList().forEach(pub -> pub.getMemberList().sort((a, b) ->
-//                rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
-//                        - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
-//            ));
 
         PageDescription pubPageDesc =
                 new PageDescription("pubs/home", "Publications",
