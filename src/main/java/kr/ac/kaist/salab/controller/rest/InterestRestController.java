@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by USER on 2016-03-07.
- */
 @RestController
 @RequestMapping("/interest/rest")
 public class InterestRestController {
@@ -22,6 +19,7 @@ public class InterestRestController {
 
     @RequestMapping("/list")
     public List<Interest> findAll() {
+
         return ir.findAll();
     }
 
