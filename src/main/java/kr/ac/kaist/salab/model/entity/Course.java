@@ -29,6 +29,8 @@ public class Course {
 
     private String description;
 
+    private String link;
+
     @OneToMany(mappedBy = "course")
     private List<CourseCode> courseCodeList;
 

@@ -53,9 +53,9 @@ INSERT INTO RMemberInterests (ID, InterestID, MemberID)
   VALUES
     (0, 0, 0), (1, 0, 1), (2, 1, 0), (3, 1, 1);
 
-INSERT INTO Courses(ID, CourseType, CourseID, Title, Description)
+INSERT INTO Courses(ID, CourseType, CourseID, Title, Description, Link)
   VALUES
-    (0, 'GRADUATE', null, 'Modeling Software Systems', '...');
+    (0, 'GRADUATE', null, 'Modeling Software Systems', '...', 'http://klms.kaist.ac.kr');
 
 INSERT INTO ResourceGroups(ID, GroupName)
   VALUES

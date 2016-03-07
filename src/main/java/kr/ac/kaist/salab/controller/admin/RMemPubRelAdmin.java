@@ -46,12 +46,7 @@ public class RMemPubRelAdmin extends LayoutController {
 
         return layoutCall(new PageDescription("admin/mempubrel", "Publication Relation") {
             @Override
-            protected void initCSS(List<String> pageCSS) {
-
-            }
-
-            @Override
-            protected void initJS(List<String> pageJS) {
+            protected void initResource(List<String> pageCSS, List<String> pageJS) {
                 pageJS.add("salab.admin.mempubrel.js");
             }
         }, model);
