@@ -3,9 +3,7 @@ package kr.ac.kaist.salab.controller.page;
 import kr.ac.kaist.salab.controller.navs.NavNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import sun.invoke.empty.Empty;
 
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,16 +39,6 @@ public abstract class LayoutController {
 
         public DefaultPageDesc(String viewName, String title) {
             super(viewName, title);
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-
         }
     }
 }

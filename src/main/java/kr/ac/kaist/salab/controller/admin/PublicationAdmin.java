@@ -36,12 +36,7 @@ public class PublicationAdmin extends LayoutController {
         model.addAttribute("pubTypes", new TypeValues().pubTypes);
         return layoutCall(new PageDescription("admin/publication", "Create Publication") {
             @Override
-            protected void initCSS(List<String> pageCSS) {
-
-            }
-
-            @Override
-            protected void initJS(List<String> pageJS) {
+            protected void initResource(List<String> pageCSS, List<String> pageJS) {
 
             }
         }, model);
