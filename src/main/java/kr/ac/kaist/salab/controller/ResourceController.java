@@ -28,19 +28,7 @@ public class ResourceController extends LayoutController {
     @RequestMapping
     public String home(Model model) {
         setLocalNav("resources");
-        return layoutCall(
-                new PageDescription("resources/home", "Resources") {
-
-                    @Override
-                    protected void initCSS(List<String> pageCSS) {
-
-                    }
-
-                    @Override
-                    protected void initJS(List<String> pageJS) {
-
-                    }
-                }, model);
+        return layoutCall(new DefaultPageDesc("resources/home", "Resources"), model);
     }
 
     @RequestMapping("/tools")
@@ -54,19 +42,7 @@ public class ResourceController extends LayoutController {
     )
     public String tools(Model model) {
         setLocalNav("resources");
-        return layoutCall(
-                new PageDescription("resources/tools", "Resources") {
-
-                    @Override
-                    protected void initCSS(List<String> pageCSS) {
-
-                    }
-
-                    @Override
-                    protected void initJS(List<String> pageJS) {
-
-                    }
-                }, model);
+        return layoutCall(new DefaultPageDesc("resources/tools", "Resources"), model);
     }
 
     @RequestMapping("/links")
@@ -81,18 +57,10 @@ public class ResourceController extends LayoutController {
     public String links(Model model) {
         setLocalNav("resources");
         model.addAttribute("resourceGroup", rgr.findAll());
-        return layoutCall(
-                new PageDescription("resources/links", "Resources") {
+        PageDescription linkPageDesc =
+                new PageDescription("resources/links", "Resources",
+                        (css, js) -> css.add("resources.links.css"));
 
-                    @Override
-                    protected void initCSS(List<String> pageCSS) {
-                        pageCSS.add("resources.links.css");
-                    }
-
-                    @Override
-                    protected void initJS(List<String> pageJS) {
-
-                    }
-                }, model);
+        return layoutCall(linkPageDesc, model);
     }
 }

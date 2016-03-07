@@ -63,17 +63,15 @@ public class MemberController extends LayoutController {
         setLocalNav("member");
         model.addAttribute("status", statusMap.get(code));
         model.addAttribute("members", members);
-        return layoutCall(new PageDescription("member/common", statusMap.get(code) + " List") {
-            @Override
-            protected void initCSS(List<String> pageCSS) {
-                pageCSS.add("members.css");
-            }
 
-            @Override
-            protected void initJS(List<String> pageJS) {
+        PageDescription pageDesc =
+                new PageDescription("member/common",
+                        statusMap.get(code) + " List",
+                        (css, js) -> {
+                            css.add("member.css");
+                        });
 
-            }
-        }, model);
+        return layoutCall(pageDesc, model);
     }
 
     @RequestMapping("/prof")
@@ -87,17 +85,12 @@ public class MemberController extends LayoutController {
     )
     public String memberProf(Model model) {
         setLocalNav("member");
-        return layoutCall(new PageDescription("member/prof", "Professors") {
-            @Override
-            protected void initCSS(List<String> pageCSS) {
-                pageCSS.add("members.prof.css");
-            }
-
-            @Override
-            protected void initJS(List<String> pageJS) {
-
-            }
-        }, model);
+        PageDescription profPageDesc =
+                new PageDescription("member/prof", "Professors",
+                        (css, js) -> {
+                            css.add("members.prof.css");
+                        });
+        return layoutCall(profPageDesc, model);
     }
 
     @RequestMapping("/reses")
@@ -157,18 +150,15 @@ public class MemberController extends LayoutController {
         years.addAll(map.keySet());
         years.sort((a, b) -> a - b);
         model.addAttribute("alumniYears", years);
-        return layoutCall(new PageDescription("member/alumni", "Alumni") {
-            @Override
-            protected void initCSS(List<String> pageCSS) {
-                pageCSS.add("members.alumni.css");
-                pageCSS.add("members.css");
-            }
 
-            @Override
-            protected void initJS(List<String> pageJS) {
-                pageJS.add("salab.members.alumni.js");
-            }
-        }, model);
+        PageDescription alumniPageDesc =
+                new PageDescription("member/alumni", "Alumni",
+                        (css, js) -> {
+                            css.add("members.alumni.css");
+                            css.add("members.css");
+                            js.add("salab.members.alumni.js");
+                        });
+        return layoutCall(alumniPageDesc, model);
     }
 
     private Map<Integer, List<Member>> constructHashMapAlumni() {

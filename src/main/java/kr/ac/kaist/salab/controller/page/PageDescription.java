@@ -6,27 +6,24 @@ import java.util.List;
 /**
  * Created by USER on 2016-02-23.
  */
-public abstract class PageDescription {
+public class PageDescription {
     private String title;
     private String pageFileName;
     private List<String> pageCSS;
     private List<String> pageJS;
 
-    public PageDescription() {
+    public PageDescription(WebResourceInitializer wri) {
         pageCSS = new ArrayList<>();
         pageJS = new ArrayList<>();
-        initCSS(pageCSS);
-        initJS(pageJS);
+
+        wri.initResource(pageCSS, pageJS);
     }
 
-    protected PageDescription(String pageFileName, String title) {
-        this();
+    public PageDescription(String pageFileName, String title, WebResourceInitializer wri) {
+        this(wri);
         this.title = title;
         this.pageFileName = pageFileName + ".jsp";
     }
-
-    protected abstract void initCSS(List<String> pageCSS);
-    protected abstract void initJS(List<String> pageJS);
 
     public String getTitle() {
         return title;

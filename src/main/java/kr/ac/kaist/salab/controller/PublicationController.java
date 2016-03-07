@@ -84,23 +84,12 @@ public class PublicationController extends LayoutController {
 //                rmpr.findByPublicationAndMember(pub, a).getAuthorOrder()
 //                        - rmpr.findByPublicationAndMember(pub, b).getAuthorOrder())
 //            ));
-        return layoutCall(new PublicationPageDescription(), model);
-    }
 
-    public class PublicationPageDescription extends PageDescription {
-
-        protected PublicationPageDescription() {
-            super("pubs/home", "Publications");
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-            pageCSS.add("pubs.home.css");
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-
-        }
+        PageDescription pubPageDesc =
+                new PageDescription("pubs/home", "Publications",
+                        (css, js) -> {
+                            css.add("pubs.home.css");
+                        });
+        return layoutCall(pubPageDesc, model);
     }
 }

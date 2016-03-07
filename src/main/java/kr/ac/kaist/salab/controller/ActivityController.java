@@ -24,25 +24,16 @@ import java.util.List;
     )
 )
 public class ActivityController extends LayoutController {
-    
+
+    PageDescription activityPageDesc =
+            new PageDescription("acts/acts.home", "Activity",
+                    (css, js) -> {
+                        css.add("activities.css");
+                        js.add("salab.activities.js");
+                    });
+
     @RequestMapping
     public String activityMain(Model model) {
-        return layoutCall(new ActivityPageDescription(), model);
-    }
-
-    public class ActivityPageDescription extends PageDescription {
-        protected ActivityPageDescription() {
-            super("acts/acts.home", "Activity");
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-            pageCSS.add("activities.css");
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-            pageJS.add("salab.activities.js");
-        }
+        return layoutCall(activityPageDesc, model);
     }
 }

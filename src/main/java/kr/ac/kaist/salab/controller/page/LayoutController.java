@@ -40,17 +40,7 @@ public abstract class LayoutController {
     public class DefaultPageDesc extends PageDescription {
 
         public DefaultPageDesc(String viewName, String title) {
-            super(viewName, title);
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-
+            super(viewName, title, (a, b) -> {});
         }
     }
 }

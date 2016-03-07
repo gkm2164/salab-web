@@ -37,16 +37,11 @@ public class ResearchController extends LayoutController {
 
         interestList.sort((a, b) -> rmir.countWithInterest(a) - rmir.countWithInterest(b));
         model.addAttribute("researches", interestList);
-        return layoutCall(new PageDescription("research/home", "Researches") {
-            @Override
-            protected void initCSS(List<String> pageCSS) {
-                pageCSS.add("research.list.css");
-            }
-
-            @Override
-            protected void initJS(List<String> pageJS) {
-
-            }
-        }, model);
+        PageDescription researchPageDesc =
+                new PageDescription("research/home", "Researches",
+                        (css, js) -> {
+                           css.add("research.list.css");
+                        });
+        return layoutCall(researchPageDesc, model);
     }
 }

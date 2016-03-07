@@ -25,27 +25,19 @@ import java.util.List;
 )
 public class CoursesController extends LayoutController {
 
+    PageDescription coursePageDesc =
+            new PageDescription("courses/courses", "Courses",
+                    (css, js) -> {
+                        css.add("courses.css");
+                        js.add("salab.courses.js");
+                    });
+
     @Autowired private CourseRepository cr;
+
     @RequestMapping
     public String courses(Model model) {
         List<Course> courses = cr.findAll();
         model.addAttribute("courses", courses);
-        return layoutCall(new CoursePageDescription(), model);
-    }
-
-    public class CoursePageDescription extends PageDescription {
-        protected CoursePageDescription() {
-            super("courses/courses", "Courses");
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-            pageCSS.add("courses.css");
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-            pageJS.add("salab.courses.js");
-        }
+        return layoutCall(coursePageDesc, model);
     }
 }

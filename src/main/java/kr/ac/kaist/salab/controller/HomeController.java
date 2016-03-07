@@ -25,24 +25,15 @@ import java.util.List;
 )
 public class HomeController extends LayoutController {
 
+    private PageDescription homePageDesc =
+            new PageDescription("home/home", "SALab Website",
+                    (css, js) -> {
+                        css.add("home.css");
+                        js.add("salab.home.js");
+                    });
+
     @RequestMapping
     public String home(Model model) {
-        return layoutCall(new HomePageDescription(), model);
-    }
-
-    public class HomePageDescription extends PageDescription {
-        protected HomePageDescription() {
-            super("home/home", "SALab website");
-        }
-
-        @Override
-        protected void initCSS(List<String> pageCSS) {
-            pageCSS.add("home.css");
-        }
-
-        @Override
-        protected void initJS(List<String> pageJS) {
-            pageJS.add("salab.home.js");
-        }
+        return layoutCall(homePageDesc, model);
     }
 }
