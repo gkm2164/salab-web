@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by USER on 2016-02-24.
- */
 @RestController
 @RequestMapping("/member/rest")
 public class MemberRestController {

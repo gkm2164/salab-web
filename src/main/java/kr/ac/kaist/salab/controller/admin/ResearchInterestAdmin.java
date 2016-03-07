@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by USER on 2016-03-07.
- */
 @Controller
 @RequestMapping("/admin/interest")
 public class ResearchInterestAdmin extends LayoutController {

@@ -21,9 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-/**
- * Created by USER on 2016-03-04.
- */
 @Controller
 @RequestMapping(path = "/admin/mempubrel")
 public class RMemPubRelAdmin extends LayoutController {
@@ -46,9 +43,7 @@ public class RMemPubRelAdmin extends LayoutController {
 
         PageDescription rmpraPageDesc =
                 new PageDescription("admin/mempubrel", "Publication Relation",
-                        (css, js) -> {
-                            js.add("salab.admin.mempubrel.js");
-                        });
+                        (css, js) -> js.add("salab.admin.mempubrel.js"));
         return layoutCall(rmpraPageDesc, model);
     }
 

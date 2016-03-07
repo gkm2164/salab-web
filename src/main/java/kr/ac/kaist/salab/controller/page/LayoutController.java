@@ -3,19 +3,14 @@ package kr.ac.kaist.salab.controller.page;
 import kr.ac.kaist.salab.controller.navs.NavNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import sun.invoke.empty.Empty;
 
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by USER on 2016-02-23.
- */
 public abstract class LayoutController {
+    private static final Logger l = Logger.getLogger(LayoutController.class.getName());
     @Autowired NavNode rootNode;
     private String navId = "";
-    private static final Logger l = Logger.getLogger(LayoutController.class.getName());
 
     public void setLocalNav(String navId) {
         this.navId = navId;

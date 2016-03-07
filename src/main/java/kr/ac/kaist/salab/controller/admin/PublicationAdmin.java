@@ -19,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by USER on 2016-03-04.
- */
 @Controller
 @RequestMapping("/admin/publication")
 public class PublicationAdmin extends LayoutController {
