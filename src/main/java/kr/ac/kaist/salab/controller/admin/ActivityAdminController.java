@@ -26,6 +26,7 @@ public class ActivityAdminController extends LayoutController {
         PageDescription actAdmPageDesc = new DefaultPageDesc("admin/activity", "New Activity");
         model.addAttribute("activity", new Activity());
         return layoutCall(actAdmPageDesc, model);
+
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
