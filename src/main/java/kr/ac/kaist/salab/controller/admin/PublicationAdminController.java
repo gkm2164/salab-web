@@ -21,7 +21,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin/publication")
-public class PublicationAdmin extends LayoutController {
+public class PublicationAdminController extends LayoutController {
     @Autowired private PublicationRepository pr;
     @Autowired private MemberRepository mr;
     @Autowired private RMemberPublicationRepository rmpr;

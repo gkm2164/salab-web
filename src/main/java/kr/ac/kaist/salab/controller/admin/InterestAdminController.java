@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/admin/interest")
-public class ResearchInterestAdmin extends LayoutController {
+public class InterestAdminController extends LayoutController {
     @Autowired private InterestRepository ir;
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)

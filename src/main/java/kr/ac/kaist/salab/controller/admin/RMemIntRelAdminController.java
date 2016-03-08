@@ -7,9 +7,10 @@ import kr.ac.kaist.salab.model.entity.Member;
 import kr.ac.kaist.salab.model.entity.RMemberInterest;
 import kr.ac.kaist.salab.model.repository.InterestRepository;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
-import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberInterestRepository;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/admin/memintrel")
-public class RMemIntRelAdmin extends LayoutController {
+public class RMemIntRelAdminController extends LayoutController {
     @Autowired private InterestRepository ir;
     @Autowired private MemberRepository mr;
     @Autowired private RMemberInterestRepository rmir;
@@ -33,6 +34,7 @@ public class RMemIntRelAdmin extends LayoutController {
         PageDescription nrPageDesc = new PageDescription(
                 "admin/memintrel", "New Relation",
                 (css, js) -> {
+                    js.add("salab.memintrel.js");
                 }
         );
         model.addAttribute("relation", new RMIBox ());
