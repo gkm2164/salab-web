@@ -41,12 +41,12 @@ INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Gradua
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (26, 'Sangyup Han', '한상엽', 'external', '', '2016-03-04', 0, null);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (27, 'Ben Lee', '벤리', 'external', '', '2016-03-04', 0, null);
 INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (28, 'Hoseung Shin', '신호승', 'external', '', '2016-03-07', 0, null);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1000, 'Heuijin Lee', '이희진', 'ms', '', '2012-09-01', 1, 2014);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1050, 'Changsub Keum', '금창섭', 'phd', '', '2008-01-01', 1, 2014);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1100, 'Danhyung Lee', '이단형', 'external', '', '2016-03-04', 0, null);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1150, 'Myungchul Kim', '김명철', 'external', '', '2016-12-31', 0, null);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1200, 'Sunghun Kim', '김성훈', 'external', '', '2016-03-04', 0, null);
-INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (1201, 'Matt Staats', '', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (29, 'Heuijin Lee', '이희진', 'ms', '', '2012-09-01', 1, 2014);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (30, 'Changsub Keum', '금창섭', 'phd', '', '2008-01-01', 1, 2014);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (31, 'Danhyung Lee', '이단형', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (32, 'Myungchul Kim', '김명철', 'external', '', '2016-12-31', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (33, 'Sunghun Kim', '김성훈', 'external', '', '2016-03-04', 0, null);
+INSERT INTO salab.members (ID, Name, KoreanName, Degree, Link, EnterDate, Graduated, GraduatedYear) VALUES (34, 'Matt Staats', '', 'external', '', '2016-03-04', 0, null);
 
 INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (0, 'INTERNATIONAL_CONFERENCE', 'A Software Binding Application Tool based on the Orthogonal Variability Description Language for Software Product Line Development', 'The 16th ACIS International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing (SNPD 2015), Takamatsu, Japan, June 1-3, 2015. (Regular Paper)', '2015-06-01');
 INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (1, 'DOMESTIC_CONFERENCE', '사례연구: 기능확장성을 위한 소프트웨어 아키텍처 재설계', '2009 한국 소프트웨어공학 학술대회 (KCSE2009), 2009년 2월 9일 ~ 11일', '2009-02-09');
@@ -61,10 +61,10 @@ INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALU
 INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (13, 'DOMESTIC_JOURNAL', '확장형 실시간 데이터 파이프라인 시스템 아키텍처 설계', '한국정보과학회 논문지 제42권 제8호, pp. 1010-1021, 2015년 8월.', '2015-08-01');
 INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (14, 'DOMESTIC_JOURNAL', '문제틀과 아키텍처 패턴의 매칭을 이용한 소프트웨어 아키텍처 설계방법', '한국정보과학회 논문지 제42권 제3호, pp. 341-360, 2015년 3월.', '2015-03-01');
 INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (15, 'DOMESTIC_JOURNAL', '조합 시험 설계를 이용한 소프트웨어 제품라인 시험항목 생성 방법', '한국정보과학회논문지 제31권 제10호, pp. 86-93, 2014년 10월.', '2014-10-01');
-INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (251, 'INTERNATIONAL_JOURNAL', 'vPMM: A Value Based Process Maturity Model', 'Studies in Computational Intelligence, Vol 208/2009, R. Lee, G. Hu, H. Miao (Eds.), pp. 193-202, Springer-Verlag Berlin Heidelberg 2009. (Presented at the 8th IEEE Int''l Conf. on Computer and Information Science (ICIS 2009), Shanghai, China, June 1-3, 2009. [Selected as 26 outstanding papers out of 585 submitted and 205 published in the conference proceedings.]', '2009-06-01');
-INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (300, 'INTERNATIONAL_CONFERENCE', 'An Efficient Application-Device Matching Method for the Mobile Software Ecosystem', 'The 21st Asia-Pacific Software Engineering Conference, Jeju, Korea, December 1-4, 2014. (Acceptance Rate: 29.6%)', '2014-12-01');
-INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (350, 'SCI_JOURNAL', 'A Technique for Measuring Business Process based on Business Values', 'IEICE Transactions on Information and Software Systems. Vol.E98-D,No.4, pp. 911-921, April 2015.', '2015-04-01');
-INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (400, 'SCI_JOURNAL', 'Clustering Navigation Sequences to Create Contexts for Guiding Code Navigation', 'Journal of Systems and Software (2013), Vol. 86, 2154- 2165, August 2013.', '2013-08-01');
+INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (16, 'INTERNATIONAL_JOURNAL', 'vPMM: A Value Based Process Maturity Model', 'Studies in Computational Intelligence, Vol 208/2009, R. Lee, G. Hu, H. Miao (Eds.), pp. 193-202, Springer-Verlag Berlin Heidelberg 2009. (Presented at the 8th IEEE Int''l Conf. on Computer and Information Science (ICIS 2009), Shanghai, China, June 1-3, 2009. [Selected as 26 outstanding papers out of 585 submitted and 205 published in the conference proceedings.]', '2009-06-01');
+INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (17, 'INTERNATIONAL_CONFERENCE', 'An Efficient Application-Device Matching Method for the Mobile Software Ecosystem', 'The 21st Asia-Pacific Software Engineering Conference, Jeju, Korea, December 1-4, 2014. (Acceptance Rate: 29.6%)', '2014-12-01');
+INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (18, 'SCI_JOURNAL', 'A Technique for Measuring Business Process based on Business Values', 'IEICE Transactions on Information and Software Systems. Vol.E98-D,No.4, pp. 911-921, April 2015.', '2015-04-01');
+INSERT INTO salab.publications (ID, PublicationType, Title, MetaData, Date) VALUES (19, 'SCI_JOURNAL', 'Clustering Navigation Sequences to Create Contexts for Guiding Code Navigation', 'Journal of Systems and Software (2013), Vol. 86, 2154- 2165, August 2013.', '2013-08-01');
 
 INSERT INTO salab.resourcegroups (ID, GroupName) VALUES (0, 'KAIST Links');
 INSERT INTO salab.resourcegroups (ID, GroupName) VALUES (1, 'Software Architecture Resources');
@@ -95,22 +95,22 @@ INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder)
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (15, 4, 0, 2);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (16, 4, 18, 3);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (17, 4, 19, 4);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (18, 251, 12, 1);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (19, 251, 0, 3);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (20, 251, 1100, 2);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (21, 300, 1000, 1);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (22, 300, 0, 2);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (23, 300, 1150, 3);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (24, 350, 12, 1);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (25, 350, 0, 2);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (26, 400, 19, 1);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (27, 400, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (18, 16, 12, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (19, 16, 0, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (20, 16, 31, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (21, 17, 29, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (22, 17, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (23, 17, 32, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (24, 18, 12, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (25, 18, 0, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (26, 19, 19, 1);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (27, 19, 0, 2);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (28, 5, 19, 1);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (29, 5, 0, 2);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (30, 5, 1200, 3);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (31, 5, 1201, 4);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (30, 5, 33, 3);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (31, 5, 34, 4);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (32, 9, 26, 1);
-INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (33, 9, 1150, 2);
+INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (33, 9, 32, 2);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (34, 9, 27, 3);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (35, 9, 0, 4);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (36, 10, 1, 1);
@@ -129,10 +129,14 @@ INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder)
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (49, 15, 0, 2);
 INSERT INTO salab.rmemberpublications (ID, PublicationID, MemberID, AuthorOrder) VALUES (50, 15, 12, 3);
 
-INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Interests', 2);
-INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Members', 29);
-INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Publications', 16);
-INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('RMemberInterests', 2);
+INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Interests', 10);
+INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Members', 35);
+INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('Publications', 20);
+INSERT INTO salab.SurrogateKeys (TableName, KeyValue) VALUES ('Resources', 1);
+INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('RMemberInterests', 4);
 INSERT INTO salab.surrogatekeys (TableName, KeyValue) VALUES ('RMemberPublications', 51);
+INSERT INTO salab.SurrogateKeys (TableName, KeyValue) VALUES ('Courses', 1);
+INSERT INTO salab.SurrogateKeys (TableName, KeyValue) VALUES ('CourseCodes', 2);
+INSERT INTO salab.SurrogateKeys (TableName, KeyValue) VALUES ('ResourceGroups', 3);
 
 COMMIT;
