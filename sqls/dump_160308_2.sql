@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES = @@SQL_NOTES, SQL_NOTES = 0 */;
 
 --
--- Table structure for table `Activities`
+-- Table structure for table `activities`
 --
 
-DROP TABLE IF EXISTS `Activities`;
+DROP TABLE IF EXISTS `activities`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Activities` (
+CREATE TABLE `activities` (
   `ID`       INT(11)      NOT NULL,
   `Title`    VARCHAR(255) NOT NULL,
   `Contents` TEXT         NOT NULL,
@@ -34,51 +34,51 @@ CREATE TABLE `Activities` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Activities`
+-- Dumping data for table `activities`
 --
 
-LOCK TABLES `Activities` WRITE;
-/*!40000 ALTER TABLE `Activities` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Activities` ENABLE KEYS */;
+LOCK TABLES `activities` WRITE;
+/*!40000 ALTER TABLE `activities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `activities` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `CourseCodes`
+-- Table structure for table `coursecodes`
 --
 
-DROP TABLE IF EXISTS `CourseCodes`;
+DROP TABLE IF EXISTS `coursecodes`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CourseCodes` (
+CREATE TABLE `coursecodes` (
   `ID`       INT(11)     NOT NULL,
   `CourseID` INT(11)     NOT NULL,
   `Code`     VARCHAR(50) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_CourseCodes_CourseID` (`CourseID`),
-  CONSTRAINT `FK_CourseCodes_CourseID` FOREIGN KEY (`CourseID`) REFERENCES `Courses` (`ID`)
+  CONSTRAINT `FK_CourseCodes_CourseID` FOREIGN KEY (`CourseID`) REFERENCES `courses` (`ID`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CourseCodes`
+-- Dumping data for table `coursecodes`
 --
 
-LOCK TABLES `CourseCodes` WRITE;
-/*!40000 ALTER TABLE `CourseCodes` DISABLE KEYS */;
-INSERT INTO `CourseCodes` VALUES (0, 0, 'CS552'), (1, 0, 'SEP531');
-/*!40000 ALTER TABLE `CourseCodes` ENABLE KEYS */;
+LOCK TABLES `coursecodes` WRITE;
+/*!40000 ALTER TABLE `coursecodes` DISABLE KEYS */;
+INSERT INTO `coursecodes` VALUES (0, 0, 'CS552'), (1, 0, 'SEP531');
+/*!40000 ALTER TABLE `coursecodes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Courses`
+-- Table structure for table `courses`
 --
 
-DROP TABLE IF EXISTS `Courses`;
+DROP TABLE IF EXISTS `courses`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Courses` (
+CREATE TABLE `courses` (
   `ID`          INT(11)      NOT NULL,
   `CourseType`  VARCHAR(50)  NOT NULL,
   `Title`       VARCHAR(255) NOT NULL,
@@ -91,25 +91,25 @@ CREATE TABLE `Courses` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Courses`
+-- Dumping data for table `courses`
 --
 
-LOCK TABLES `Courses` WRITE;
-/*!40000 ALTER TABLE `Courses` DISABLE KEYS */;
-INSERT INTO `Courses` VALUES (0, 'GRADUATE', 'Models of Software Systems',
+LOCK TABLES `courses` WRITE;
+/*!40000 ALTER TABLE `courses` DISABLE KEYS */;
+INSERT INTO `courses` VALUES (0, 'GRADUATE', 'Models of Software Systems',
                               'Computer Scientists have long investigated the problem of how to automate software development from its specification to its program. So far the efforts were not fully successful but much of the results can be fruitfully applied to development of small programs and critical small portions of large programs. In this course, we learn how to formally write requirements, how to formally model specifications and how to rigorously verify that the models have the required properties.',
                               'http://klms.kaist.ac.kr');
-/*!40000 ALTER TABLE `Courses` ENABLE KEYS */;
+/*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Interests`
+-- Table structure for table `interests`
 --
 
-DROP TABLE IF EXISTS `Interests`;
+DROP TABLE IF EXISTS `interests`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Interests` (
+CREATE TABLE `interests` (
   `ID`        INT(11)      NOT NULL,
   `FieldName` VARCHAR(255) NOT NULL,
   `FieldDesc` TEXT,
@@ -120,27 +120,27 @@ CREATE TABLE `Interests` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Interests`
+-- Dumping data for table `interests`
 --
 
-LOCK TABLES `Interests` WRITE;
-/*!40000 ALTER TABLE `Interests` DISABLE KEYS */;
-INSERT INTO `Interests`
+LOCK TABLES `interests` WRITE;
+/*!40000 ALTER TABLE `interests` DISABLE KEYS */;
+INSERT INTO `interests`
 VALUES (0, 'Software Engineering', NULL), (1, 'Software Architecture', NULL), (2, 'Software Product Lines', NULL),
   (3, 'Software Testing', NULL), (4, 'Model-Driven Development', NULL), (5, 'Formal Methods', NULL),
   (6, 'Service-Oriented Architecture', NULL), (7, 'Measuring Quality based on Software Architecture', NULL),
   (8, 'Evaluation of Software Architecture Software System', NULL), (9, 'Construction of Software Architecture', NULL);
-/*!40000 ALTER TABLE `Interests` ENABLE KEYS */;
+/*!40000 ALTER TABLE `interests` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Members`
+-- Table structure for table `members`
 --
 
-DROP TABLE IF EXISTS `Members`;
+DROP TABLE IF EXISTS `members`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Members` (
+CREATE TABLE `members` (
   `ID`            INT(11)      NOT NULL,
   `Name`          VARCHAR(255) NOT NULL,
   `KoreanName`    VARCHAR(255) NOT NULL,
@@ -156,12 +156,12 @@ CREATE TABLE `Members` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Members`
+-- Dumping data for table `members`
 --
 
-LOCK TABLES `Members` WRITE;
-/*!40000 ALTER TABLE `Members` DISABLE KEYS */;
-INSERT INTO `Members` VALUES (0, 'Sungwon Kang', '강성원', 'prof', NULL, '1997-01-01', 0, NULL),
+LOCK TABLES `members` WRITE;
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` VALUES (0, 'Sungwon Kang', '강성원', 'prof', NULL, '1997-01-01', 0, NULL),
   (1, 'Jungho Kim', '김정호', 'phd', NULL, '2011-02-01', 0, NULL),
   (2, 'Hwi Ahn', '안휘', 'phd', NULL, '2012-03-01', 0, NULL),
   (3, 'Jongsun Ahn', '안종선', 'phd', NULL, '2012-10-31', 0, NULL),
@@ -193,17 +193,17 @@ INSERT INTO `Members` VALUES (0, 'Sungwon Kang', '강성원', 'prof', NULL, '199
   (34, 'Matt Staats', '', 'external', '', '2016-03-04', 0, NULL),
   (35, 'Kyungmin Go', '고경민', 'external', '', '2016-12-31', 0, NULL),
   (36, 'Jongmoon Baik', '백종문', 'external', '', '2016-12-31', 0, NULL);
-/*!40000 ALTER TABLE `Members` ENABLE KEYS */;
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Publications`
+-- Table structure for table `publications`
 --
 
-DROP TABLE IF EXISTS `Publications`;
+DROP TABLE IF EXISTS `publications`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Publications` (
+CREATE TABLE `publications` (
   `ID`              INT(11)      NOT NULL,
   `PublicationType` VARCHAR(255) NOT NULL,
   `Title`           VARCHAR(255) NOT NULL,
@@ -216,12 +216,12 @@ CREATE TABLE `Publications` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Publications`
+-- Dumping data for table `publications`
 --
 
-LOCK TABLES `Publications` WRITE;
-/*!40000 ALTER TABLE `Publications` DISABLE KEYS */;
-INSERT INTO `Publications` VALUES (0, 'INTERNATIONAL_CONFERENCE',
+LOCK TABLES `publications` WRITE;
+/*!40000 ALTER TABLE `publications` DISABLE KEYS */;
+INSERT INTO `publications` VALUES (0, 'INTERNATIONAL_CONFERENCE',
                                    'A Software Binding Application Tool based on the Orthogonal Variability Description Language for Software Product Line Development',
                                    'The 16th ACIS International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing (SNPD 2015), Takamatsu, Japan, June 1-3, 2015. (Regular Paper)',
                                    '2015-06-01'),
@@ -252,17 +252,17 @@ INSERT INTO `Publications` VALUES (0, 'INTERNATIONAL_CONFERENCE',
    'Journal of Systems and Software, Vol. 98, pp. 79–106, December 2014.', '2014-12-01'),
   (21, 'SCI_JOURNAL', 'Pairwise Testing for Systems with Data Derived from Real-valued Variable Inputs',
    'Software: Practice and Experience, DOI: 10.1002/spe.2295, Oct. 16, 2014.', '2014-10-16');
-/*!40000 ALTER TABLE `Publications` ENABLE KEYS */;
+/*!40000 ALTER TABLE `publications` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `ResourceGroups`
+-- Table structure for table `resourcegroups`
 --
 
-DROP TABLE IF EXISTS `ResourceGroups`;
+DROP TABLE IF EXISTS `resourcegroups`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ResourceGroups` (
+CREATE TABLE `resourcegroups` (
   `ID`        INT(11)      NOT NULL,
   `GroupName` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -272,24 +272,24 @@ CREATE TABLE `ResourceGroups` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ResourceGroups`
+-- Dumping data for table `resourcegroups`
 --
 
-LOCK TABLES `ResourceGroups` WRITE;
-/*!40000 ALTER TABLE `ResourceGroups` DISABLE KEYS */;
-INSERT INTO `ResourceGroups`
+LOCK TABLES `resourcegroups` WRITE;
+/*!40000 ALTER TABLE `resourcegroups` DISABLE KEYS */;
+INSERT INTO `resourcegroups`
 VALUES (0, 'KAIST Links'), (1, 'Software Architecture Resources'), (2, 'Related Conferences');
-/*!40000 ALTER TABLE `ResourceGroups` ENABLE KEYS */;
+/*!40000 ALTER TABLE `resourcegroups` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Resources`
+-- Table structure for table `resources`
 --
 
-DROP TABLE IF EXISTS `Resources`;
+DROP TABLE IF EXISTS `resources`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Resources` (
+CREATE TABLE `resources` (
   `ID`              INT(11)      NOT NULL,
   `ResourceGroupID` INT(11)      NOT NULL,
   `ResourceType`    VARCHAR(255) NOT NULL,
@@ -297,61 +297,61 @@ CREATE TABLE `Resources` (
   `Contents`        TEXT         NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_Resources_ResourceGroupID` (`ResourceGroupID`),
-  CONSTRAINT `FK_Resources_ResourceGroupID` FOREIGN KEY (`ResourceGroupID`) REFERENCES `ResourceGroups` (`ID`)
+  CONSTRAINT `FK_Resources_ResourceGroupID` FOREIGN KEY (`ResourceGroupID`) REFERENCES `resourcegroups` (`ID`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Resources`
+-- Dumping data for table `resources`
 --
 
-LOCK TABLES `Resources` WRITE;
-/*!40000 ALTER TABLE `Resources` DISABLE KEYS */;
-INSERT INTO `Resources` VALUES (0, 0, 'LINK', 'KAIST', 'http://www.kaist.ac.kr');
-/*!40000 ALTER TABLE `Resources` ENABLE KEYS */;
+LOCK TABLES `resources` WRITE;
+/*!40000 ALTER TABLE `resources` DISABLE KEYS */;
+INSERT INTO `resources` VALUES (0, 0, 'LINK', 'KAIST', 'http://www.kaist.ac.kr');
+/*!40000 ALTER TABLE `resources` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `RMemberInterests`
+-- Table structure for table `rmemberinterests`
 --
 
-DROP TABLE IF EXISTS `RMemberInterests`;
+DROP TABLE IF EXISTS `rmemberinterests`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `RMemberInterests` (
+CREATE TABLE `rmemberinterests` (
   `ID`         INT(11) NOT NULL,
   `InterestID` INT(11) NOT NULL,
   `MemberID`   INT(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_Interests_ID` (`InterestID`),
   KEY `FK_Interests_Members_ID` (`MemberID`),
-  CONSTRAINT `FK_Interests_ID` FOREIGN KEY (`InterestID`) REFERENCES `Interests` (`ID`),
-  CONSTRAINT `FK_Interests_Members_ID` FOREIGN KEY (`MemberID`) REFERENCES `Members` (`ID`)
+  CONSTRAINT `FK_Interests_ID` FOREIGN KEY (`InterestID`) REFERENCES `interests` (`ID`),
+  CONSTRAINT `FK_Interests_Members_ID` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `RMemberInterests`
+-- Dumping data for table `rmemberinterests`
 --
 
-LOCK TABLES `RMemberInterests` WRITE;
-/*!40000 ALTER TABLE `RMemberInterests` DISABLE KEYS */;
-INSERT INTO `RMemberInterests` VALUES (0, 0, 0), (1, 7, 1), (2, 8, 1), (3, 9, 1);
-/*!40000 ALTER TABLE `RMemberInterests` ENABLE KEYS */;
+LOCK TABLES `rmemberinterests` WRITE;
+/*!40000 ALTER TABLE `rmemberinterests` DISABLE KEYS */;
+INSERT INTO `rmemberinterests` VALUES (0, 0, 0), (1, 7, 1), (2, 8, 1), (3, 9, 1);
+/*!40000 ALTER TABLE `rmemberinterests` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `RMemberPublications`
+-- Table structure for table `rmemberpublications`
 --
 
-DROP TABLE IF EXISTS `RMemberPublications`;
+DROP TABLE IF EXISTS `rmemberpublications`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `RMemberPublications` (
+CREATE TABLE `rmemberpublications` (
   `ID`            INT(11) NOT NULL,
   `PublicationID` INT(11) NOT NULL,
   `MemberID`      INT(11) NOT NULL,
@@ -361,20 +361,20 @@ CREATE TABLE `RMemberPublications` (
   KEY `FK_Publications_ID` (`PublicationID`),
   KEY `FK_Members_ID` (`MemberID`),
   KEY `IDX_RMP_AuthorOrder` (`PublicationID`, `AuthorOrder`),
-  CONSTRAINT `FK_Members_ID` FOREIGN KEY (`MemberID`) REFERENCES `Members` (`ID`),
-  CONSTRAINT `FK_Publications_ID` FOREIGN KEY (`PublicationID`) REFERENCES `Publications` (`ID`)
+  CONSTRAINT `FK_Members_ID` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`),
+  CONSTRAINT `FK_Publications_ID` FOREIGN KEY (`PublicationID`) REFERENCES `publications` (`ID`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `RMemberPublications`
+-- Dumping data for table `rmemberpublications`
 --
 
-LOCK TABLES `RMemberPublications` WRITE;
-/*!40000 ALTER TABLE `RMemberPublications` DISABLE KEYS */;
-INSERT INTO `RMemberPublications`
+LOCK TABLES `rmemberpublications` WRITE;
+/*!40000 ALTER TABLE `rmemberpublications` DISABLE KEYS */;
+INSERT INTO `rmemberpublications`
 VALUES (0, 0, 7, 1), (1, 0, 0, 2), (2, 0, 3, 3), (3, 1, 1, 1), (4, 1, 0, 2), (5, 2, 0, 1), (6, 2, 10, 2), (7, 2, 11, 3),
   (8, 2, 12, 4), (9, 3, 13, 1), (10, 3, 14, 2), (11, 3, 15, 3), (12, 3, 16, 4), (13, 3, 0, 5), (14, 4, 17, 1),
   (15, 4, 0, 2), (16, 4, 18, 3), (17, 4, 19, 4), (18, 16, 12, 1), (19, 16, 0, 3), (20, 16, 31, 2), (21, 17, 29, 1),
@@ -384,17 +384,17 @@ VALUES (0, 0, 7, 1), (1, 0, 0, 2), (2, 0, 3, 3), (3, 1, 1, 1), (4, 1, 0, 2), (5,
   (43, 13, 0, 2), (44, 13, 12, 3), (45, 14, 11, 1), (46, 14, 0, 2), (47, 14, 12, 3), (48, 15, 10, 1), (49, 15, 0, 2),
   (50, 15, 12, 3), (51, 20, 25, 1), (52, 20, 0, 2), (53, 20, 12, 3), (54, 21, 35, 1), (55, 21, 0, 2), (56, 21, 32, 4),
   (57, 21, 36, 3);
-/*!40000 ALTER TABLE `RMemberPublications` ENABLE KEYS */;
+/*!40000 ALTER TABLE `rmemberpublications` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `SurrogateKeys`
+-- Table structure for table `surrogatekeys`
 --
 
-DROP TABLE IF EXISTS `SurrogateKeys`;
+DROP TABLE IF EXISTS `surrogatekeys`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `SurrogateKeys` (
+CREATE TABLE `surrogatekeys` (
   `TableName` VARCHAR(255) NOT NULL,
   `KeyValue`  BIGINT(20)   NOT NULL,
   PRIMARY KEY (`TableName`)
@@ -404,15 +404,15 @@ CREATE TABLE `SurrogateKeys` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `SurrogateKeys`
+-- Dumping data for table `surrogatekeys`
 --
 
-LOCK TABLES `SurrogateKeys` WRITE;
-/*!40000 ALTER TABLE `SurrogateKeys` DISABLE KEYS */;
-INSERT INTO `SurrogateKeys`
+LOCK TABLES `surrogatekeys` WRITE;
+/*!40000 ALTER TABLE `surrogatekeys` DISABLE KEYS */;
+INSERT INTO `surrogatekeys`
 VALUES ('CourseCodes', 2), ('Courses', 1), ('Interests', 10), ('Members', 37), ('Publications', 22),
   ('ResourceGroups', 3), ('Resources', 1), ('RMemberInterests', 4), ('RMemberPublications', 58);
-/*!40000 ALTER TABLE `SurrogateKeys` ENABLE KEYS */;
+/*!40000 ALTER TABLE `surrogatekeys` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE = @OLD_TIME_ZONE */;
 
@@ -424,4 +424,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES = @OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-08 16:46:00
+-- Dump completed on 2016-03-08 16:50:38
