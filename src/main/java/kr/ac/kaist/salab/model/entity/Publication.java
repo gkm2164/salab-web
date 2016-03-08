@@ -4,14 +4,8 @@ import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.*;
-import org.springframework.data.jpa.repository.*;
-import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
 import java.sql.Date;
 import java.util.List;
 
@@ -40,9 +34,18 @@ public class Publication {
     @ManyToMany
     @JoinTable(
             name = "RMemberPublications",
-            indexes = @Index(name = "IDX_AuthorOrder", columnList = "AuthorOrder ASC"),
-            joinColumns = @JoinColumn(table = "Publications", name = "PublicationID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(table = "Members", name = "MemberID", referencedColumnName = "ID")
+            joinColumns =
+            @JoinColumn(
+                    table = "Publications",
+                    name = "PublicationID",
+                    referencedColumnName = "ID"
+            ),
+            inverseJoinColumns =
+            @JoinColumn(
+                    table = "Members",
+                    name = "MemberID",
+                    referencedColumnName = "ID"),
+            indexes = @Index(columnList = "AuthorOrder")
     )
     private List<Member> memberList;
 

@@ -6,6 +6,7 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
+import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.util.HashMapLinked;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,19 @@ import java.util.Map;
 )
 public class MemberController extends LayoutController {
 
+    private static final Map<String, String> statusMap = new HashMap<>();
+
+    static {
+        statusMap.put("prof", "Professors");
+        statusMap.put("reses", "Researchers");
+        statusMap.put("phd", "Ph. D. Students");
+        statusMap.put("ms", "M.S. Students");
+        statusMap.put("alumni", "Alumni");
+    }
+
     @Autowired MemberRepository mr;
+    @Autowired
+    PublicationAuthorSortHelper pash;
 
     @RequestMapping
     public String memberMain(Model model) {
@@ -45,17 +58,9 @@ public class MemberController extends LayoutController {
         setLocalNav("member");
         Member member = mr.findOne(id);
         model.addAttribute("member", member);
+        member.getPublications().forEach(pash::sortByAuthorOrder);
+
         return layoutCall(new DefaultPageDesc("member/show", "Member Show"), model);
-    }
-
-    private static final Map<String, String> statusMap = new HashMap<>();
-
-    static {
-        statusMap.put("prof", "Professors");
-        statusMap.put("reses", "Researchers");
-        statusMap.put("phd", "Ph. D. Students");
-        statusMap.put("ms", "M.S. Students");
-        statusMap.put("alumni", "Alumni");
     }
 
     public String memberStatus(String code, Model model) {
@@ -64,6 +69,7 @@ public class MemberController extends LayoutController {
         model.addAttribute("status", statusMap.get(code));
         model.addAttribute("members", members);
 
+        members.forEach(x -> x.getPublications().forEach(pash::sortByAuthorOrder));
         String title = statusMap.get(code) + " List";
         PageDescription pageDesc =
                 new PageDescription("member/common", title,
@@ -169,6 +175,8 @@ public class MemberController extends LayoutController {
     public String memberAlumni(@PathVariable Integer year, Model model) {
         List<Member> members = mr.findAlumniByGraduatedYear(year);
         model.addAttribute("members", members);
+
+        members.forEach(x -> x.getPublications().forEach(pash::sortByAuthorOrder));
         return "member/common";
     }
 }

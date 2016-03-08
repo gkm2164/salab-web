@@ -3,6 +3,7 @@ package kr.ac.kaist.salab.controller.admin;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
+import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
@@ -25,9 +26,15 @@ public class PublicationAdminController extends LayoutController {
     @Autowired private PublicationRepository pr;
     @Autowired private MemberRepository mr;
     @Autowired private RMemberPublicationRepository rmpr;
+    @Autowired
+    private PublicationAuthorSortHelper pash;
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPublication(Model model) {
+        List<Publication> publicationList = pr.findAll();
+
+        publicationList.forEach(pash::sortByAuthorOrder);
+        model.addAttribute("publicationList", publicationList);
         model.addAttribute("publication", new Publication());
         model.addAttribute("pubTypes", new TypeValues().pubTypes);
         return layoutCall(new DefaultPageDesc("admin/publication", "Create Publication"), model);
@@ -40,8 +47,8 @@ public class PublicationAdminController extends LayoutController {
             return "redirect:/admin/publication/new";
         }
 
-        pr.save(publication);
-        return "redirect:/admin/mempubrel/new";
+        Publication p = pr.save(publication);
+        return "redirect:/admin/mempubrel/new?pubId=" + p.getId();
     }
 
     public class TypeValues {

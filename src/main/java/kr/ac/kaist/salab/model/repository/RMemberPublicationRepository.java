@@ -15,5 +15,5 @@ import java.util.List;
 public interface RMemberPublicationRepository extends JpaRepository<RMemberPublication, Integer>{
     RMemberPublication findByPublicationAndMember(Publication pub, Member member);
 
-    List<RMemberPublication> findByPublication(Publication pub);
+    List<RMemberPublication> findByPublicationOrderByAuthorOrderAsc(Publication pub);
 }

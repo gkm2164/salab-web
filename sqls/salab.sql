@@ -133,9 +133,9 @@ CREATE TABLE `RMemberPublications` (
   `MemberID` int(11) NOT NULL,
   `AuthorOrder` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
+  KEY `IDX_RMP_AuthorOrder` (`AuthorOrder`),
   KEY `FK_Publications_ID` (`PublicationID`),
   KEY `FK_Members_ID` (`MemberID`),
-  KEY `IDX_RMP_AuthorOrder` (`AuthorOrder`),
   CONSTRAINT `FK_Members_ID` FOREIGN KEY (`MemberID`) REFERENCES `Members` (`ID`),
   CONSTRAINT `FK_Publications_ID` FOREIGN KEY (`PublicationID`) REFERENCES `Publications` (`ID`),
   CONSTRAINT `UQ_RMP_PublicationID_MemberID` UNIQUE (PublicationID, MemberID)

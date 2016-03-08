@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: USER
@@ -29,3 +30,11 @@
   </p>
   <button type="submit">Submit!</button>
 </form:form>
+
+<div id="publication-list-box">
+  <ul>
+    <c:forEach items="${publicationList}" var="elem">
+      <li>${elem}</li>
+    </c:forEach>
+  </ul>
+</div>

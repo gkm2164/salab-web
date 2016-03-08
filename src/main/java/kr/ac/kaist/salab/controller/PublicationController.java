@@ -6,6 +6,7 @@ import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
+import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,36 @@ import java.util.List;
 public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;
     @Autowired RMemberPublicationRepository rmpr;
+    @Autowired
+    PublicationAuthorSortHelper pash;
+
+    @RequestMapping
+    public String pubPage(Model model) {
+
+        List<PublicationCategory> pubs = new ArrayList<>();
+
+        pubs.add(new PublicationCategory("SCI/SCIE Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.SCI_JOURNAL)));
+        pubs.add(new PublicationCategory("Other International Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_JOURNAL)));
+        pubs.add(new PublicationCategory("International Conference Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_CONFERENCE)));
+        pubs.add(new PublicationCategory("Domestic Journal Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_JOURNAL)));
+        pubs.add(new PublicationCategory("Domestic Conference Papers",
+                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_CONFERENCE)));
+
+        model.addAttribute("PUBS", pubs);
+
+        PageDescription pubPageDesc =
+                new PageDescription("pubs/home", "Publications",
+                        (css, js) -> {
+                            css.add("pubs.home.css");
+                        });
+
+        pubs.forEach(x -> x.getList().forEach(pash::sortByAuthorOrder));
+        return layoutCall(pubPageDesc, model);
+    }
 
     public class PublicationCategory {
         private String name;
@@ -57,31 +88,5 @@ public class PublicationController extends LayoutController {
         public void setList(List<Publication> list) {
             this.list = list;
         }
-    }
-
-    @RequestMapping
-    public String pubPage(Model model) {
-
-        List<PublicationCategory> pubs = new ArrayList<>();
-
-        pubs.add(new PublicationCategory("SCI/SCIE Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.SCI_JOURNAL)));
-        pubs.add(new PublicationCategory("Other International Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_JOURNAL)));
-        pubs.add(new PublicationCategory("International Conference Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_CONFERENCE)));
-        pubs.add(new PublicationCategory("Domestic Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_JOURNAL)));
-        pubs.add(new PublicationCategory("Domestic Conference Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_CONFERENCE)));
-
-        model.addAttribute("PUBS", pubs);
-
-        PageDescription pubPageDesc =
-                new PageDescription("pubs/home", "Publications",
-                        (css, js) -> {
-                            css.add("pubs.home.css");
-                        });
-        return layoutCall(pubPageDesc, model);
     }
 }

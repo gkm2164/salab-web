@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class RMemPubRelAdminController extends LayoutController {
     @Autowired private RMemberPublicationRepository rmpr;
 
     @RequestMapping(path = "/new", method = RequestMethod.GET)
-    public String addRelation(Model model) {
+    public String addRelation(@RequestParam(defaultValue = "-1") Integer pubId, Model model) {
         List<Member> memberList = mr.findAll();
         memberList.sort((a, b) -> a.getName().compareTo(b.getName()));
 
@@ -37,9 +38,14 @@ public class RMemPubRelAdminController extends LayoutController {
 
         publications.sort((a, b) -> a.getTitle().compareTo(b.getTitle()));
 
+        Relation r;
         model.addAttribute("members", memberList);
         model.addAttribute("publications", publications);
-        model.addAttribute("relation", new Relation());
+        model.addAttribute("relation", r = new Relation());
+
+        if (pubId >= 0) {
+            r.setPubId(pubId);
+        }
 
         PageDescription rmpraPageDesc =
                 new PageDescription("admin/mempubrel", "Publication Relation",
@@ -55,7 +61,7 @@ public class RMemPubRelAdminController extends LayoutController {
         RMemberPublication rmp = rmpr.findByPublicationAndMember(pub, member);
 
         if (rmp != null) {
-            return "redirect:/admin/mempubrel/new";
+            return "redirect:/admin/mempubrel/new?pubId=" + relation.pubId;
         }
 
         rmp = new RMemberPublication();
@@ -64,7 +70,7 @@ public class RMemPubRelAdminController extends LayoutController {
         rmp.setAuthorOrder(relation.order);
         rmpr.save(rmp);
 
-        return "redirect:/admin/mempubrel/new";
+        return "redirect:/admin/mempubrel/new?pubId=" + relation.pubId;
     }
 
     @Data
