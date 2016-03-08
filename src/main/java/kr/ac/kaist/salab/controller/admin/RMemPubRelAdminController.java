@@ -23,7 +23,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(path = "/admin/mempubrel")
-public class RMemPubRelAdmin extends LayoutController {
+public class RMemPubRelAdminController extends LayoutController {
     @Autowired private PublicationRepository pr;
     @Autowired private MemberRepository mr;
     @Autowired private RMemberPublicationRepository rmpr;

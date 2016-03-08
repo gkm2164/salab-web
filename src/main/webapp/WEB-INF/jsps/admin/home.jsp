@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: USER
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<p><a href="/admin/member/new">Add new member</a></p>
-<p><a href="/admin/publication/new">Add new publication</a></p>
-<p><a href="/admin/mempubrel/new">Add new relation to publication - member</a></p>
+
+<c:forEach items="${links}" var="elem">
+  <p><a href="${elem}">${linkmap.get(elem)}</a></p>
+</c:forEach>

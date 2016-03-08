@@ -3,7 +3,7 @@
 <form:form method="post" modelAttribute="relation">
   <p>
     <form:label path="intId">Interest</form:label>
-    <form:select path="intId">
+    <form:select path="intId" onchange="onInterestClick()">
       <form:option value="Select Interest" />
       <form:options items="${interests}" itemLabel="fieldName" itemValue="id" />
     </form:select>
@@ -18,3 +18,5 @@
 
   <button type="submit">Submit!</button>
 </form:form>
+
+<div id="interest-relation"></div>

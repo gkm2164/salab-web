@@ -7,6 +7,7 @@ import kr.ac.kaist.salab.model.repository.RMemberInterestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class InterestRestController {
         return ir.findAll();
     }
 
-    @RequestMapping("/{id}/member")
+    @RequestMapping(value = "/{id}/member", method = RequestMethod.POST)
     public List<Member> findAllMember(@PathVariable Integer id) {
         return ir.findOne(id).getMemberList();
     }
