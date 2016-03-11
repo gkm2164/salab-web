@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4007769023">
-    <data-source source="LOCAL" name="MySQL - SALab@localhost" uuid="f92b2d29-4c66-475d-bb17-e733242726f6">
+  <component name="DataSourceManagerImpl" format="xml" hash="2693033475">
+    <data-source source="LOCAL" name="MySQL - SALab@localhost" uuid="85a9ce05-e11f-433e-9a01-ce2c13ef0d35">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
-      <auto-commit>false</auto-commit>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/SALab</jdbc-url>
       <driver-properties>
+        <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
         <property name="characterEncoding" value="utf8" />

@@ -9,17 +9,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @SpringBootApplication
 public class SALabWebsiteApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SALabWebsiteApplication.class, args);
-	}
-
-	@Bean
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver irvr = new InternalResourceViewResolver();
-		irvr.setViewClass(JstlView.class);
-		irvr.setPrefix("/WEB-INF/jsps/");
-		irvr.setSuffix(".jsp");
-		return irvr;
 	}
 }

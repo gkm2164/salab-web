@@ -6,6 +6,7 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
+import kr.ac.kaist.salab.model.helper.MemberAlumniHelper;
 import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.util.HashMapLinked;
@@ -147,8 +148,10 @@ public class MemberController extends LayoutController {
     )
     public String memberAlumni(Model model) {
         setLocalNav("member");
-        Map<Integer, List<Member>> map = constructHashMapAlumni();
+        HashMapLinked<Integer, Member> map = new HashMapLinked<>();
         List<Integer> years = new ArrayList<>();
+
+        MemberAlumniHelper.constructTable(mr.findAlumni(), map);
         years.addAll(map.keySet());
         years.sort((a, b) -> a - b);
         model.addAttribute("alumniYears", years);
