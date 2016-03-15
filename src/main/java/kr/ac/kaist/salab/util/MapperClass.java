@@ -7,7 +7,6 @@ import java.util.List;
  */
 public class MapperClass<D, IK, IV> {
     private Mapper<D, IK, IV> mapper;
-    private HashMapLinked<IK, IV> hashMap = new HashMapLinked<>();
 
     public MapperClass(Mapper<D, IK, IV> mapper) {
         this.mapper = mapper;
