@@ -18,7 +18,6 @@ public class BeanDefinitions {
     @Autowired
     public NavNode navNode() {
         NavigationBuilder nb = new NavigationBuilder(HomeController.class);
-        
         return nb.getRoot();
     }
 
