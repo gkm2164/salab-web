@@ -1,11 +1,19 @@
 package kr.ac.kaist.salab.util;
 
 /**
- * Created by gyeongmin on 3/13/16.
+ * Created by USER on 2016-03-15.
  */
 public class Context<K, V> {
     private K key;
     private V value;
+
+    public Context() {
+    }
+
+    public Context(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
 
     public void write(K key, V value) {
         this.key = key;

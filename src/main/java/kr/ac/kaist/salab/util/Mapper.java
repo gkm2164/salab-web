@@ -1,8 +1,8 @@
 package kr.ac.kaist.salab.util;
 
 /**
- * Created by gyeongmin on 3/13/16.
+ * Created by USER on 2016-03-15.
  */
-public interface Mapper<D extends Object, K, V> {
-    void map(D data, Context<K, V> ctx);
+public interface Mapper<D, IK, IV> {
+    void map(D data, Context<IK, IV> ctx);
 }

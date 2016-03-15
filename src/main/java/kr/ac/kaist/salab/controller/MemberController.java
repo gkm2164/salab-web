@@ -6,10 +6,9 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
-import kr.ac.kaist.salab.model.helper.MemberAlumniHelper;
 import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
-import kr.ac.kaist.salab.util.HashMapLinked;
+import kr.ac.kaist.salab.util.MapperClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -148,10 +147,11 @@ public class MemberController extends LayoutController {
     )
     public String memberAlumni(Model model) {
         setLocalNav("member");
-        HashMapLinked<Integer, Member> map = new HashMapLinked<>();
+
+        Map<Integer, List<Member>> map = constructAlumniHashMap();
+
         List<Integer> years = new ArrayList<>();
 
-        MemberAlumniHelper.constructTable(mr.findAlumni(), map);
         years.addAll(map.keySet());
         years.sort((a, b) -> a - b);
         model.addAttribute("alumniYears", years);
@@ -166,12 +166,19 @@ public class MemberController extends LayoutController {
         return layoutCall(alumniPageDesc, model);
     }
 
-    private Map<Integer, List<Member>> constructHashMapAlumni() {
-        HashMapLinked<Integer, Member> hml = new HashMapLinked<>();
-        List<Member> members = mr.findAlumni();
-        members.forEach((x) -> hml.add(x.getGraduatedYear(), x));
+    private Map<Integer, List<Member>> constructAlumniHashMap() {
 
-        return hml;
+        List<Member> members = mr.findAlumni();
+
+        MapperClass<Member, Integer, Member> mc =
+                new MapperClass<>(((data, ctx) -> {
+                    Integer key = data.getGraduatedYear();
+                    Member value = data;
+
+                    ctx.write(key, value);
+                }));
+
+        return mc.map(members);
     }
 
     @RequestMapping(path = "/alumni/{year}", method = RequestMethod.POST)
