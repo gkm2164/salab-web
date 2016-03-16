@@ -17,7 +17,7 @@ import java.util.List;
 @Entity
 @Table(name = "Members")
 @Getter @Setter
-@EqualsAndHashCode(exclude = {"interests", "publications"})
+@EqualsAndHashCode(exclude = {"interests", "publications", "alumniTable"})
 public class Member {
     @Id @TableGenerator(
             name = "MemberIDGenerator", table = "SurrogateKeys",
@@ -42,6 +42,9 @@ public class Member {
     private Boolean graduated;
 
     private Integer graduatedYear;
+
+    @OneToOne(mappedBy = "member")
+    private AlumniTable alumniTable;
 
     @ManyToMany
     @JoinTable(
@@ -69,5 +72,11 @@ public class Member {
         } else {
             return String.format(format, id, name);
         }
+    }
+
+    public String toString() {
+        String format = "%d: %s(%s)";
+
+        return String.format(format, id, name, koreanName);
     }
 }

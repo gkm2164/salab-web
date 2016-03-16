@@ -14,6 +14,9 @@
 					${member.name}
 				</c:if>
 			</span>
+			<c:if test="${member.alumniTable != null}">
+				<span class="name-card-current-work">${member.alumniTable.currentWork}</span>
+			</c:if>
 			<c:if test="${member.interests.size() > 0}">
 				<div class="name-card-interest">
 					<h2>Research Interests</h2>

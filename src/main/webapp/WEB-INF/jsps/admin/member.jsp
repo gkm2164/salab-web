@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form:form method="post" modelAttribute="member">
   <p>
@@ -40,4 +41,12 @@
   </p>
   <button type="submit">Submit!</button>
 </form:form>
+
+<div>
+  <ul>
+    <c:forEach items="${members}" var="elem">
+      <li>${elem}</li>
+    </c:forEach>
+  </ul>
+</div>
 

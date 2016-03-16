@@ -26,6 +26,7 @@ public class MemberAdminController extends LayoutController {
 
     @RequestMapping(path = "/new", method = RequestMethod.GET)
     public String createMember(Model model) {
+        model.addAttribute("members", mr.findAll());
         model.addAttribute("member", new Member());
         model.addAttribute("degreeList", new Degrees().degreeList);
         return layoutCall(new DefaultPageDesc("admin/member", "Create member"), model);

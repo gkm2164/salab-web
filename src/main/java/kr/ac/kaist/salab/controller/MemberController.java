@@ -183,10 +183,13 @@ public class MemberController extends LayoutController {
 
     @RequestMapping(path = "/alumni/{year}", method = RequestMethod.POST)
     public String memberAlumni(@PathVariable Integer year, Model model) {
+        String viewName = "member/common";
         List<Member> members = mr.findAlumniByGraduatedYear(year);
+
         model.addAttribute("members", members);
 
         members.forEach(x -> x.getPublications().forEach(pash::sortByAuthorOrder));
-        return "member/common";
+
+        return viewName;
     }
 }
