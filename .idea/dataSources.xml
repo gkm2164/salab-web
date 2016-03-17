@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1810510051">
+  <component name="DataSourceManagerImpl" format="xml" hash="1326878985">
     <data-source source="LOCAL" name="MySQL - SALab@localhost" uuid="85a9ce05-e11f-433e-9a01-ce2c13ef0d35">
       <driver-ref>mysql</driver-ref>
       <auto-commit>false</auto-commit>

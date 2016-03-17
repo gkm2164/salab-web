@@ -30,9 +30,9 @@ public class InterestAdminController extends LayoutController {
     public String newResearchInterest(@ModelAttribute Interest interest, BindingResult ibr) {
         if (ibr.hasErrors()) {
             ibr.getAllErrors().forEach(System.out::println);
-            return "redirect:/admin/rmir/new";
+            return "redirect:/admin/interest/new";
         }
         ir.save(interest);
-        return "redirect:/admin/rmir/new";
+        return "redirect:/admin/interest/new";
     }
 }
