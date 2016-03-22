@@ -7,6 +7,7 @@ import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
 import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
+import kr.ac.kaist.salab.model.helper.PublicationStringCreationHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.util.MapperClass;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,8 @@ public class MemberController extends LayoutController {
     @Autowired MemberRepository mr;
     @Autowired
     PublicationAuthorSortHelper pash;
+    @Autowired
+    PublicationStringCreationHelper psch;
 
     @RequestMapping
     public String memberMain(Model model) {
@@ -58,18 +61,21 @@ public class MemberController extends LayoutController {
         setLocalNav("member");
         Member member = mr.findOne(id);
         model.addAttribute("member", member);
-        member.getPublications().forEach(pash::sortByAuthorOrder);
+        model.addAttribute("publications", psch.toList(member.getPublications(), true));
 
         return layoutCall(new DefaultPageDesc("member/show", "Member Show"), model);
     }
 
     public String memberStatus(String code, Model model) {
         List<Member> members = mr.findByDegreeAndGraduated(code, false);
+        Map<Member, List<String>> pub_map = new HashMap<>();
+
         setLocalNav("member");
         model.addAttribute("status", statusMap.get(code));
         model.addAttribute("members", members);
+        model.addAttribute("pub_map", pub_map);
 
-        members.forEach(x -> x.getPublications().forEach(pash::sortByAuthorOrder));
+        members.forEach(x -> pub_map.put(x, psch.toList(x.getPublications(), true)));
         String title = statusMap.get(code) + " List";
         PageDescription pageDesc =
                 new PageDescription("member/common", title,
@@ -185,10 +191,12 @@ public class MemberController extends LayoutController {
     public String memberAlumni(@PathVariable Integer year, Model model) {
         String viewName = "member/common";
         List<Member> members = mr.findAlumniByGraduatedYear(year);
+        Map<Member, List<String>> pubsMap = new HashMap<>();
 
         model.addAttribute("members", members);
+        model.addAttribute("pub_map", pubsMap);
 
-        members.forEach(x -> x.getPublications().forEach(pash::sortByAuthorOrder));
+        members.forEach(x -> pubsMap.put(x, psch.toList(x.getPublications(), true)));
 
         return viewName;
     }

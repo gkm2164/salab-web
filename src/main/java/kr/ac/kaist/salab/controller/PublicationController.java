@@ -4,9 +4,9 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationDesc;
 import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
-import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
 import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
+import kr.ac.kaist.salab.model.helper.PublicationStringCreationHelper;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,40 +35,60 @@ public class PublicationController extends LayoutController {
     @Autowired RMemberPublicationRepository rmpr;
     @Autowired
     PublicationAuthorSortHelper pash;
+    @Autowired
+    PublicationStringCreationHelper psch;
 
     @RequestMapping
     public String pubPage(Model model) {
 
         List<PublicationCategory> pubs = new ArrayList<>();
 
-        pubs.add(new PublicationCategory("SCI/SCIE Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.SCI_JOURNAL)));
-        pubs.add(new PublicationCategory("Other International Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_JOURNAL)));
-        pubs.add(new PublicationCategory("International Conference Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.INTERNATIONAL_CONFERENCE)));
-        pubs.add(new PublicationCategory("Domestic Journal Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_JOURNAL)));
-        pubs.add(new PublicationCategory("Domestic Conference Papers",
-                        pr.findByPublicationTypeOrderByDateDesc(PublicationType.DOMESTIC_CONFERENCE)));
+        pubs.add(
+                new PublicationCategory("SCI/SCIE Journal Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.SCI_JOURNAL), true)
+                )
+        );
+
+        pubs.add(
+                new PublicationCategory("SCI/SCIE Journal Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.SCI_JOURNAL), true)
+                )
+        );
+        pubs.add(
+                new PublicationCategory("Other International Journal Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.INTERNATIONAL_JOURNAL), true)
+                )
+        );
+        pubs.add(
+                new PublicationCategory("International Conference Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.INTERNATIONAL_CONFERENCE), true)
+                )
+        );
+        pubs.add(
+                new PublicationCategory("Domestic Journal Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.DOMESTIC_JOURNAL), true)
+                )
+        );
+        pubs.add(
+                new PublicationCategory("Domestic Conference Papers",
+                        psch.toList(pr.findByPublicationType(PublicationType.DOMESTIC_CONFERENCE), true)
+                )
+        );
 
         model.addAttribute("PUBS", pubs);
 
         PageDescription pubPageDesc =
                 new PageDescription("pubs/home", "Publications",
-                        (css, js) -> {
-                            css.add("pubs.home.css");
-                        });
+                        (css, js) -> css.add("pubs.home.css"));
 
-        pubs.forEach(x -> x.getList().forEach(pash::sortByAuthorOrder));
         return layoutCall(pubPageDesc, model);
     }
 
     public class PublicationCategory {
         private String name;
-        private List<Publication> list;
+        private List<String> list;
 
-        public PublicationCategory(String name, List<Publication> list) {
+        public PublicationCategory(String name, List<String> list) {
             this.name = name;
             this.list = list;
         }
@@ -81,12 +101,8 @@ public class PublicationController extends LayoutController {
             this.name = name;
         }
 
-        public List<Publication> getList() {
+        public List<String> getList() {
             return list;
-        }
-
-        public void setList(List<Publication> list) {
-            this.list = list;
         }
     }
 }

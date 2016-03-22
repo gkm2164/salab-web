@@ -35,7 +35,7 @@
 		<div class="name-card-career">
 			<h2>Publications</h2>
 			<ul>
-				<c:forEach var="pubs" items="${member.publications}">
+				<c:forEach var="pubs" items="${pub_map.get(member)}">
 					<li>${pubs}</li>
 				</c:forEach>
 			</ul>

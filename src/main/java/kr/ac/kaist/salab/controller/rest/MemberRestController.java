@@ -23,11 +23,7 @@ public class MemberRestController {
 
     @RequestMapping("/{id}/show/pub")
     public List<Publication> findPubs(@PathVariable Integer id) {
-        List<Publication> listPubs = memberRepository.findOne(id).getPublications();
-
-        System.out.println ("* " + listPubs);
-
-        return listPubs;
+        return memberRepository.findOne(id).getPublications();
     }
 
     @RequestMapping("/alumni")

@@ -56,4 +56,10 @@ public class PublicationStringCreationHelper {
 
         return authors + ", \"" + pub.getTitle() + ",\"" + pub.getMetadata();
     }
+
+    public List<String> toList(List<Publication> publicationList, boolean authorAsLink) {
+        List<String> stringList = new ArrayList<>();
+        publicationList.forEach(x -> stringList.add(getString(x, authorAsLink)));
+        return stringList;
+    }
 }

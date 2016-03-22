@@ -62,6 +62,7 @@ public class Member {
             inverseJoinColumns = @JoinColumn(name = "PublicationID", referencedColumnName = "ID")
     )
     @JsonBackReference
+    @OrderBy("date desc")
     private List<Publication> publications;
 
     public String getPageLink(boolean korean) {

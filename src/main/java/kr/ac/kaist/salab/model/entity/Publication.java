@@ -49,36 +49,9 @@ public class Publication {
     )
     private List<Member> memberList;
 
+    @Override
     public String toString() {
-
-        switch (publicationType) {
-            case SCI_JOURNAL:
-            case INTERNATIONAL_JOURNAL:
-            case INTERNATIONAL_CONFERENCE:
-                return toEnglishString();
-            case DOMESTIC_JOURNAL:
-            case DOMESTIC_CONFERENCE:
-                return toKoreanString();
-
-        }
-
-        return "!!";
+        throw new UnsupportedOperationException("Don't use it!!");
     }
 
-    public String toEnglishString() {
-        StringBuilder sb = new StringBuilder();
-
-        memberList.forEach((x) -> sb.append(x.getPageLink(false)).append(", "));
-        String names = sb.toString();
-
-        return String.format("%s\"%s,\" %s", names, title, metadata);
-    }
-
-    public String toKoreanString() {
-        StringBuilder sb = new StringBuilder();
-        memberList.forEach((x) -> sb.append(x.getPageLink(true)).append(", "));
-        String names = sb.toString();
-
-        return String.format("%s\"%s,\" %s", names, title, metadata);
-    }
 }

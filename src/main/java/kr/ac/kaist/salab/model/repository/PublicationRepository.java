@@ -17,5 +17,6 @@ public interface PublicationRepository extends JpaRepository<Publication, Intege
     @Query("SELECT m FROM Publication p, RMemberPublication rmi, Member m WHERE p = rmi.publication AND rmi.member = m AND p.id = ?1 ORDER BY rmi.authorOrder ASC")
     List<Member> findByIdOrderByAuthorOrder(Integer id);
 
-    List<Publication> findByPublicationTypeOrderByDateDesc(PublicationType type);
+    @Query("SELECT p FROM Publication p WHERE p.publicationType = ?1 ORDER BY p.date DESC")
+    List<Publication> findByPublicationType(PublicationType type);
 }
