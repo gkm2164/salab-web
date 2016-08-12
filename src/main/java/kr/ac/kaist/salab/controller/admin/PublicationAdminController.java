@@ -3,7 +3,7 @@ package kr.ac.kaist.salab.controller.admin;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.model.entity.Publication;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
-import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
+import kr.ac.kaist.salab.model.helper.PublicationStringCreationHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
@@ -27,14 +27,13 @@ public class PublicationAdminController extends LayoutController {
     @Autowired private MemberRepository mr;
     @Autowired private RMemberPublicationRepository rmpr;
     @Autowired
-    private PublicationAuthorSortHelper pash;
+    private PublicationStringCreationHelper psch;
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPublication(Model model) {
-        List<Publication> publicationList = pr.findAll();
+        List<String> pubStringList = psch.toList(pr.findAll(), false);
 
-        publicationList.forEach(pash::sortByAuthorOrder);
-        model.addAttribute("publicationList", publicationList);
+        model.addAttribute("publicationList", pubStringList);
         model.addAttribute("publication", new Publication());
         model.addAttribute("pubTypes", new TypeValues().pubTypes);
         return layoutCall(new DefaultPageDesc("admin/publication", "Create Publication"), model);

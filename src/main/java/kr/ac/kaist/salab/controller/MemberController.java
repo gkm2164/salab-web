@@ -6,7 +6,6 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.Member;
-import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.helper.PublicationStringCreationHelper;
 import kr.ac.kaist.salab.model.repository.MemberRepository;
 import kr.ac.kaist.salab.util.MapperClass;
@@ -45,8 +44,6 @@ public class MemberController extends LayoutController {
     }
 
     @Autowired MemberRepository mr;
-    @Autowired
-    PublicationAuthorSortHelper pash;
     @Autowired
     PublicationStringCreationHelper psch;
 
@@ -179,9 +176,7 @@ public class MemberController extends LayoutController {
         MapperClass<Member, Integer, Member> mc =
                 new MapperClass<>(((data, ctx) -> {
                     Integer key = data.getGraduatedYear();
-                    Member value = data;
-
-                    ctx.write(key, value);
+                    ctx.write(key, data);
                 }));
 
         return mc.map(members);

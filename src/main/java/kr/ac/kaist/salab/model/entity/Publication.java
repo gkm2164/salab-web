@@ -44,8 +44,10 @@ public class Publication {
             @JoinColumn(
                     table = "Members",
                     name = "MemberID",
-                    referencedColumnName = "ID"),
-            indexes = @Index(columnList = "AuthorOrder")
+                    referencedColumnName = "ID"
+            ),
+            indexes = @Index(columnList = "AuthorOrder"
+            )
     )
     private List<Member> memberList;
 

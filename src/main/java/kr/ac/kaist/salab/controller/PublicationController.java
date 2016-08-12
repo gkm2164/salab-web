@@ -5,7 +5,6 @@ import kr.ac.kaist.salab.controller.navs.annotation.NavigationTop;
 import kr.ac.kaist.salab.controller.page.LayoutController;
 import kr.ac.kaist.salab.controller.page.PageDescription;
 import kr.ac.kaist.salab.model.entity.types.PublicationType;
-import kr.ac.kaist.salab.model.helper.PublicationAuthorSortHelper;
 import kr.ac.kaist.salab.model.helper.PublicationStringCreationHelper;
 import kr.ac.kaist.salab.model.repository.PublicationRepository;
 import kr.ac.kaist.salab.model.repository.RMemberPublicationRepository;
@@ -34,8 +33,6 @@ public class PublicationController extends LayoutController {
     @Autowired PublicationRepository pr;
     @Autowired RMemberPublicationRepository rmpr;
     @Autowired
-    PublicationAuthorSortHelper pash;
-    @Autowired
     PublicationStringCreationHelper psch;
 
     @RequestMapping
@@ -43,37 +40,11 @@ public class PublicationController extends LayoutController {
 
         List<PublicationCategory> pubs = new ArrayList<>();
 
-        pubs.add(
-                new PublicationCategory("SCI/SCIE Journal Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.SCI_JOURNAL), true)
-                )
-        );
-
-        pubs.add(
-                new PublicationCategory("SCI/SCIE Journal Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.SCI_JOURNAL), true)
-                )
-        );
-        pubs.add(
-                new PublicationCategory("Other International Journal Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.INTERNATIONAL_JOURNAL), true)
-                )
-        );
-        pubs.add(
-                new PublicationCategory("International Conference Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.INTERNATIONAL_CONFERENCE), true)
-                )
-        );
-        pubs.add(
-                new PublicationCategory("Domestic Journal Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.DOMESTIC_JOURNAL), true)
-                )
-        );
-        pubs.add(
-                new PublicationCategory("Domestic Conference Papers",
-                        psch.toList(pr.findByPublicationType(PublicationType.DOMESTIC_CONFERENCE), true)
-                )
-        );
+        pubs.add(readCategory("SCI/SCIE Journal Papers", PublicationType.SCI_JOURNAL));
+        pubs.add(readCategory("Other International Journal Papers", PublicationType.INTERNATIONAL_JOURNAL));
+        pubs.add(readCategory("International Conference Papers", PublicationType.INTERNATIONAL_CONFERENCE));
+        pubs.add(readCategory("Domestic Journal Papers", PublicationType.DOMESTIC_JOURNAL));
+        pubs.add(readCategory("Domestic Conference Papers", PublicationType.DOMESTIC_CONFERENCE));
 
         model.addAttribute("PUBS", pubs);
 
@@ -83,6 +54,13 @@ public class PublicationController extends LayoutController {
 
         return layoutCall(pubPageDesc, model);
     }
+
+
+    public PublicationCategory readCategory(String name, PublicationType publicationType) {
+        List<String> ret = psch.toList(pr.findByPublicationType(publicationType), true);
+        return new PublicationCategory(name, ret);
+    }
+
 
     public class PublicationCategory {
         private String name;
